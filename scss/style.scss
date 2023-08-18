@@ -1,0 +1,37 @@
+@import "./utils/_vars";
+@import "./utils/_global";
+@import "./components/_fonts";
+@import "./components/_container";
+@import "./components/_header";
+@import "./components/_nav";
+@import "./components/_logo";
+@import "./components/_wrapper";
+@import "./components/_hero";
+@import "./components/_swiper";
+@import "./components/swiper-pagination-bullet";
+@import "./components/_advantages";
+@import "./components/howdoes";
+@import "./components/_video";
+@import "./components/_footer";
+@import "./components/_important";
+@import "./components/_contacts";
+@import "./components/_blog";
+@import "./components/_catalog";
+
+.sl-wrapper .sl-counter {top: 100px;}
+.sl-wrapper .sl-close {top: 110px;}
+
+// .swiper-button-left {
+//   transform: translateX(-41px);
+
+
+// }
+// .swiper-button-right {
+//   transform: translateX(8px);
+// }
+// <svg class="projects__item-svg" width="30" height="30" aria-label="РРєРѕРЅРєР° РїРѕРёСЃРєР°">
+//                     <use href="./images/projects/icons.svg#icon-search"></use>
+//                   </svg>
+
+// @include transition ($transition-property: color);
+  // @media screen and (width < 1034px ) {}
