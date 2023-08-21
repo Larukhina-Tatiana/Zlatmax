@@ -24,15 +24,15 @@ const ttf2woff2 = require("gulp-ttf2woff2");
 const include = require("gulp-include");
 
 function fonts() {
-  return src("app/fonts/src/*.*")
+  return src("fonts/src/*.*")
     .pipe(
       fonter({
         formats: ["woff", "ttf"],
       })
     )
-    .pipe(src("app/fonts/*.ttf"))
+    .pipe(src("fonts/*.ttf"))
     .pipe(ttf2woff2())
-    .pipe(dest("app/fonts"));
+    .pipe(dest("fonts"));
 }
 
 // function includeh() {

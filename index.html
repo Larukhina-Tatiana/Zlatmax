@@ -1,62 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+<!-- <html lang="en"> -->
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leasing From D&M</title>
-  <link rel="stylesheet" href="scss/modern-normalize.min.css">
-  <link rel="stylesheet" href="./js/swiper-bundle.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <title>ZLATMAX - Златоустовские ножи</title>
   <link rel="stylesheet" href="scss/style.css">
 </head>
 
 <body>
   <div class="wrepper">
-    <header class="header header__main">
+    <header class="header">
       <div class="container">
-        <div class="header__inner">
-          <a class="logo" href="./index.html">
-            <img src="./images/logo.svg" alt="Logo">
-          </a>
-          <nav class="nav">
-            <button class="nav__menu-btn">
+        <div class="header-top">
+          <div class="header-top__menu menu">
+
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a class="menu__link" href="">О нас</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="">Оплата и доставка</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="">Новости</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+            <a class="menu__user _icon-user" href="">Личный кабинет</a>
+            <button class="menu__btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="17" viewBox="0 0 28 17" fill="none">
+                <rect width="28" height="3" rx="1.5" fill="white" />
+                <rect y="7" width="28" height="3" rx="1.5" fill="white" />
+                <rect y="14" width="28" height="3" rx="1.5" fill="white" />
+              </svg>
+              <!-- <span></span>
               <span></span>
-              <span></span>
-              <span></span>
+              <span></span> -->
             </button>
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a class="nav__link" href="./new-cars.html">NEW CARS</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__link" href="">PRE-OWNED CARS</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__link" href="">FINANCE</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__link" href="">LEASE VS BUY</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__link" href="./contacts.html">CONTACT</a>
-              </li>
-            </ul>
-          </nav>
+          </div>
         </div>
       </div>
-    </header>
-    <main class="main">
-      <section class="hero">
-        <div class="container"></div>
-      </section>
-      
-        
-    </main>
-    <footer class="footer">
-      <div class="container"></div>
-    </footer>
+      <div class="header-center">
+        <div class="container">
+          <div class="header-center__inner">
+            <a class="header-center__logo" href=""></a>
+            <div class="header-center__search">
+              <form action="#" class="header-center__search-form">
+                <button class="header-center__search-btn _icon-search" type="submit"></button>
+                <input class="header-center__search-input" type="text" placeholder="Поиск" name="" id=""
+                  autocomplete="off">
+              </form>
+            </div>
+            <div class="header-center__actions">
+              <a class="header-center__actions-location _icon-header-location" href="">Киев</a>
+              <div class="header-center__phones">
+                <div class="header-center__phone-items" data-spollers>
+                  <div class="header-center__phone-item">
+                    <a class="header-center__phone-link" href="tel:+380050774967">380-50-777-49-67</a>
+                    <button class="header-center__phone-arrow _icon-arrow_bottom" data-spoller></button>
+                    <ul class="header-center__phone-list">
+                      <li>
+                        <a class="header-center__phone-link" href="tel:+380050774968">380-50-777-49-68</a>
+                      </li>
+                      <li>
+                        <a class="header-center__phone-link" href="tel:+380050774969">380-50-777-49-69</a>
+                      </li>
+                      <li>
+                        <a class="header-center__phone-link" href="tel:+380050774970">380-50-777-49-70</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <button class="header-center__phone-callback">Заказать звонок</button>
+              </div>
+              <a class="header-center__favorite _icon-favorites" href=""></a>
+              <div class="header-center__cart">
+                <div class="header-center__card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="34" viewBox="0 0 32 34" fill="none">
+                    <path
+                      d="M7.13008 7.76882H29.7121C30.3649 7.76882 30.8427 8.38411 30.681 9.01655L28.7801 16.4506C28.4405 17.7785 27.2442 18.7074 25.8736 18.7074H9.02537M0 1.49957H4.65214C5.63535 1.49957 6.47274 2.21422 6.62728 3.18521L9.6467 22.1562C9.80125 23.1272 10.6386 23.8418 11.6218 23.8418H28.203"
+                      stroke="black" stroke-width="1.5" />
+                    <path
+                      d="M15.7689 30.2656C15.7689 31.5678 14.7584 32.5758 13.5695 32.5758C12.3807 32.5758 11.3701 31.5678 11.3701 30.2656C11.3701 28.9634 12.3807 27.9554 13.5695 27.9554C14.7584 27.9554 15.7689 28.9634 15.7689 30.2656Z"
+                      stroke="black" stroke-width="1.5" />
+                    <path
+                      d="M28.746 30.2656C28.746 31.5678 27.7354 32.5758 26.5466 32.5758C25.3577 32.5758 24.3472 31.5678 24.3472 30.2656C24.3472 28.9634 25.3577 27.9554 26.5466 27.9554C27.7354 27.9554 28.746 28.9634 28.746 30.2656Z"
+                      stroke="black" stroke-width="1.5" />
+                  </svg>
+                  <span>0</span>
+                </div>
+                <div class="header-center__card-body">
+                  <div class="header-center__cart-summa"></div>
+                  <a class="header-center__cart-link" href="">Оформить заказ</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="heade-catalog"></div>
+
+
+
+  </div>
+  </header>
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero _icon-hryvnia-icon"></div>
+      </div>
+    </section>
+
+
+  </main>
+  <footer class="footer">
+    <div class="container"></div>
+  </footer>
   </div>
 
   <script src="js/swiper-bundle.min.js"></script>

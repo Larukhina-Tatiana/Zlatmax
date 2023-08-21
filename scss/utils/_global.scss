@@ -30,6 +30,8 @@ select {
 a {
     display: block;
     text-decoration: none;
+    color: inherit;
+    font-size: inherit;
 }
 
 body,
@@ -54,19 +56,19 @@ dd {
 }
 
 body {
-    background: var(--peach);
-    @extend %Comfortaa-400;
-    font-size: .625rem;
-    line-height: calc(11/10);
+    // background: var(--peach);
+    @extend %Montserrat-500;
+    font-size: 1.125rem;
+    // line-height: calc(11/10);
     color: var(--black);
     overflow-x: hidden;
     min-width: 100vw;
 
 
-    @media screen and (width > 999px) {
-        font-size: .875rem;
-        line-height: calc(16/14);
-    }
+    // @media screen and (width > 999px) {
+    //     font-size: .875rem;
+    //     line-height: calc(16/14);
+    // }
 
 
 

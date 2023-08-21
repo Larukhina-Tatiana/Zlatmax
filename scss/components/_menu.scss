@@ -1,0 +1,45 @@
+.menu {
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    @include adaptive-value(column-gap, 60, 10, 0);
+  }
+
+  &__link {
+    font-size: 1rem;
+    line-height: calc(20/16);
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    @extend %Montserrat-600;
+    line-height: calc(22/18);
+
+    &::before {
+      width: 21px;
+      font-size: 28px;
+    }
+  }
+
+  &__btn {
+    display: none;
+    @media screen and (width < 768px) {
+      display: block;
+
+      // & span {
+      //   display: flex;
+      //   width: 28px;
+      //   height: 3px;
+      //   background-color: var(--white);
+      //   border-radius: 20px;
+      //   margin-bottom: 4px;
+
+      // }
+    }
+  }
+
+}
