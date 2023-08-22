@@ -4,6 +4,7 @@
     --cod-gray: #141414;
     --white: #FFFFFF;
     --black: #000000;
+    --header-center: #ECF1F2;
 }
 
 
@@ -11,6 +12,12 @@
     transition-duration: $transition-duration;
     transition-timing-function: $transition-timing-function;
 }
+
+// @mixin em ($px:null, $current: 16) {
+//     px: $px;
+//     current: $current;
+// };
+
 // @include transition ($transition-property: color);
 
 

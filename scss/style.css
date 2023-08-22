@@ -227,6 +227,7 @@ body {
   --cod-gray: #141414;
   --white: #FFFFFF;
   --black: #000000;
+  --header-center: #ECF1F2;
 }
 
 html,
@@ -369,11 +370,11 @@ button,
 }
 .header-center__search {
   margin-left: calc(20px + 138 *((100vw - 320px) / 1300));
-  width: 377px;
+  flex: 1 1 auto;
 }
 .header-center__search-form {
   position: relative;
-  width: 100%;
+  max-width: 23.5625rem;
 }
 .header-center__search-input {
   width: 100%;
@@ -404,6 +405,75 @@ button,
   top: 50%;
   transform: translateY(-50%);
   left: 0.5rem;
+}
+.header-center__actions {
+  display: flex;
+  align-items: center;
+  gap: 0 30px;
+}
+.header-center__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: calc(3px + 22 *((100vw - 320px) / 1300));
+  padding-left: 10px;
+  font-weight: 600;
+}
+.header-center__location::before {
+  color: var(--black);
+  height: 24px;
+  font-size: 1.5rem;
+}
+.header-center__phone {
+  font-weight: 600;
+  line-height: 1.2222222222;
+  margin-right: calc(7px + 23 *((100vw - 320px) / 1300));
+  white-space: nowrap;
+}
+.header-center__phone-item {
+  position: relative;
+  display: flex;
+}
+.header-center__phone-link {
+  display: inline-block;
+  margin-bottom: 0.3125rem;
+}
+.header-center__phone-arrow.active._icon-arrow_bottom::before {
+  transform: rotate(-180deg);
+  padding-top: 8px;
+}
+.header-center__phone-callback {
+  line-height: 1.2222222222;
+  color: var(--accent);
+}
+.header-center__phone-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  background-color: var(--header-center);
+  padding: 0.9375rem;
+  border-radius: 0.625rem;
+}
+.header-center__phone-list li:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+
+._icon-arrow_bottom::before {
+  margin-left: calc(5px + 12 *((100vw - 320px) / 1300));
+  color: var(--accent);
+  font-size: 0.59375rem;
+  padding-top: 4px;
+  transition-duration: 550ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+._icon-favorites::before {
+  margin-right: calc(7px + 23 *((100vw - 320px) / 1300));
+  font-size: 1.75rem;
+  height: 27px;
+  color: var(--black);
 }
 
 .menu__list {
