@@ -78,10 +78,12 @@
                     </ul>
                   </div>
                 </div>
-                <button class="header-center__phone-callback">Заказать звонок</button>
+                <!-- <a class="header-center__phone-callback" href="#callback">Заказать звонок</a> -->
+                <button class="header-center__phone-callback" data-popup="#callback">Заказать звонок</button>
+
               </div>
               <a class="header-center__favorite _icon-favorites" href=""></a>
-              <div class="header-center__cart">
+              <div class="header-center__card">
                 <div class="header-center__card-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="34" viewBox="0 0 32 34" fill="none">
                     <path
@@ -94,11 +96,11 @@
                       d="M28.746 30.2656C28.746 31.5678 27.7354 32.5758 26.5466 32.5758C25.3577 32.5758 24.3472 31.5678 24.3472 30.2656C24.3472 28.9634 25.3577 27.9554 26.5466 27.9554C27.7354 27.9554 28.746 28.9634 28.746 30.2656Z"
                       stroke="black" stroke-width="1.5" />
                   </svg>
-                  <span>0</span>
+                  <span>10</span>
                 </div>
                 <div class="header-center__card-body">
-                  <div class="header-center__cart-summa">0 грн.</div>
-                  <a class="header-center__cart-link" href="">Оформить заказ</a>
+                  <div class="header-center__card-summa">0 грн.</div>
+                  <a class="header-center__card-link" href="">Оформить заказ</a>
                 </div>
               </div>
             </div>
@@ -126,7 +128,20 @@
   </footer>
   </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <div class="popup" id="callback" aria-hidden="true">
+    <div class="popup__wrapper">
+      <div class="popup__content">
+        <button class="popup__close" data-close>Закрыть</button>
+        <div class="popup__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis sapiente dolor nam repellendus laborum
+          quia minus soluta placeat vitae modi voluptatum vel, inventore consequuntur eaque doloribus recusandae
+          officiis cum! Ad!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- <script src="js/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->

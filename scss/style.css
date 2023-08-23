@@ -442,22 +442,60 @@ button,
   transform: rotate(-180deg);
   padding-top: 8px;
 }
-.header-center__phone-callback {
-  line-height: 1.2222222222;
-  color: var(--accent);
-}
 .header-center__phone-list {
+  box-shadow: 0 0 5px rgba(113, 109, 109, 0.04);
   display: none;
   position: absolute;
   top: 100%;
   width: 100%;
-  left: 0;
+  left: -2px;
   background-color: var(--header-center);
   padding: 0.9375rem;
   border-radius: 0.625rem;
 }
 .header-center__phone-list li:not(:last-child) {
   margin-bottom: 0.625rem;
+}
+.header-center__phone-callback {
+  font-weight: 700;
+  line-height: 1.2222222222;
+  color: var(--accent);
+}
+.header-center__card {
+  display: flex;
+  align-items: center;
+  gap: 0 22px;
+}
+.header-center__card-icon {
+  display: flex;
+  position: relative;
+}
+.header-center__card-icon span {
+  position: absolute;
+  top: -2px;
+  right: -7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--accent);
+  padding: 2px 4px;
+  color: #FFF;
+  font-size: 0.5rem;
+  line-height: 1.25;
+  width: 18px;
+  height: 18px;
+}
+.header-center__card-summa {
+  color: var(--black);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+.header-center__card-link {
+  margin-top: 5px;
+  color: var(--accent);
+  font-size: 1rem;
+  line-height: 1.25;
 }
 
 ._icon-arrow_bottom::before {
@@ -504,6 +542,42 @@ button,
   .menu__btn {
     display: block;
   }
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.popup__wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 30px 10px;
+}
+.popup__content {
+  background-color: aliceblue;
+  color: #000000;
+  max-width: 800px;
+  padding: 30px;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+}
+.popup__close {
+  border-radius: 15px;
+  padding: 10px;
+  border: 1px solid gray;
+  margin-bottom: 20px;
+}
+.popup:open {
+  opacity: 1;
+  visibility: visible;
 }
 
 .sl-wrapper .sl-counter {
