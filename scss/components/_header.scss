@@ -141,10 +141,14 @@
       }
     }
 
+    &__favorite {
+      font-size: calc(27/16)+rem;
+    }
+
     &__card {
       display: flex;
       align-items: center;
-      gap: 0 22px;
+      gap: 0 15px;
 
       &-icon {
         display: flex;
@@ -195,11 +199,4 @@
   font-size: calc(9.5/16)+rem;
   padding-top: 4px;
   @include transition ($transition-property: transform);
-}
-
-._icon-favorites::before {
-  @include adaptive-value(margin-right, 30, 7, 0);
-  font-size: calc(28/16)+rem;
-  height: 27px;
-  color: var(--black);
 }
