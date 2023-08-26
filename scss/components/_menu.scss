@@ -10,6 +10,13 @@
   &__link {
     font-size: 1rem;
     line-height: calc(20/16);
+    @include transition ($transition-property: color);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--accent);
+      }
+    }
   }
 
   &__user {
@@ -23,22 +30,37 @@
       width: 21px;
       font-size: 28px;
     }
+
+    @include transition ($transition-property: color);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--accent);
+      }
+    }
   }
 
   &__btn {
     display: none;
+
     @media screen and (width < 768px) {
       display: block;
 
-      // & span {
-      //   display: flex;
-      //   width: 28px;
-      //   height: 3px;
-      //   background-color: var(--white);
-      //   border-radius: 20px;
-      //   margin-bottom: 4px;
+      @media (any-hover: hover) {
+        &:hover span {
+          background-color: var(--accent);
+        }
+      }
 
-      // }
+      & span {
+        display: flex;
+        width: 28px;
+        height: 3px;
+        background-color: var(--white);
+        border-radius: 20px;
+        margin-bottom: 4px;
+        @include transition ($transition-property: color);
+      }
     }
   }
 
