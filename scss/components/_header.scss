@@ -1,10 +1,17 @@
 .header {
-  background: #141414;
+  background-color: var(--cod-gray);
   color: var(--white);
 
   &-top {
     min-height: 50px;
     padding: 10px 0;
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
 
 
     &__menu {
@@ -13,11 +20,113 @@
       justify-content: space-between;
       padding-top: 23px;
       padding-bottom: 19px;
+
+      &-list {
+        display: flex;
+        align-items: center;
+        row-gap: 5px;
+        flex-wrap: wrap;
+        @include adaptive-value(column-gap, 60, 10, 0);
+
+        @media screen and (width < 991.98px) {
+          flex-direction: column;
+          row-gap: 20px;
+          align-items: flex-start;
+        }
+      }
+
+      &-item--hidden {
+        display: none;
+
+        @media screen and (width < 991.98px) {
+          display: block;
+        }
+      }
+
+      &-link {
+        @include adaptivevalue(font-size, 16, 14, 1620, 992, 1);
+        // font-size: 1rem;
+        line-height: calc(20/16);
+        @include transition ($transition-property: color);
+
+        @media (any-hover: hover) {
+          &:hover {
+            color: var(--accent);
+          }
+
+          &:hover .header-top__menu-link--catalog::before {
+            color: var(--accent);
+          }
+        }
+
+        @media screen and (width < 991.98px) {
+          @include adaptivevalue(font-size, 20, 16, 992, 320, 1);
+        }
+
+        &--catalog {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          align-items: center;
+
+          &::before {
+            height: 14px;
+            color: var(--white);
+            transform: rotate(-90deg);
+            @include adaptive-value(margin-left, 17, 5, 0);
+            @include adaptivevalue(font-size, 9.5, 7.5, 1620, 992, 1);
+            // font-size: calc(9.5/16)+rem;
+            padding-top: 4px;
+            @include transition ($transition-property: transform);
+          }
+        }
+
+      }
+
+      @media screen and (width < 991.98px) {
+        display: none;
+      }
     }
+
+    &__user {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      @extend %Montserrat-600;
+      @include adaptivevalue(font-size, 18, 16, 1620, 992, 1);
+      line-height: calc(22/18);
+
+      &::before {
+        width: 21px;
+        font-size: 28px;
+      }
+
+      @include transition ($transition-property: color);
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--accent);
+        }
+      }
+
+      @media screen and (width < 479.98px) {
+        span {
+          display: none;
+        }
+      }
+
+    }
+
+    @media screen and (width < 991.98px) {
+      column-gap: 35px;
+      align-items: center;
+    }
+
+
   }
 
   &-center {
-    background: #ECF1F2;
+    background-color: var(--header-center);
     color: var(--black);
     padding: 10px 0;
 
@@ -25,6 +134,7 @@
       display: flex;
       min-height: 70px;
       align-items: center;
+      justify-content: space-between;
     }
 
     &__logo {
@@ -34,24 +144,34 @@
     }
 
     &__search {
-      @include adaptive-value(margin-left, 158, 20, 0);
+      @include adaptivevalue(margin-left, 158, 20, 1620, 992, 1);
+      @include adaptivevalue(max-width, 377, 250, 1620, 320, 1);
       flex: 1 1 auto;
+      // max-width: calc(377/16)+rem;
+      width: 100%;
 
       &-form {
         position: relative;
-        max-width: calc(377/16)+rem;
+        background-color: rgba(7, 7, 7, 0.03);
       }
 
       &-input {
+        border: 1px solid rgba(4, 4, 4, 0.50);
+        background-color: transparent;
+        border-radius: 3px;
         width: 100%;
         height: 2.5625rem;
-        background-color: rgba(7, 7, 7, 0.03);
-        border: 1px solid rgba(4, 4, 4, 0.50);
-        border-radius: 3px;
         padding: 0 1.25rem 0 3.125rem;
+
+
         color: var(--black);
         font-size: .875rem;
         line-height: calc(17/14);
+        @include transition ($transition-property: border);
+
+        &:hover {
+          border: 1px solid #e8aa31;
+        }
 
         &::placeholder {
           color: rgba(0, 0, 0, 0.50);
@@ -67,15 +187,25 @@
         top: 50%;
         transform: translateY(-50%);
         left: .5rem;
-        // margin-right: 10px;
+
+        &:hover .header-center__search-input {
+          border: 1px solid #e8aa31;
+        }
       }
+
+
     }
 
     &__actions {
       display: flex;
       align-items: center;
-      gap: 0 30px;
-      // @include adaptive-value(margin-left, 238, 3, 0);
+      // gap: 0 30px;
+      @include adaptivevalue(gap, 30, 15, 1620, 1200, 1);
+      @include adaptivevalue(margin-left, 232, 15, 1620, 1200, 1);
+
+      @media screen and (width < 991.98px) {
+        display: none;
+      }
     }
 
 
@@ -85,7 +215,7 @@
       gap: 10px;
       @include adaptive-value(margin-right, 25, 3, 0);
       padding-left: 10px;
-
+      @include adaptivevalue(font-size, 18, 16, 1620, 992, 1);
       font-weight: 600;
 
       &::before {
@@ -93,13 +223,22 @@
         height: 24px;
         font-size: calc(24/16)+rem;
       }
+
+      @media screen and (width < 991.98px) {
+        display: none;
+      }
     }
 
     &__phone {
+      @include adaptivevalue(font-size, 18, 16, 1620, 992, 1);
       font-weight: 600;
       line-height: calc(22/18);
-      @include adaptive-value(margin-right, 30, 7, 0);
       white-space: nowrap;
+
+      @media screen and (width < 991.98px) {
+        order: -1;
+      }
+
 
       &-item {
         position: relative;
@@ -109,6 +248,20 @@
       &-link {
         display: inline-block;
         margin-bottom: calc(5/16)+rem;
+        @include transition ($transition-property: color);
+
+        &:hover {
+          color: var(--accent);
+        }
+      }
+
+      &-arrow::before {
+        @include adaptive-value(margin-left, 17, 5, 0);
+        color: var(--accent);
+        @include adaptivevalue(font-size, 9.5, 7.5, 1620, 992, 1);
+        // font-size: calc(9.5/16)+rem;
+        padding-top: 4px;
+        @include transition ($transition-property: transform);
       }
 
       &-arrow.active._icon-arrow_bottom::before {
@@ -126,6 +279,7 @@
         background-color: var(--header-center);
         padding: calc(15/16)+rem;
         border-radius: calc(10/16)+rem;
+        z-index: 1;
 
         li {
           &:not(:last-child) {
@@ -150,6 +304,7 @@
 
     &__favorite {
       font-size: calc(27/16)+rem;
+      height: 27px;
     }
 
     &__card {
@@ -180,17 +335,24 @@
         }
       }
 
-      &-summa {
-        color: var(--black);
+      &-body {
         font-size: calc(16/16)+rem;
         line-height: calc(20/16);
+        flex: 0 0 auto;
+
+        @media screen and (width < 1200px) {
+          display: none;
+        }
+
+      }
+
+      &-summa {
+        color: var(--black);
       }
 
       &-link {
         margin-top: 5px;
         color: var(--accent);
-        font-size: calc(16/16)+rem;
-        line-height: calc(20/16);
         @include transition ($transition-property: text-decoration);
 
         @media (any-hover: hover) {
@@ -200,6 +362,10 @@
         }
       }
     }
+
+    // @media screen and (width < 991.98px) {
+    //   display: none;
+    // }
   }
 
 
@@ -219,6 +385,8 @@
     }
 
     &__link {
+      color: var(--white);
+      @include adaptivevalue(font-size, 18, 16, 1620, 992, 1);
       padding: 0 10px;
       min-height: 70px;
       display: flex;
@@ -226,14 +394,6 @@
       align-items: center;
       text-align: center;
       @include transition ($transition-property: color);
-
-      @media (any-hover: hover) {
-        &:hover {
-          color: var(--accent);
-        }
-      }
-
-      // &--active {
       position: relative;
 
       &::after {
@@ -259,11 +419,17 @@
         }
       }
 
-      &._submenu-active {
-        &::after {
-          opacity: 1;
-          visibility: visible;
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--accent);
         }
+      }
+    }
+
+    &._submenu-active {
+      &::after {
+        opacity: 1;
+        visibility: visible;
       }
     }
 
@@ -336,6 +502,7 @@
       &-footer {
         padding: 30px 15px 30px 0;
       }
+
       &-all {
         color: var(--accent);
         font-size: calc(16/16)+rem;
@@ -350,18 +517,8 @@
       }
     }
 
-
-
-
+    @media screen and (width < 991.98px) {
+      display: none;
+    }
   }
-
-
-}
-
-._icon-arrow_bottom::before {
-  @include adaptive-value(margin-left, 17, 5, 0);
-  color: var(--accent);
-  font-size: calc(9.5/16)+rem;
-  padding-top: 4px;
-  @include transition ($transition-property: transform);
 }

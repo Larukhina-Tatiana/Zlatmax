@@ -1,66 +1,51 @@
 .menu {
+  display: none;
 
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 5px;
-    @include adaptive-value(column-gap, 60, 10, 0);
-  }
-
-  &__link {
-    font-size: 1rem;
-    line-height: calc(20/16);
-    @include transition ($transition-property: color);
-
-    @media (any-hover: hover) {
-      &:hover {
-        color: var(--accent);
-      }
-    }
-  }
-
-  &__user {
+  @media screen and (width < 991.98px) {
     display: flex;
     align-items: center;
-    gap: 15px;
-    @extend %Montserrat-600;
-    line-height: calc(22/18);
-
-    &::before {
-      width: 21px;
-      font-size: 28px;
-    }
-
-    @include transition ($transition-property: color);
-
-    @media (any-hover: hover) {
-      &:hover {
-        color: var(--accent);
-      }
-    }
+    // flex: 1 1 auto;
+    justify-content: space-between;
+    @include adaptivevalue(column-gap, 35, 15, 992, 320, 1);
   }
 
   &__btn {
     display: none;
 
-    @media screen and (width < 768px) {
+    @media screen and (width < 991.98px) {
       display: block;
+     margin-left: 20px;
+    }
 
-      @media (any-hover: hover) {
-        &:hover span {
-          background-color: var(--accent);
-        }
+    @media (any-hover: hover) {
+      &:hover span {
+        background-color: var(--accent);
       }
+    }
 
-      & span {
-        display: flex;
-        width: 28px;
-        height: 3px;
-        background-color: var(--white);
-        border-radius: 20px;
-        margin-bottom: 4px;
-        @include transition ($transition-property: color);
-      }
+    & span {
+      display: flex;
+      width: 28px;
+      height: 3px;
+      background-color: var(--white);
+      border-radius: 20px;
+      margin-bottom: 4px;
+      @include transition ($transition-property: color);
+    }
+  }
+
+  &__body {
+    @media screen and (width < 991.98px) {
+      position: fixed;
+      width: 100%;
+      // width: 100vw;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      overflow: auto;
+      background-color: var(--cod-gray);
+      padding: 80px 15px 50px 15px;
+      z-index: 1;
     }
   }
 

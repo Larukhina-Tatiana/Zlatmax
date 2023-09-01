@@ -1,5 +1,5 @@
 :root {
-    --accent: #E8AA31;
+    --accent: #e8aa31;
     --gray: #ABABAB;
     --cod-gray: #141414;
     --white: #FFFFFF;
@@ -29,7 +29,7 @@
     @return m#{i}n(#{$numbers});
 }
 
-// @media (hover: hover) {
+// @media (any-hover: hover) {
 //     &__menu-link:hover {
 //       color: var(--black);
 //       & svg {
@@ -71,6 +71,7 @@
 
 $maxWidth: 1920;
 $maxWidthContainer: 1620;
+$minWidthContainer: 1400;
 
 @mixin adaptive-value($property, $startSize, $minSize, $type) {
     $addSize: $startSize - $minSize;
@@ -81,6 +82,7 @@ $maxWidthContainer: 1620;
 
         @media screen and (max-width: #{$maxWidthContainer + px}) {
             #{$property}: calc(#{$minSize + px} + #{$addSize} *((100vw - 320px) / #{$maxWidthContainer - 320}));
+            
         }
     }
 
@@ -96,9 +98,42 @@ $maxWidthContainer: 1620;
     @else {
         // Всегда
         #{$property}: calc(#{$minSize + px} + #{$addSize} *((100vw - 320px) / #{$maxWidthContainer - 320}));
-    }
+    } 
 }
 
+
+@mixin adaptivevalue($property, $startSize, $minSize, $maxWidthContainer, $minWidthContainer, $type) {
+    $addSize: $startSize - $minSize;
+
+    @if $type==1 {
+        // Только, если меньше контейнера
+        #{$property}: $startSize + px;
+
+        @media screen and (max-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidthContainer+ px}) / #{$maxWidthContainer - $minWidthContainer}));
+        }
+    }
+
+    @else if $type==2 {
+        // Только, если больше контейнера
+        #{$property}: $startSize + px;
+
+        @media screen and (min-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidthContainer+ px}) / #{$maxWidthContainer - $minWidthContainer}));
+        }
+    }
+
+    @else {
+        // Всегда
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidthContainer+ px}) / #{$maxWidthContainer - $minWidthContainer}));
+    } 
+}
+// @mixin adaptivevalue($property, $startSize, $minSize, $maxWidthContainer, $minWidthContainer) {
+//     $addSize: $startSize - $minSize;
+//     #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidthContainer+ px}) / #{$maxWidthContainer - $minWidthContainer}));
+// }
+
+// margin-left: calc(20px + (158 - 20) * ((100vw - 1400px)/ (1620 - 1400)));
 // @include adaptive-value(padding, 50, 20, 0);
 // padding: calc(20px + (50 - 20) * ((100vw - 300px)/ (1200 - 300)));
 // font-size: calc(12/16)+rem;
