@@ -1,8 +1,12 @@
 // !Спойлер
 $(document).ready(function () {
-  $(".header-center__phone-arrow").click(function (event) {
+  $(".header-center__phone-btn").click(function (event) {
     $(this).toggleClass("active").next().slideToggle(300);
   });
+});
+
+$(".menu__btn").on("click", function () {
+  $(".menu").toggleClass("menu-open");
 });
 
 document.addEventListener("click", documentActions);

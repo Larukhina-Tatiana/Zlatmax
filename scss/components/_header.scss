@@ -95,21 +95,22 @@
       @extend %Montserrat-600;
       @include adaptivevalue(font-size, 18, 16, 1620, 992, 1);
       line-height: calc(22/18);
+      @include transition ($transition-property: color);
 
       &::before {
         width: 21px;
         font-size: 28px;
       }
 
-      @include transition ($transition-property: color);
 
       @media (any-hover: hover) {
         &:hover {
+          @include transition ($transition-property: color);
           color: var(--accent);
         }
       }
 
-      @media screen and (width < 479.98px) {
+      @media screen and (width < 567.98px) {
         span {
           display: none;
         }
@@ -121,9 +122,14 @@
       column-gap: 35px;
       align-items: center;
     }
-
-
   }
+
+
+
+
+
+
+
 
   &-center {
     background-color: var(--header-center);
@@ -135,6 +141,12 @@
       min-height: 70px;
       align-items: center;
       justify-content: space-between;
+
+      @media screen and (width < 567.98px) {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
     }
 
     &__logo {
@@ -144,11 +156,25 @@
     }
 
     &__search {
-      @include adaptivevalue(margin-left, 158, 20, 1620, 992, 1);
-      @include adaptivevalue(max-width, 377, 250, 1620, 320, 1);
-      flex: 1 1 auto;
-      // max-width: calc(377/16)+rem;
+      @include adaptivevalue(margin-left, 158, 0, 1620, 992, 1);
+      // @include adaptivevalue(max-width, 377, 250, 1620, 568, 1);
+      // flex: 1 1 auto;
+      max-width: calc(377/16)+rem;
       width: 100%;
+
+      @media screen and (width < 1067.98px) {
+        max-width: 33%;
+      }
+
+      @media screen and (width < 991.98px) {
+      @include adaptivevalue(max-width, 377, 300, 1620, 568, 1);
+              margin-left: 0;
+      }
+
+      @media screen and (width < 567.98px) {
+        max-width: 100%;
+
+      }
 
       &-form {
         position: relative;
@@ -250,23 +276,64 @@
         margin-bottom: calc(5/16)+rem;
         @include transition ($transition-property: color);
 
-        &:hover {
-          color: var(--accent);
+
+        @media (any-hover: hover) {
+          &:hover {
+            color: var(--accent);
+          }
+        }
+
+
+        @media screen and (width < 479.98px) {
+          span {
+            display: none;
+          }
         }
       }
 
-      &-arrow::before {
+      &-btn {
+        display: flex;
+        align-items: center;
         @include adaptive-value(margin-left, 17, 5, 0);
-        color: var(--accent);
-        @include adaptivevalue(font-size, 9.5, 7.5, 1620, 992, 1);
-        // font-size: calc(9.5/16)+rem;
-        padding-top: 4px;
-        @include transition ($transition-property: transform);
+
+        &-arrow {
+          @include transition ($transition-property: transform);
+
+          @media screen and (width < 479.98px) {
+            display: none;
+          }
+        }
+
+        &-icon {
+          display: none;
+          @include transition ($transition-property: color);
+
+
+          @media (any-hover: hover) {
+            &:hover {
+              color: var(--accent);
+            }
+          }
+
+          @media screen and (width < 479.98px) {
+            display: block;
+          }
+        }
       }
 
-      &-arrow.active._icon-arrow_bottom::before {
-        transform: rotate(-180deg);
-        padding-top: 8px;
+      // &-arrow::before {
+
+      //   color: var(--accent);
+      //   @include adaptivevalue(font-size, 9.5, 7.5, 1620, 992, 1);
+      //   // font-size: calc(9.5/16)+rem;
+      //   @include transition ($transition-property: transform);
+      // }
+
+      &-btn.active {
+        .header-center__phone-btn-arrow {
+          transform: rotate(-180deg);
+        }
+
       }
 
       &-list {
@@ -286,6 +353,15 @@
             margin-bottom: calc(10/16)+rem;
           }
         }
+
+        @media screen and (width < 991.98px) {
+          background-color: var(--cod-gray);
+          padding: 12px;
+        }
+
+        @media screen and (width < 479.98px) {
+          width: 550%;
+        }
       }
 
       &-callback {
@@ -298,6 +374,10 @@
           &:hover {
             text-decoration: underline;
           }
+        }
+
+        @media screen and (width < 991.98px) {
+          display: none;
         }
       }
     }

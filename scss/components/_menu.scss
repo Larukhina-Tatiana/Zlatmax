@@ -6,7 +6,8 @@
     align-items: center;
     // flex: 1 1 auto;
     justify-content: space-between;
-    @include adaptivevalue(column-gap, 35, 15, 992, 320, 1);
+    // @include adaptivevalue(column-gap, 35, 15, 992, 320, 1);
+    gap: 35px;
   }
 
   &__btn {
@@ -14,7 +15,8 @@
 
     @media screen and (width < 991.98px) {
       display: block;
-     margin-left: 20px;
+      margin-left: 20px;
+            z-index: 2;
     }
 
     @media (any-hover: hover) {
@@ -46,6 +48,10 @@
       background-color: var(--cod-gray);
       padding: 80px 15px 50px 15px;
       z-index: 1;
+      @include transition ($transition-property: left);
+      .menu-open & {
+        left: 0;
+      }
     }
   }
 
