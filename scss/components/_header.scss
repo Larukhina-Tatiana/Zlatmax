@@ -273,7 +273,7 @@
 
       &-link {
         display: inline-block;
-        margin-bottom: calc(5/16)+rem;
+        // margin-bottom: calc(5/16)+rem;
         @include transition ($transition-property: color);
 
 
@@ -321,13 +321,6 @@
         }
       }
 
-      // &-arrow::before {
-
-      //   color: var(--accent);
-      //   @include adaptivevalue(font-size, 9.5, 7.5, 1620, 992, 1);
-      //   // font-size: calc(9.5/16)+rem;
-      //   @include transition ($transition-property: transform);
-      // }
 
       &-btn.active {
         .header-center__phone-btn-arrow {
@@ -374,10 +367,6 @@
           &:hover {
             text-decoration: underline;
           }
-        }
-
-        @media screen and (width < 991.98px) {
-          display: none;
         }
       }
     }

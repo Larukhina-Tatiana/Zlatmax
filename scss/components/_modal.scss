@@ -33,6 +33,11 @@
     border-radius: 4px;
 
     @include transition ($transition-property: scale);
+
+    @media screen and (width < 479.98px) {
+            width: 85%;
+            height: 85%;
+        }
 }
 
 

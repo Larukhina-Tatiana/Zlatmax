@@ -630,7 +630,6 @@ button,
 }
 .header-center__phone-link {
   display: inline-block;
-  margin-bottom: 0.3125rem;
   transition-duration: 450ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -712,11 +711,6 @@ button,
 @media (any-hover: hover) {
   .header-center__phone-callback:hover {
     text-decoration: underline;
-  }
-}
-@media screen and (width < 991.98px) {
-  .header-center__phone-callback {
-    display: none;
   }
 }
 .header-center__favorite {
@@ -927,25 +921,54 @@ button,
 }
 @media screen and (width < 991.98px) {
   .menu__btn {
-    display: block;
+    position: relative;
     margin-left: 20px;
+    display: inline-block;
+    width: 28px;
+    height: 17px;
+    background: transparent;
+    border: none;
+    padding: 0;
     z-index: 2;
+    transition-duration: 450ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
-@media (any-hover: hover) {
+@media screen and (width < 991.98px) and (any-hover: hover) {
   .menu__btn:hover span {
     background-color: var(--accent);
   }
 }
-.menu__btn span {
-  display: flex;
-  width: 28px;
-  height: 3px;
-  background-color: var(--white);
-  border-radius: 20px;
-  margin-bottom: 4px;
-  transition-duration: 450ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+@media screen and (width < 991.98px) {
+  .menu__btn-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 20px;
+    transition-duration: 450ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .menu__btn-line:nth-child(1) {
+    top: 0px;
+  }
+  .menu__btn-line:nth-child(2) {
+    top: 7px;
+  }
+  .menu__btn-line:nth-child(3) {
+    top: 14px;
+  }
+  .menu-open .menu__btn-line:nth-child(1) {
+    transform: scaleX(0);
+  }
+  .menu-open .menu__btn-line:nth-child(2) {
+    transform: rotate(45deg);
+    top: 14px;
+  }
+  .menu-open .menu__btn-line:nth-child(3) {
+    transform: rotate(-45deg);
+  }
 }
 @media screen and (width < 991.98px) {
   .menu__body {
@@ -998,6 +1021,12 @@ button,
   border-radius: 4px;
   transition-duration: 450ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (width < 479.98px) {
+  .modal {
+    width: 85%;
+    height: 85%;
+  }
 }
 
 .is-hidden {

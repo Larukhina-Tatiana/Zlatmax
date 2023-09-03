@@ -9,6 +9,11 @@ $(".menu__btn").on("click", function () {
   $(".menu").toggleClass("menu-open");
 });
 
+
+$(".menu__btn").on("click", function () {
+  $(".menu__btn").toggleClass("menu-open");
+});
+
 document.addEventListener("click", documentActions);
 // смотрит сколько категорий и добавляет класс с цифрой в html
 const manuBlocks = document.querySelectorAll(".header-catalog__submenu-block");
@@ -55,6 +60,7 @@ if ($(window).width() < 991.98) {
   $(".header-top__user").appendTo($(".menu"));
   $(".header-center__favorite").appendTo($(".menu"));
   $(".header-center__card").appendTo($(".menu"));
+  $(".header-center__phone-callback").appendTo($(".header-center__phone-list"));
 }
 
 // const parent_original = document.querySelector('.header');

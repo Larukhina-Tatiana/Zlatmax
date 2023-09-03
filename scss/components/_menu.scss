@@ -14,27 +14,64 @@
     display: none;
 
     @media screen and (width < 991.98px) {
-      display: block;
+      position: relative;
       margin-left: 20px;
-            z-index: 2;
-    }
+      display: inline-block;
+      width: 28px;
+      height: 17px;
+      background: transparent;
+      // order: 1;
+      border: none;
+      padding: 0;
+      z-index: 2;
+      @include transition ($transition-property: color);
 
-    @media (any-hover: hover) {
-      &:hover span {
-        background-color: var(--accent);
+
+      @media (any-hover: hover) {
+        &:hover span {
+          background-color: var(--accent);
+        }
+      }
+
+
+      &-line {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--white);
+        border-radius: 20px;
+        @include transition ($transition-property: (color, transform));
+
+        &:nth-child(1) {
+          top: 0px;
+        }
+
+        &:nth-child(2) {
+          top: 7px;
+        }
+
+        &:nth-child(3) {
+          top: 14px;
+        }
+
+        .menu-open &:nth-child(1) {
+          transform: scaleX(0);
+        }
+
+        .menu-open &:nth-child(2) {
+          transform: rotate(45deg);
+          top: 14px;
+        }
+
+        .menu-open &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
       }
     }
-
-    & span {
-      display: flex;
-      width: 28px;
-      height: 3px;
-      background-color: var(--white);
-      border-radius: 20px;
-      margin-bottom: 4px;
-      @include transition ($transition-property: color);
-    }
   }
+
+
 
   &__body {
     @media screen and (width < 991.98px) {
@@ -49,6 +86,7 @@
       padding: 80px 15px 50px 15px;
       z-index: 1;
       @include transition ($transition-property: left);
+
       .menu-open & {
         left: 0;
       }
