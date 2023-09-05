@@ -9,7 +9,6 @@ $(".menu__btn").on("click", function () {
   $(".menu").toggleClass("menu-open");
 });
 
-
 $(".menu__btn").on("click", function () {
   $(".menu__btn").toggleClass("menu-open");
 });
@@ -39,19 +38,61 @@ function documentActions(e) {
     if (subMenu) {
       const activeLink = document.querySelector("._submenu-active");
       const activeBlock = document.querySelector("._submenu-open");
-
+      
       if (activeLink && activeLink !== targetElement) {
         activeLink.classList.remove("_submenu-active");
         activeBlock.classList.remove("_submenu-open");
+        document
+          .querySelector(".header-catalog__submenu")
+          .classList.remove("catalog__submenu-active");
       }
+      document
+        .querySelector(".header-catalog__submenu")
+        .classList.toggle("catalog__submenu-active");
       targetElement.classList.toggle("_submenu-active");
       subMenu.classList.toggle("_submenu-open");
     } else {
       console.log("Нет такого подменю :('");
     }
-
     e.preventDefault();
   }
+  if (targetElement.closest(".header-top__menu-link--catalog")) {
+    document.documentElement.classList.add("catalog-open");
+    e.preventDefault();
+  }
+  if (targetElement.closest(".header-catalog__back")) {
+    document.documentElement.classList.remove("catalog-open");
+
+    document.querySelector("._submenu-active") ? document.querySelector("._submenu-active").classList.remove("_submenu-active") : null;
+    document.querySelector("._submenu-open") ? document.querySelector("._submenu-open").classList.remove("_submenu-open") : null;
+    e.preventDefault();
+  }
+  if (targetElement.closest(".header-catalog__submenu-back")) {
+    document.querySelector("._submenu-active")
+      ? document
+          .querySelector("._submenu-active")
+          .classList.remove("_submenu-active")
+      : null;
+    document.querySelector("._submenu-open")
+      ? document
+          .querySelector("._submenu-open")
+          .classList.remove("_submenu-open")
+      : null;
+    e.preventDefault();
+  }
+}
+
+let menuBtn = document.querySelector(".menu__btn");
+if (menuBtn) {
+  menuBtn.addEventListener("click", function (e) {
+    // if (bodyLockStatus) {
+    //   bodyLockToggle();
+    document.documentElement.classList.toggle("menu-open");
+    if (document.documentElement.classList.contains("catalog-open")) {
+      document.documentElement.classList.remove("catalog-open");
+    }
+    // }
+  });
 }
 
 if ($(window).width() < 991.98) {
@@ -80,4 +121,3 @@ if ($(window).width() < 991.98) {
 //     }
 //   }
 // })
-
