@@ -1321,7 +1321,7 @@ button,
 .main-block {
   padding-top: 40px;
   padding-bottom: 59px;
-  background: url(/images/hero-bg.jpg);
+  background: url(../images/hero-bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1339,15 +1339,20 @@ button,
 }
 .main-block__body {
   color: var(--white);
-  align-items: start;
+  align-items: center;
   display: grid;
   grid-template-columns: 1fr 38%;
+  margin-bottom: calc(30px + 12 *((100vw - 320px) / 1300));
 }
 .main-block__slider {
-  width: 959px;
+  max-width: 100%;
+  overflow: hidden;
 }
 .main-block__advantages {
   padding-top: 78px;
+}
+.main-block__swiper {
+  width: 100%;
 }
 .main-block__swiper:not(:last-child) {
   margin-bottom: 60px;
@@ -1359,12 +1364,17 @@ button,
 }
 .slide-main-block__title {
   font-weight: 700;
-  font-size: 2.25rem;
+  font-size: 36px;
   line-height: 1.2777777778;
   letter-spacing: 1.08px;
 }
 .slide-main-block__title:not(:last-child) {
   margin-bottom: 30px;
+}
+@media screen and (max-width: 1620px) {
+  .slide-main-block__title {
+    font-size: calc(20px + 16 * ((100vw - 320px) / 1300));
+  }
 }
 .slide-main-block__title span {
   display: block;
@@ -1373,10 +1383,14 @@ button,
 }
 .slide-main-block__text {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 1.25rem;
+  font-size: 20px;
   line-height: 1.5;
   letter-spacing: 0.6px;
-  max-width: 915px;
+}
+@media screen and (max-width: 1620px) {
+  .slide-main-block__text {
+    font-size: calc(14px + 6 * ((100vw - 320px) / 1300));
+  }
 }
 .slide-main-block__button {
   display: inline-block;
@@ -1387,7 +1401,6 @@ button,
   align-items: center;
   justify-content: center;
   padding: 15px;
-  width: 447px;
 }
 .media-main-block__body {
   position: relative;
@@ -1402,8 +1415,8 @@ button,
 .media-main-block__image::before {
   position: absolute;
   content: "";
-  width: 423px;
-  height: 423px;
+  width: 94.4%;
+  padding-bottom: 93.5%;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.5);
   bottom: 2%;
@@ -1412,8 +1425,10 @@ button,
 .media-main-block__image::after {
   position: absolute;
   content: "";
-  width: 535.212px;
-  height: 532.599px;
+  max-width: 535.212px;
+  width: 100%;
+  height: 100%;
+  max-height: 532.599px;
   border-radius: 535.212px;
   background: rgba(255, 255, 255, 0.05);
   filter: blur(35px);
@@ -1558,13 +1573,17 @@ button,
   color: var(--white);
 }
 .advantages-main__list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
   text-align: center;
 }
 .advantages-main__item {
-  flex-basis: 295px;
+  display: grid;
+  gap: 17px;
+  max-width: 295px;
 }
 .advantages-main__icon {
   display: flex;

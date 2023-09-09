@@ -113,7 +113,7 @@ if ($(window).width() < 991.98) {
 }
 
 const swiper = new Swiper(".main-block__slider", {
-  loop: true,
+  // loop: true,
   observer: true,
   observeParents: true,
   slidesPerView: 1,
@@ -124,10 +124,10 @@ const swiper = new Swiper(".main-block__slider", {
     el: ".controll-main-block__dotts",
     clickable: true,
   },
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: true,
-  },
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: true,
+  // },
   on: {
     init: function (swiper) {
       const allSlides = document.querySelector(".fraction-controll__all");
