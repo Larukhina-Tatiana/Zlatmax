@@ -38,7 +38,7 @@ function documentActions(e) {
     if (subMenu) {
       const activeLink = document.querySelector("._submenu-active");
       const activeBlock = document.querySelector("._submenu-open");
-      
+
       if (activeLink && activeLink !== targetElement) {
         activeLink.classList.remove("_submenu-active");
         activeBlock.classList.remove("_submenu-open");
@@ -63,8 +63,16 @@ function documentActions(e) {
   if (targetElement.closest(".header-catalog__back")) {
     document.documentElement.classList.remove("catalog-open");
 
-    document.querySelector("._submenu-active") ? document.querySelector("._submenu-active").classList.remove("_submenu-active") : null;
-    document.querySelector("._submenu-open") ? document.querySelector("._submenu-open").classList.remove("_submenu-open") : null;
+    document.querySelector("._submenu-active")
+      ? document
+          .querySelector("._submenu-active")
+          .classList.remove("_submenu-active")
+      : null;
+    document.querySelector("._submenu-open")
+      ? document
+          .querySelector("._submenu-open")
+          .classList.remove("_submenu-open")
+      : null;
     e.preventDefault();
   }
   if (targetElement.closest(".header-catalog__submenu-back")) {
@@ -103,6 +111,29 @@ if ($(window).width() < 991.98) {
   $(".header-center__card").appendTo($(".menu"));
   $(".header-center__phone-callback").appendTo($(".header-center__phone-list"));
 }
+
+const swiper = new Swiper(".main-block__slider", {
+  observer: true,
+  observeParents: true,
+  slidesPerView: 1,
+  spaceBetween: 50,
+  // speed: 800,
+
+  pagination: {
+    // el: ".swiper-pagination",
+    el: ".controll-main-block__dotts",
+    clickable: true,
+  },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true
+    }
+});
+
+
+
+
+
 
 // const parent_original = document.querySelector('.header');
 // const parent = document.querySelector(".menu__body");

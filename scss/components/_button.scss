@@ -1,0 +1,19 @@
+.button {
+  border-radius: 3px;
+  background: #E8AA31;
+  box-shadow: 0px 4px 20px 0px rgba(232, 170, 49, 0.43);
+  padding: calc(8/16)+rem calc(52/16)+rem;
+
+  color: var(--white);
+  font-size: calc(20/16)+rem;
+  font-weight: 600;
+  line-height: calc(32/20);
+  text-align: center;
+  @include transition ($transition-property: box-shadow);
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0px 4px 45px 0px rgba(232, 170, 49, 0.43);
+    }
+  }
+}
