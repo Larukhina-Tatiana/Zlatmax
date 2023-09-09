@@ -1488,6 +1488,7 @@ button,
   display: inline-grid;
   grid-auto-flow: column;
   gap: 17px;
+  transform: translate(0, 10%);
 }
 .controll-main-block__dotts .swiper-pagination-bullet {
   position: relative;

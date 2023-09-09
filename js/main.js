@@ -113,6 +113,7 @@ if ($(window).width() < 991.98) {
 }
 
 const swiper = new Swiper(".main-block__slider", {
+  loop: true,
   observer: true,
   observeParents: true,
   slidesPerView: 1,
@@ -120,20 +121,33 @@ const swiper = new Swiper(".main-block__slider", {
   // speed: 800,
 
   pagination: {
-    // el: ".swiper-pagination",
     el: ".controll-main-block__dotts",
     clickable: true,
   },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: true
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true,
+  },
+  on: {
+    init: function (swiper) {
+      const allSlides = document.querySelector(".fraction-controll__all");
+
+      allSlides.innerHTML = swiper.slides.length;
+    },
+    slideChange: function (swiper) { 
+      const currentSlide = document.querySelector(
+        ".fraction-controll__current"
+      );
+      currentSlide.innerHTML =
+        swiper.realIndex + 1 < 10
+          ? `0${swiper.realIndex + 1}`
+          : swiper.realIndex + 1;
+      
+
     }
+  }
+
 });
-
-
-
-
-
 
 // const parent_original = document.querySelector('.header');
 // const parent = document.querySelector(".menu__body");

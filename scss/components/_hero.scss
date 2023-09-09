@@ -204,10 +204,10 @@
   gap: 32px;
 
   &__dotts {
-    // display: flex;
     display: inline-grid;
     grid-auto-flow: column;
     gap: 17px;
+    transform: translate(0, 10%);
 
     .swiper-pagination-bullet {
       position: relative;
