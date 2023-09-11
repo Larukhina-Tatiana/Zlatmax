@@ -16,7 +16,6 @@
 
     @media screen and (width > 991.98px) {
       grid-template-columns: 1fr 38%;
-
     }
 
   }
@@ -30,8 +29,6 @@
   &__advantages {
     padding-top: 78px;
   }
-
-
 
   &__swiper {
     width: 100%;
@@ -77,7 +74,6 @@
     @include adaptivevalue(font-size, 20, 16, 991, 320, 1);
     line-height: calc(30/20);
     letter-spacing: 0.6px;
-    // max-width: 915px;
   }
 
   &__button {
@@ -90,7 +86,6 @@
   align-items: center;
   justify-content: center;
   padding: 15px;
-
 
   &__body {
     position: relative;

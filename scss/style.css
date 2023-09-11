@@ -788,7 +788,7 @@ button,
   .header-catalog__nav {
     position: fixed;
     top: 0;
-    transform: translateX(-102%);
+    transform: translateX(-130%);
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -1122,7 +1122,7 @@ button,
     overflow: auto;
     background-color: var(--cod-gray);
     padding: 80px 15px 50px 15px;
-    z-index: 1;
+    z-index: 5;
     transition-duration: 450ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
