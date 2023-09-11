@@ -9,14 +9,15 @@
 
   &__body {
     color: var(--white);
-    // display: flex;
-    // column-gap: 128px;
-    // justify-content: space-between;
-    // align-items: start;
-    align-items: center;
     display: grid;
-    grid-template-columns: 1fr 38%;
+    align-items: center;
+    row-gap: 40px;
     @include adaptive-value(margin-bottom, 42, 30, 0);
+
+    @media screen and (width > 991.98px) {
+      grid-template-columns: 1fr 38%;
+
+    }
 
   }
 
@@ -28,7 +29,6 @@
 
   &__advantages {
     padding-top: 78px;
-    // padding-bottom: 59px;
   }
 
 
@@ -45,8 +45,14 @@
 .slide-main-block {
 
   &__content {
-    padding-right: 40px;
-    @include adaptive-value(margin-bottom, 60, 30, 0);
+
+    &:not(:last-child) {
+      @include adaptive-value(margin-bottom, 60, 30, 0);
+    }
+
+    @media screen and (width < 991.98px) {
+      padding-right: 40px;
+    }
   }
 
   &__title {
@@ -55,7 +61,7 @@
     }
 
     font-weight: 700;
-    @include adaptivevalue(font-size, 36, 20, 1620, 320, 1);
+    @include adaptivevalue(font-size, 36, 23, 992, 320, 1);
     line-height: calc(46/36);
     letter-spacing: 1.08px;
 
@@ -68,7 +74,7 @@
 
   &__text {
     color: rgba(255, 255, 255, 0.70);
-    @include adaptivevalue(font-size, 20, 14, 1620, 320, 1);
+    @include adaptivevalue(font-size, 20, 16, 991, 320, 1);
     line-height: calc(30/20);
     letter-spacing: 0.6px;
     // max-width: 915px;
@@ -289,35 +295,35 @@
   color: var(--white);
 
   &__list {
-    // display: flex;
     display: grid;
     grid-template-columns: repeat(4, auto);
-    gap: 10px;
+    gap: 50px 10px;
 
-    align-items: center;
     justify-content: space-between;
-    text-align: center;
+    align-items: baseline;
+
+    // text-align: center;
+    @media screen and (width < 991.98px) {
+      grid-template-columns: repeat(2, auto);
+      justify-content: center;
+    }
+
+    @media screen and (width < 479.98px) {
+      grid-template-columns: repeat(1, auto);
+    }
   }
 
   &__item {
     display: grid;
     gap: 17px;
     max-width: 295px;
+    text-align: center;
+    // grid-template-rows: 77px auto;
   }
 
   &__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    svg {
-      width: 64px;
-      height: 63px;
-      margin-bottom: 18px;
-    }
   }
-
-
-
-  &__text {}
 }

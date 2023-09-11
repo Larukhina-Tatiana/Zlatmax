@@ -1339,10 +1339,15 @@ button,
 }
 .main-block__body {
   color: var(--white);
-  align-items: center;
   display: grid;
-  grid-template-columns: 1fr 38%;
+  align-items: center;
+  row-gap: 40px;
   margin-bottom: calc(30px + 12 *((100vw - 320px) / 1300));
+}
+@media screen and (width > 991.98px) {
+  .main-block__body {
+    grid-template-columns: 1fr 38%;
+  }
 }
 .main-block__slider {
   max-width: 100%;
@@ -1358,9 +1363,13 @@ button,
   margin-bottom: 60px;
 }
 
-.slide-main-block__content {
-  padding-right: 40px;
+.slide-main-block__content:not(:last-child) {
   margin-bottom: calc(30px + 30 *((100vw - 320px) / 1300));
+}
+@media screen and (width < 991.98px) {
+  .slide-main-block__content {
+    padding-right: 40px;
+  }
 }
 .slide-main-block__title {
   font-weight: 700;
@@ -1371,9 +1380,9 @@ button,
 .slide-main-block__title:not(:last-child) {
   margin-bottom: 30px;
 }
-@media screen and (max-width: 1620px) {
+@media screen and (max-width: 992px) {
   .slide-main-block__title {
-    font-size: calc(20px + 16 * ((100vw - 320px) / 1300));
+    font-size: calc(23px + 13 * ((100vw - 320px) / 672));
   }
 }
 .slide-main-block__title span {
@@ -1387,9 +1396,9 @@ button,
   line-height: 1.5;
   letter-spacing: 0.6px;
 }
-@media screen and (max-width: 1620px) {
+@media screen and (max-width: 991px) {
   .slide-main-block__text {
-    font-size: calc(14px + 6 * ((100vw - 320px) / 1300));
+    font-size: calc(16px + 4 * ((100vw - 320px) / 671));
   }
 }
 .slide-main-block__button {
@@ -1575,26 +1584,33 @@ button,
 .advantages-main__list {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  gap: 10px;
-  align-items: center;
+  gap: 50px 10px;
   justify-content: space-between;
-  text-align: center;
+  align-items: baseline;
+}
+@media screen and (width < 991.98px) {
+  .advantages-main__list {
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+  }
+}
+@media screen and (width < 479.98px) {
+  .advantages-main__list {
+    grid-template-columns: repeat(1, auto);
+  }
 }
 .advantages-main__item {
   display: grid;
   gap: 17px;
   max-width: 295px;
+  text-align: center;
 }
 .advantages-main__icon {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.advantages-main__icon svg {
-  width: 64px;
-  height: 63px;
-  margin-bottom: 18px;
-}
+
 .button {
   border-radius: 3px;
   background: #E8AA31;
