@@ -1,0 +1,46 @@
+.catalog {
+  background-color: var(--white);
+  @include adaptivevalue(padding-top, 120, 50, 1620, 320, 1);
+
+  &__content {
+    @include adaptivevalue(padding-top, 30, 10, 1620, 320, 1);
+    @include adaptivevalue(padding-right, 157, 8, 1620, 320, 1);
+    @include adaptivevalue(padding-left, 30, 15, 1620, 320, 1);
+    @include adaptivevalue(padding-bottom, 40, 20, 1620, 320, 1);
+    @include adaptivevalue(margin-bottom, 120, 50, 1620, 320, 1);
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+  }
+
+  &__tilte {
+    &:not(:last-child) {
+      @include adaptivevalue(margin-bottom, 20, 15, 1620, 320, 1);
+    }
+  }
+
+  &__text {
+    @include adaptivevalue(font-size, 20, 16, 1620, 320, 1);
+
+    &:not(:last-child) {
+      @include adaptivevalue(margin-bottom, 40, 20, 1620, 320, 1);
+    }
+  }
+
+  &__cards {}
+
+  &__cards-item {}
+
+  &__cards-link {}
+
+  &__cards-links {}
+
+  &__cards-links-item {}
+
+  &__cards-title {}
+
+
+  &__link {}
+
+
+
+}

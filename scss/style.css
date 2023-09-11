@@ -282,6 +282,7 @@ dd {
 
 body {
   font-size: 1.125rem;
+  line-height: 1.5;
   color: var(--black);
   overflow-x: hidden;
   min-width: 100vw;
@@ -1630,6 +1631,91 @@ button,
   }
 }
 
+.section-title {
+  color: var(--cod-gray);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.5333333333;
+  letter-spacing: 1.5px;
+}
+@media screen and (max-width: 1620px) {
+  .section-title {
+    font-size: calc(20px + 10 * ((100vw - 320px) / 1300));
+  }
+}
+@media screen and (max-width: 1620px) {
+  .section-title {
+    letter-spacing: calc(1px + 0.5 * ((100vw - 320px) / 1300));
+  }
+}
+
+.catalog {
+  background-color: var(--white);
+  padding-top: 120px;
+}
+@media screen and (max-width: 1620px) {
+  .catalog {
+    padding-top: calc(50px + 70 * ((100vw - 320px) / 1300));
+  }
+}
+.catalog__content {
+  padding-top: 30px;
+  padding-right: 157px;
+  padding-left: 30px;
+  padding-bottom: 40px;
+  margin-bottom: 120px;
+  background: #FFF;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 1620px) {
+  .catalog__content {
+    padding-top: calc(10px + 20 * ((100vw - 320px) / 1300));
+  }
+}
+@media screen and (max-width: 1620px) {
+  .catalog__content {
+    padding-right: calc(8px + 149 * ((100vw - 320px) / 1300));
+  }
+}
+@media screen and (max-width: 1620px) {
+  .catalog__content {
+    padding-left: calc(15px + 15 * ((100vw - 320px) / 1300));
+  }
+}
+@media screen and (max-width: 1620px) {
+  .catalog__content {
+    padding-bottom: calc(20px + 20 * ((100vw - 320px) / 1300));
+  }
+}
+@media screen and (max-width: 1620px) {
+  .catalog__content {
+    margin-bottom: calc(50px + 70 * ((100vw - 320px) / 1300));
+  }
+}
+.catalog__tilte:not(:last-child) {
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1620px) {
+  .catalog__tilte:not(:last-child) {
+    margin-bottom: calc(15px + 5 * ((100vw - 320px) / 1300));
+  }
+}
+.catalog__text {
+  font-size: 20px;
+}
+@media screen and (max-width: 1620px) {
+  .catalog__text {
+    font-size: calc(16px + 4 * ((100vw - 320px) / 1300));
+  }
+}
+.catalog__text:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 1620px) {
+  .catalog__text:not(:last-child) {
+    margin-bottom: calc(20px + 20 * ((100vw - 320px) / 1300));
+  }
+}
 .sl-wrapper .sl-counter {
   top: 100px;
 }
