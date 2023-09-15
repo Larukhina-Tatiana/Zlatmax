@@ -5,3 +5,28 @@
   line-height: calc(46/30);
   @include adaptivevalue(letter-spacing, 1.5, 1, 1620, 320, 1);
 }
+
+.title-h3 {
+  display: inline-block;
+  color: var(--black);
+  @include adaptivevalue(font-size, 24, 18, 1620, 992, 1);
+  font-weight: 600;
+  line-height: calc(34/24);
+  @include adaptivevalue(padding-bottom, 15, 10, 1620, 320, 1);
+
+  
+
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 68px;
+    height: 2px;
+    left: 0;
+    // left: calc(50% - 100px);
+    bottom: 0;
+    background-color: var(--accent);
+    @include transition ($transition-property: width);
+  }
+}
