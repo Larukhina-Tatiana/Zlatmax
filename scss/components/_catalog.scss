@@ -31,7 +31,7 @@
     grid-template-columns: repeat(auto-fit, minmax(289px, 509px));
     gap: 33px 29px;
     justify-content: center;
-    @include adaptivevalue(padding-bottom, 120, 49, 1620, 320, 1);
+    @include adaptivevalue(padding-bottom, 120, 50, 1620, 320, 1);
   }
 
   &__cards-inner {
@@ -79,8 +79,6 @@
       }
     }
   }
-
-  &__cards-links {}
 
   &__cards-link {
     font-size: calc(18/16)+rem;

@@ -1,3 +1,7 @@
+@use 'sass:math';
+
+// $half: math.percentage(1/2);
+
 @import "./utils/modern-normalize.min";
 @import "./utils/_fonts";
 @import "./utils/_iconfonts";
@@ -14,6 +18,9 @@
 @import "./components/_button";
 @import "./components/_titles";
 @import "./components/_catalog";
+@import "./components/_products-slider";
+@import "./components/_products-card";
+@import "./components/_rating";
 // @import "./components/_swiper";
 // @import "./components/swiper-pagination-bullet";
 // @import "./components/_advantages";

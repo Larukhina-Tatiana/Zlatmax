@@ -112,42 +112,106 @@ if ($(window).width() < 991.98) {
   $(".header-center__phone-callback").appendTo($(".header-center__phone-list"));
 }
 
-const swiper = new Swiper(".main-block__slider", {
-  // loop: true,
-  observer: true,
-  observeParents: true,
-  slidesPerView: 1,
-  spaceBetween: 50,
-  // speed: 800,
+// const swiper = new Swiper(".main-block__slider", {
+//   // loop: true,
+//   observer: true,
+//   observeParents: true,
+//   slidesPerView: 1,
+//   spaceBetween: 50,
+//   // speed: 800,
 
-  pagination: {
-    el: ".controll-main-block__dotts",
-    clickable: true,
-  },
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: true,
-  // },
-  on: {
-    init: function (swiper) {
-      const allSlides = document.querySelector(".fraction-controll__all");
+//   pagination: {
+//     el: ".controll-main-block__dotts",
+//     clickable: true,
+//   },
+//   on: {
+//     init: function (swiper) {
+//       const allSlides = document.querySelector(".fraction-controll__all");
 
-      allSlides.innerHTML = swiper.slides.length;
-    },
-    slideChange: function (swiper) { 
-      const currentSlide = document.querySelector(
-        ".fraction-controll__current"
-      );
-      currentSlide.innerHTML =
-        swiper.realIndex + 1 < 10
-          ? `0${swiper.realIndex + 1}`
-          : swiper.realIndex + 1;
-      
+//       allSlides.innerHTML = swiper.slides.length;
+//     },
+//     slideChange: function (swiper) {
+//       const currentSlide = document.querySelector(
+//         ".fraction-controll__current"
+//       );
+//       currentSlide.innerHTML =
+//         swiper.realIndex + 1 < 10
+//           ? `0${swiper.realIndex + 1}`
+//           : swiper.realIndex + 1;
+//     },
+//   },
+// });
 
-    }
-  }
+// !Рейтинг
+// const ratings = document.querySelectorAll(".rating");
+// if (ratings.length > 0) {
+//   initRatings();
+// }
+// // Основная функция
+// function initRatings() {
+//   let ratingActive, ratingValue;
+//   // Бегаем по всем рейтингам на странице
+//   for (let index = 0; index < ratings.length; index++) {
+//     const rating = ratings[index];
+//     initRating(rating);
+//   }
+// }
+// //  Инициализируем конкретный рейтинг
+// function initRating(rating) {
+//   initRatingVars(rating);
 
-});
+//   setRatingActiveWidth();
+//   if (rating.classList.contains("rating_set")) {
+//     setRating(rating);
+//   }
+// }
+
+// // Инициализация переменных
+// function initRatingVars(rating) {
+//   ratingActive = rating.querySelector(".rating__active");
+//   ratingValue = rating.querySelector(".rating__value");
+// }
+// // Изменяем ширину активных звёзд
+// function setRatingActiveWidth(index = ratingValue.innerHTML) {
+//   const ratingActiveWidth = index / 0.05;
+//   ratingActive.style.width = "${ratingActiveWidth}%";
+// }
+
+// // Возможность указывать оценку
+// function setRating(rating) {
+//   const ratingItems = rating.querySelectorAll(".rating__item");
+//   for (let index = 0; index < ratingItems.length; index++) {
+//     const ratingItem = ratingItems[index];
+//     ratingItem.addEventListener("mouseenter", function (e) {
+//       // Обновление переменных
+//       initRatingVars(rating);
+//       // Обновление активных звезд
+//       setRatingActiveWidth(ratingItem.value);
+//     });
+//     // Убрали мышь
+//     ratingItem.addEventListener("mouseleave", function (e) {
+//       // Обновление активных звезд
+//       setRatingActiveWidth();
+//     });
+//     // Кликнули на рейтинге
+//     ratingItem.addEventListener("click", function (e) {
+//       // Обновление переменных
+//       initRatingVars(rating);
+
+//       if (rating.dataset.ajax) {
+//         // Отаравить на сервер
+//         setRatingValue(ratingItem.value, rating);
+//       } else {
+//         //  Отобразить указанную оценку
+//         ratingValue.innerHTML = index + 1;
+
+//         // Обновление активных звезд
+//         setRatingActiveWidth();
+//       }
+
+//     });
+//   }
+// }
 
 // const parent_original = document.querySelector('.header');
 // const parent = document.querySelector(".menu__body");

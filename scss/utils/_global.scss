@@ -132,22 +132,22 @@ button,
 //     border-bottom: 1px solid var(--black);
 // }
 // .images-bg {
-  // background: url(../images/footer@1x.png);
-  // padding-top: 900px;
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
+// background: url(../images/footer@1x.png);
+// padding-top: 900px;
+// background-size: cover;
+// background-position: center;
+// background-repeat: no-repeat;
 
-  // @media screen and (min-device-pixel-ratio: 2),
-  // screen and (-webkit-min-device-pixel-ratio: 2),
-  // screen and (-o-mini-device-pixel-ratio: 2/1),
-  // screen and (min-resolution: 192dpi),
-  // screen and (min-resolution: 2dppx) {
-  //   background: url(../images/footer@2x.png);
-  //   background-size: cover;
-  //   background-position: center;
-  //   background-repeat: no-repeat;
-  // }
+// @media screen and (min-device-pixel-ratio: 2),
+// screen and (-webkit-min-device-pixel-ratio: 2),
+// screen and (-o-mini-device-pixel-ratio: 2/1),
+// screen and (min-resolution: 192dpi),
+// screen and (min-resolution: 2dppx) {
+//   background: url(../images/footer@2x.png);
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+// }
 // }
 
 .visually-hidden {
@@ -161,4 +161,22 @@ button,
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     margin: -1px;
+}
+
+// REM
+@function rem($px) {
+    $result: math.div($px, 16) + rem;
+    @return $result;
+}
+
+// EM
+@function em($px) {
+    $result: math.div($px, 16) + em;
+    @return $result;
+}
+
+// TO %
+@function prc($pxOne, $pxTwo) {
+    $result: math.div($pxOne, $pxTwo) * 100%;
+    @return $result;
 }

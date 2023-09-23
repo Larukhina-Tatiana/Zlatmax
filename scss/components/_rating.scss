@@ -1,0 +1,88 @@
+.rating {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  &__star {
+    display: none;
+  }
+
+  &__group {
+    position: relative;
+    display: flex;
+    gap: 5px;
+    flex-direction: row-reverse;
+
+    // Для современных браузуров
+    &:focus-within {
+      outline: solid var(--gray);
+      outline-offset: 0.2em;
+    }
+  }
+
+  &__input {
+    // appearance: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+
+    &:checked + .rating__label::before,
+    &:checked ~ .rating__label::before {
+      color: var(--accent);
+    }
+
+    &:focus ~ .rating__focus {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+      outline: solid var(--gray);
+      outline-offset: 0.2em;
+    }
+  }
+
+  &__label {
+    font-size: 18px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      color: var(--gray);
+    }
+
+    // &::after {
+    //   content: url(../images/icons/star.svg);
+    //   position: absolute;
+    //   top: -1px;
+    //   left: -1px;
+    //   opacity: 0;
+    // }
+
+    &:hover::before,
+    &:hover ~ &::before {
+      // opacity: 1;
+      color: var(--accent) !important;
+    }
+  }
+
+
+  &__info {
+    color: var(--gray);
+    font-size: rem(16);
+  }
+}
+
+.rating:hover .rating__input:checked ~ .rating__label::before {
+  color: rgba(232, 171, 49, .4);
+}
+
+.rating .rating__input:checked ~ .rating__label::before {
+  color: var(--accent);
+}
