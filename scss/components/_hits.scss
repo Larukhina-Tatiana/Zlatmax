@@ -1,0 +1,3 @@
+.hits {
+    @include adaptivevalue(padding-bottom, 120, 40, 1620, 320, 1);
+}

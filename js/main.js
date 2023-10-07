@@ -157,98 +157,121 @@ const swiper = new Swiper(".products-slider__slider", {
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
-},
+  },
   pagination: {
     el: ".products-slider__dotts",
     clickable: true,
   },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      autoHeight: true,
+    },
+
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+
+    1320: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
 });
 
-// !Рейтинг
-// const ratings = document.querySelectorAll(".rating");
-// if (ratings.length > 0) {
-//   initRatings();
-// }
-// // Основная функция
-// function initRatings() {
-//   let ratingActive, ratingValue;
-//   // Бегаем по всем рейтингам на странице
-//   for (let index = 0; index < ratings.length; index++) {
-//     const rating = ratings[index];
-//     initRating(rating);
-//   }
-// }
-// //  Инициализируем конкретный рейтинг
-// function initRating(rating) {
-//   initRatingVars(rating);
+!Рейтинг
+const ratings = document.querySelectorAll(".rating");
+if (ratings.length > 0) {
+  initRatings();
+}
+// Основная функция
+function initRatings() {
+  let ratingActive, ratingValue;
+  // Бегаем по всем рейтингам на странице
+  for (let index = 0; index < ratings.length; index++) {
+    const rating = ratings[index];
+    initRating(rating);
+  }
+}
+//  Инициализируем конкретный рейтинг
+function initRating(rating) {
+  initRatingVars(rating);
 
-//   setRatingActiveWidth();
-//   if (rating.classList.contains("rating_set")) {
-//     setRating(rating);
-//   }
-// }
+  setRatingActiveWidth();
+  if (rating.classList.contains("rating_set")) {
+    setRating(rating);
+  }
+}
 
-// // Инициализация переменных
-// function initRatingVars(rating) {
-//   ratingActive = rating.querySelector(".rating__active");
-//   ratingValue = rating.querySelector(".rating__value");
-// }
-// // Изменяем ширину активных звёзд
-// function setRatingActiveWidth(index = ratingValue.innerHTML) {
-//   const ratingActiveWidth = index / 0.05;
-//   ratingActive.style.width = "${ratingActiveWidth}%";
-// }
+// Инициализация переменных
+function initRatingVars(rating) {
+  ratingActive = rating.querySelector(".rating__active");
+  ratingValue = rating.querySelector(".rating__value");
+}
+// Изменяем ширину активных звёзд
+function setRatingActiveWidth(index = ratingValue.innerHTML) {
+  const ratingActiveWidth = index / 0.05;
+  ratingActive.style.width = "${ratingActiveWidth}%";
+}
 
-// // Возможность указывать оценку
-// function setRating(rating) {
-//   const ratingItems = rating.querySelectorAll(".rating__item");
-//   for (let index = 0; index < ratingItems.length; index++) {
-//     const ratingItem = ratingItems[index];
-//     ratingItem.addEventListener("mouseenter", function (e) {
-//       // Обновление переменных
-//       initRatingVars(rating);
-//       // Обновление активных звезд
-//       setRatingActiveWidth(ratingItem.value);
-//     });
-//     // Убрали мышь
-//     ratingItem.addEventListener("mouseleave", function (e) {
-//       // Обновление активных звезд
-//       setRatingActiveWidth();
-//     });
-//     // Кликнули на рейтинге
-//     ratingItem.addEventListener("click", function (e) {
-//       // Обновление переменных
-//       initRatingVars(rating);
+// Возможность указывать оценку
+function setRating(rating) {
+  const ratingItems = rating.querySelectorAll(".rating__item");
+  for (let index = 0; index < ratingItems.length; index++) {
+    const ratingItem = ratingItems[index];
+    ratingItem.addEventListener("mouseenter", function (e) {
+      // Обновление переменных
+      initRatingVars(rating);
+      // Обновление активных звезд
+      setRatingActiveWidth(ratingItem.value);
+    });
+    // Убрали мышь
+    ratingItem.addEventListener("mouseleave", function (e) {
+      // Обновление активных звезд
+      setRatingActiveWidth();
+    });
+    // Кликнули на рейтинге
+    ratingItem.addEventListener("click", function (e) {
+      // Обновление переменных
+      initRatingVars(rating);
 
-//       if (rating.dataset.ajax) {
-//         // Отаравить на сервер
-//         setRatingValue(ratingItem.value, rating);
-//       } else {
-//         //  Отобразить указанную оценку
-//         ratingValue.innerHTML = index + 1;
+      if (rating.dataset.ajax) {
+        // Отаравить на сервер
+        setRatingValue(ratingItem.value, rating);
+      } else {
+        //  Отобразить указанную оценку
+        ratingValue.innerHTML = index + 1;
 
-//         // Обновление активных звезд
-//         setRatingActiveWidth();
-//       }
+        // Обновление активных звезд
+        setRatingActiveWidth();
+      }
 
-//     });
-//   }
-// }
+    });
+  }
+}
 
-// const parent_original = document.querySelector('.header');
-// const parent = document.querySelector(".menu__body");
-// const item = document.querySelector(".header-catalog");
+const parent_original = document.querySelector('.header');
+const parent = document.querySelector(".menu__body");
+const item = document.querySelector(".header-catalog");
 
-// window.addEventListener('resive', function (event) {
-//   if (viewport_width <= 992) {
-//     if (!item.classList.contains('done')) {
-//       parent.insertBefore(item, parent.children[1]);
-//       item.classList.add('done');
-//     }
-//   } else {
-//     if (item.classList.contains('done')) {
-//       parent_original.insertBefore(item, parent_original.children[2]);
-//       item.classList.remove('done');
-//     }
-//   }
-// })
+window.addEventListener('resive', function (event) {
+  if (viewport_width <= 992) {
+    if (!item.classList.contains('done')) {
+      parent.insertBefore(item, parent.children[1]);
+      item.classList.add('done');
+    }
+  } else {
+    if (item.classList.contains('done')) {
+      parent_original.insertBefore(item, parent_original.children[2]);
+      item.classList.remove('done');
+    }
+  }
+})
