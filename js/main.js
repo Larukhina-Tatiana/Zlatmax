@@ -112,35 +112,57 @@ if ($(window).width() < 991.98) {
   $(".header-center__phone-callback").appendTo($(".header-center__phone-list"));
 }
 
-// const swiper = new Swiper(".main-block__slider", {
-//   // loop: true,
-//   observer: true,
-//   observeParents: true,
-//   slidesPerView: 1,
-//   spaceBetween: 50,
-//   // speed: 800,
+const swiperTvo = new Swiper(".main-block__slider", {
+  // loop: true,
+  observer: true,
+  observeParents: true,
+  slidesPerView: 1,
+  spaceBetween: 50,
+  // speed: 800,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 
-//   pagination: {
-//     el: ".controll-main-block__dotts",
-//     clickable: true,
-//   },
-//   on: {
-//     init: function (swiper) {
-//       const allSlides = document.querySelector(".fraction-controll__all");
+  pagination: {
+    el: ".controll-main-block__dotts",
+    clickable: true,
+  },
+  on: {
+    init: function (swiper) {
+      const allSlides = document.querySelector(".fraction-controll__all");
 
-//       allSlides.innerHTML = swiper.slides.length;
-//     },
-//     slideChange: function (swiper) {
-//       const currentSlide = document.querySelector(
-//         ".fraction-controll__current"
-//       );
-//       currentSlide.innerHTML =
-//         swiper.realIndex + 1 < 10
-//           ? `0${swiper.realIndex + 1}`
-//           : swiper.realIndex + 1;
-//     },
-//   },
-// });
+      allSlides.innerHTML = swiper.slides.length;
+    },
+    slideChange: function (swiper) {
+      const currentSlide = document.querySelector(
+        ".fraction-controll__current"
+      );
+      currentSlide.innerHTML =
+        swiper.realIndex + 1 < 10
+          ? `0${swiper.realIndex + 1}`
+          : swiper.realIndex + 1;
+    },
+  },
+});
+
+const swiper = new Swiper(".products-slider__slider", {
+  loop: true,
+  observer: true,
+  observeParents: true,
+  watchOverflow: true,
+  slidesPerView: 4,
+  spaceBetween: 40,
+  // speed: 800,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+},
+  pagination: {
+    el: ".products-slider__dotts",
+    clickable: true,
+  },
+});
 
 // !Рейтинг
 // const ratings = document.querySelectorAll(".rating");

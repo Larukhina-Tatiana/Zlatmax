@@ -17,10 +17,10 @@
     flex-direction: row-reverse;
 
     // Для современных браузуров
-    &:focus-within {
-      outline: solid var(--gray);
-      outline-offset: 0.2em;
-    }
+    // &:focus-within {
+    //   outline: solid var(--gray);
+    //   outline-offset: 0.2em;
+    // }
   }
 
   &__input {
@@ -35,16 +35,16 @@
       color: var(--accent);
     }
 
-    &:focus ~ .rating__focus {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      z-index: -1;
-      outline: solid var(--gray);
-      outline-offset: 0.2em;
-    }
+    // &:focus ~ .rating__focus {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   bottom: 0;
+    //   right: 0;
+    //   z-index: -1;
+    //   outline: solid var(--gray);
+    //   outline-offset: 0.2em;
+    // }
   }
 
   &__label {
@@ -57,17 +57,9 @@
       color: var(--gray);
     }
 
-    // &::after {
-    //   content: url(../images/icons/star.svg);
-    //   position: absolute;
-    //   top: -1px;
-    //   left: -1px;
-    //   opacity: 0;
-    // }
 
     &:hover::before,
     &:hover ~ &::before {
-      // opacity: 1;
       color: var(--accent) !important;
     }
   }

@@ -1,10 +1,12 @@
 .products-card {
 
   display: grid;
+  height: 600px;
   grid-template-rows: auto 1fr;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
   @include transition ($transition-property: transform);
-  width: 375px;
+  // width: 375px;
+  flex-basis: 25%;
 
   @media (any-hover: hover) {
     &:hover {
@@ -12,20 +14,54 @@
     }
   }
 
+  &__img-cover {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 240px;
+  }
+
   &__img {
-    padding-bottom: 7.8%;
+
+    @include adaptivevalue(padding-top, 20, 15, 1620, 320, 1);
+    @include adaptivevalue(padding-left, 50, 40, 1620, 320, 1);
+    @include adaptivevalue(padding-bottom, 20, 15, 1620, 320, 1);
+    @include adaptivevalue(padding-right, 50, 40, 1620, 320, 1);
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     object-fit: contain;
+    // padding-bottom: 7.8%;
+    // object-fit: contain;
   }
 
 
   &__body {
     padding: 20px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    margin-bottom: 20px;
   }
 
   &__title-link {
+
     color: var(--cod-gray);
     font-size: rem(20);
     font-weight: 600;
+    @include transition ($transition-property: color);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--accent);
+      }
+    }
   }
 
   &__info {
@@ -45,21 +81,40 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 15px;
     border-top: 1px solid rgba(20, 20, 20, 0.50);
-    margin-bottom: 32px;
+    margin-bottom: 30px;
     padding-top: 20px;
     margin-top: 20px;
+
+  }
+
+  &__price {
+    flex: 1 1 auto;
+    font-size: rem(20);
+    font-weight: 600;
+    color: var(--cod-gray);
   }
 
   &__compare-link {
-    font-size: rem(26);
-    margin-left: 180px;
-    margin-right: 15px;
+    font-size: rem(24);
 
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--accent);
+      }
+    }
   }
 
-  &__favorite-link {
-    font-size: rem(24);
-    color: var(--accent);
+    &__favorite-link {
+      font-size: rem(26);
+      color: var(--accent);
+    }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
   }
 }
