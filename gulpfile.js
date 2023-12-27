@@ -45,17 +45,18 @@ function fonts() {
 //     .pipe(dest("app"));
 // }
 
-
 function styles() {
   // return src("app/scss/style.scss")
   return src("app/scss/style.scss")
     .pipe(concat("style.min.css"))
     .pipe(scss({ outputStyle: "compressed" }))
     .pipe(dest("app/css"))
-    .pipe(autoprefixer({
-      overrideBrowsersList: ["last 10 version"],
-      grid: true
-  }));
+    .pipe(
+      autoprefixer({
+        overrideBrowsersList: ["last 10 version"],
+        grid: true,
+      })
+    );
 }
 
 function scripts() {
@@ -75,20 +76,20 @@ function scripts() {
 function images() {
   // return src(["app/images/**/*.*", "!app/images/**/*.svg"])
   return (
-    src(["images/src/catalog-cards/*.*", "!images/src/*.svg"])
+    src(["images/src/*.*", "!images/src/*.svg"])
       // .pipe(newer("app/images"))
       // .pipe(avif({ quality: 50 }))
 
       // .pipe(src("app/images/**/*.*"))
-      .pipe(src("images/src/catalog-cards/*.*"))
+      .pipe(src("images/src/*.*"))
       .pipe(newer("images"))
       .pipe(webp())
 
-      .pipe(src("images/src/catalog-cards/*.*"))
+      .pipe(src("images/src/*.*"))
       .pipe(newer("images"))
       .pipe(imagemin())
 
-      .pipe(dest("images/catalog-cards/"))
+      .pipe(dest("images/"))
   );
 }
 
