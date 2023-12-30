@@ -184,7 +184,47 @@ const swiper = new Swiper(".products-slider__slider", {
     1320: {
       slidesPerView: 4,
       spaceBetween: 30,
+      autoHeight: true,
     },
+  },
+});
+
+const swiper1 = new Swiper(".new-products__slider", {
+  loop: true,
+  observer: true,
+  observeParents: true,
+  watchOverflow: true,
+  slidesPerView: 3,
+  spaceBetween: 30,
+  speed: 800,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".new-products__dotts",
+    clickable: true,
+    dinamicBullets: true,
+  },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+    },
+
+    799: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+
+    1330: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  },
+  on: {
+    init: function (swiper1) {},
   },
 });
 
@@ -259,20 +299,20 @@ const swiper = new Swiper(".products-slider__slider", {
 //   }
 // }
 
-const parent_original = document.querySelector('.header');
+const parent_original = document.querySelector(".header");
 const parent = document.querySelector(".menu__body");
 const item = document.querySelector(".header-catalog");
 
-window.addEventListener('resive', function (event) {
+window.addEventListener("resive", function (event) {
   if (viewport_width <= 992) {
-    if (!item.classList.contains('done')) {
+    if (!item.classList.contains("done")) {
       parent.insertBefore(item, parent.children[1]);
-      item.classList.add('done');
+      item.classList.add("done");
     }
   } else {
-    if (item.classList.contains('done')) {
+    if (item.classList.contains("done")) {
       parent_original.insertBefore(item, parent_original.children[2]);
-      item.classList.remove('done');
+      item.classList.remove("done");
     }
   }
-})
+});

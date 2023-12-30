@@ -1,13 +1,13 @@
 .catalog {
   background-color: var(--white);
-  @include adaptivevalue(padding-top, 120, 50, 1620, 320, 1);
+  // @include adaptivevalue(padding-top, 120, 50, 1620, 320, 1);
 
   &__content {
     @include adaptivevalue(padding-top, 30, 10, 1620, 320, 1);
     @include adaptivevalue(padding-right, 157, 8, 1620, 320, 1);
     @include adaptivevalue(padding-left, 30, 15, 1620, 320, 1);
     @include adaptivevalue(padding-bottom, 40, 20, 1620, 320, 1);
-    @include adaptivevalue(margin-bottom, 120, 50, 1620, 320, 1);
+    // @include adaptivevalue(margin-bottom, 120, 50, 1620, 320, 1);
     background: #FFF;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
   }
@@ -31,7 +31,8 @@
     grid-template-columns: repeat(auto-fit, minmax(289px, 509px));
     gap: 33px 29px;
     justify-content: center;
-    @include adaptivevalue(padding-bottom, 120, 50, 1620, 320, 1);
+    @include adaptivevalue(padding-top, 120, 60, 1620, 320, 1);
+    // @include adaptivevalue(padding-bottom, 120, 50, 1620, 320, 1);
   }
 
   &__cards-inner {

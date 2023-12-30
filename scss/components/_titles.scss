@@ -14,7 +14,7 @@
   line-height: calc(34/24);
   @include adaptivevalue(padding-bottom, 15, 10, 1620, 320, 1);
 
-  
+
 
   position: relative;
 
@@ -29,4 +29,39 @@
     background-color: var(--accent);
     @include transition ($transition-property: width);
   }
+}
+
+.section-text {
+  color: rgba(255, 255, 255, 0.70);
+  letter-spacing: 0.54px;
+  @include adaptivevalue(font-size, 18, 16, 1620, 320, 1);
+  @include adaptivevalue(letter-spacing, .54, .48, 1620, 320, 1);
+}
+
+.section__link {
+  @include adaptivevalue(margin-top, 60, 20, 1620, 320, 1);
+  @include adaptivevalue(font-size, 20, 18, 1620, 320, 1);
+  @include adaptivevalue(letter-spacing, 1, .9, 1620, 320, 1);
+  line-height: rem(46);
+  color: var(--accent);
+  font-weight: 600;
+  position: relative;
+  @include transition ($transition-property: text-decoration);
+
+  @media (any-hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: url(../images/icons/arrow-next.svg);
+    width: rem(9);
+    height: rem(17);
+    top: 25%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+
 }

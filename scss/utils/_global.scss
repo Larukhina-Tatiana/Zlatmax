@@ -56,36 +56,12 @@ dd {
 }
 
 body {
-    // background: var(--peach);
     @extend %Montserrat-500;
     font-size: 1.125rem;
     line-height: calc(27/18);
     color: var(--black);
     overflow-x: hidden;
     min-width: 100vw;
-
-
-    // @media screen and (width > 999px) {
-    //     font-size: .875rem;
-    //     line-height: calc(16/14);
-    // }
-
-
-
-    // }
-    // @media screen and (width < 769px) {
-    //     line-height: calc(15/10);
-    // }
-    // @media screen and (width > 1000px) {
-
-
-
-
-    // @media screen and (width > 480px) {
-    // font-size: .5rem;
-    // line-height: calc(12/8);
-    //     line-height: calc(11/10);
-    // }
 }
 
 button {
@@ -149,6 +125,11 @@ button,
 //   background-repeat: no-repeat;
 // }
 // }
+
+.section {
+    @include adaptivevalue(margin-top, 120, 60, 1200, 320, 1);
+}
+
 
 .visually-hidden {
     position: absolute;

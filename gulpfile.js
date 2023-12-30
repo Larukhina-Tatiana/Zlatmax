@@ -60,17 +60,20 @@ function styles() {
 }
 
 function scripts() {
-  return src([
-    "node_modules/swiper/swiper-bundle.js",
-    "app/js/main.js",
+  return (
+    src([
+      "node_modules/swiper/swiper-bundle.js",
+      "js/main.js",
 
-    // Для подключения многих (всех) файлов js? Обязательно исключать main.min.js
-    // 'app/js/*.js',
-    // '!app/js/main.min.js'
-  ])
-    .pipe(concat("main.min.js"))
-    .pipe(uglify())
-    .pipe(dest("app/js"));
+      // Для подключения многих (всех) файлов js? Обязательно исключать main.min.js
+      // 'app/js/*.js',
+      // '!app/js/main.min.js'
+    ])
+      // .pipe(concat("main.min.js"))
+      .pipe(concat("main.js"))
+      .pipe(uglify())
+      .pipe(dest("js"))
+  );
 }
 
 function images() {
@@ -82,14 +85,14 @@ function images() {
 
       // .pipe(src("app/images/**/*.*"))
       .pipe(src("images/src/*.*"))
-      .pipe(newer("images"))
+      .pipe(newer("images/products-card"))
       .pipe(webp())
 
       .pipe(src("images/src/*.*"))
       .pipe(newer("images"))
       .pipe(imagemin())
 
-      .pipe(dest("images/"))
+      .pipe(dest("images/products-card"))
   );
 }
 
