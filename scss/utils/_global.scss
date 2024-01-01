@@ -130,6 +130,30 @@ button,
     @include adaptivevalue(margin-top, 120, 60, 1200, 320, 1);
 }
 
+.section__background {
+    @include adaptivevalue(padding-top, 55, 20, 1620, 320, 1);
+    @include adaptivevalue(padding-bottom, 55, 20, 1620, 320, 1);
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        width: 54%;
+        height: calc(100% + 100px);
+        background: linear-gradient(to right,
+                rgba(0, 0, 0, 0.65),
+                rgba(0, 0, 0, 0.65)),
+            url(../images/background.jpg) top / cover no-repeat;
+
+        @media screen and (width < 660.01px) {
+            height: calc(100% + 44px);
+            width: 100%;
+        }
+    }
+}
+
 
 .visually-hidden {
     position: absolute;

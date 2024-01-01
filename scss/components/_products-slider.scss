@@ -2,10 +2,13 @@
   // @include adaptivevalue(padding-bottom, 120, 50, 1620, 320, 1);
 
   &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 60px;
+    &:not(:last-child) {
+      @include adaptivevalue(margin-bottom, 60, 30, 1620, 320, 1);
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(10);
   }
 
   &__link-more {
@@ -41,6 +44,15 @@
   &__slider {
     padding: rem(15) rem(20);
     margin: 0 rem(-20);
+  }
+
+  @media screen and (width > 480.01px) {
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: rem(20);
+    }
   }
 }
 

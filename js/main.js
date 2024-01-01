@@ -167,7 +167,7 @@ const swiper = new Swiper(".products-slider__slider", {
   breakpoints: {
     320: {
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: 15,
       // autoHeight: true,
     },
 
@@ -184,7 +184,10 @@ const swiper = new Swiper(".products-slider__slider", {
     1320: {
       slidesPerView: 4,
       spaceBetween: 30,
-      autoHeight: true,
+      // autoHeight: true,
+    },
+    on: {
+      init: function (swiper) {},
     },
   },
 });
@@ -210,7 +213,7 @@ const swiper1 = new Swiper(".new-products__slider", {
   breakpoints: {
     320: {
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: 15,
     },
 
     799: {
