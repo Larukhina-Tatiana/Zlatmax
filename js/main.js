@@ -171,7 +171,7 @@ const swiper = new Swiper(".products-slider__slider", {
       // autoHeight: true,
     },
 
-    480: {
+    630: {
       slidesPerView: 2,
       spaceBetween: 20,
     },

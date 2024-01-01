@@ -141,7 +141,7 @@ body {
   font-weight: 600;
   font-style: normal;
 }
-.header-top__user {
+.title-h4, .header-top__user {
   font-family: "Montserrat", cursive;
   font-weight: 600;
 }
@@ -230,6 +230,7 @@ body {
   --white: #FFFFFF;
   --black: #000000;
   --header-center: #ECF1F2;
+  --background: #FEFEFE;
 }
 
 html,
@@ -1726,6 +1727,20 @@ button,
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.title-h4 {
+  display: inline-block;
+  font-size: 1.25rem;
+  color: var(--cod-gray);
+  font-weight: 600;
+  line-height: 1.4166666667;
+  line-height: 34px;
+}
+@media screen and (max-width: 1620px) {
+  .title-h4 {
+    line-height: calc(32px + 2 * (100vw - 320px) / 1300);
+  }
+}
+
 .section-text {
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.54px;
@@ -2295,6 +2310,73 @@ button,
 .new-products__slider {
   min-width: 0;
   padding-top: 3.4375rem;
+}
+
+.articles__title {
+  margin-bottom: 1.875rem;
+}
+.articles__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.875rem;
+}
+.articles__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--background);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+  flex-basis: calc((100% - 90px) / 4);
+  transition-duration: 450ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (any-hover: hover) {
+  .articles__item:hover {
+    transform: scale(1.05);
+  }
+}
+.articles__link-title {
+  max-width: 19.8125rem;
+  padding: 1.25rem 0.3125rem 0.625rem 0;
+  margin-left: 1.875rem;
+  transition-duration: 450ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (any-hover: hover) {
+  .articles__link-title:hover {
+    color: var(--accent);
+  }
+  .articles__link-title:focus-visible {
+    color: var(--accent);
+  }
+}
+.articles__link-data {
+  margin-left: 1.875rem;
+  margin-bottom: 1.25rem;
+  color: var(--gray);
+  font-size: 1rem;
+  line-height: 2.125rem;
+  transition-duration: 450ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (any-hover: hover) {
+  .articles__link-data:hover {
+    color: var(--accent);
+  }
+  .articles__link-data:focus-visible {
+    color: var(--accent);
+  }
+}
+@media screen and (width < 1100.01px) {
+  .articles__item {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (width < 480.01px) {
+  .articles__list {
+    flex-direction: column;
+  }
 }
 
 .sl-wrapper .sl-counter {
