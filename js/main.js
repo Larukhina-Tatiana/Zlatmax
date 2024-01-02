@@ -110,6 +110,7 @@ if ($(window).width() < 991.98) {
   $(".header-center__favorite").appendTo($(".menu"));
   $(".header-center__card").appendTo($(".menu"));
   $(".header-center__phone-callback").appendTo($(".header-center__phone-list"));
+  // $(".products-block__link-more").appendTo($(".products-block__item"));
 }
 
 const swiperTvo = new Swiper(".main-block__slider", {

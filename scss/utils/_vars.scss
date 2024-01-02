@@ -131,6 +131,7 @@ $minWidthContainer: 1400;
     }
 }
 
+
 // @mixin adaptivevalue($property, $startSize, $minSize, $maxWidthContainer, $minWidthContainer) {
 //     $addSize: $startSize - $minSize;
 //     #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidthContainer+ px}) / #{$maxWidthContainer - $minWidthContainer}));
