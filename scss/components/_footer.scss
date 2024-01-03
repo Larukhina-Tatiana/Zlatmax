@@ -1,0 +1,184 @@
+.footer {
+  // background-color: $bg-img;
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)),
+    url(../images/footer-bg@1x.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  // height: rem(342);
+  color: rgba(255, 255, 255, 0.80);
+
+  @media screen and (min-device-pixel-ratio: 2),
+  screen and (-webkit-min-device-pixel-ratio: 2),
+  screen and (-o-mini-device-pixel-ratio: 2/1),
+  screen and (min-resolution: 228dpi),
+  screen and (min-resolution: 2dppx) {
+    background: linear-gradient(to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)),
+      url(../images/footer-bg@1x.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+
+  &__header {
+    padding: rem(70) rem(10) rem(60);
+  }
+
+  &__title {
+    text-align: center;
+    color: var(--accent);
+  }
+
+  &__header-text {
+    margin-top: rem(30);
+    color: var(--white);
+    letter-spacing: 0.54px;
+  }
+
+  &__bg {
+    background-color: var(--cod-gray);
+  }
+
+  &__body {
+    padding: rem(68) rem(10) rem(30);
+  }
+
+  &__body-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(50);
+    border-bottom: rem(1) solid rgba(255, 255, 255, 0.50);
+    padding-top: rem(35);
+    @include adaptivevalue(padding-bottom, 30, 0, 1620, 320, 1);
+  }
+
+  &__body-wrapper-item {
+    width: rem(318);
+    // outline: 1px solid green;
+  }
+
+  &__body-item {
+
+    &:not(:last-child) {
+      @include adaptivevalue(margin-bottom, 20, 30, 1620, 320, 1);
+    }
+
+    & p {
+      display: inline-block;
+    }
+  }
+
+  &__body-link {
+    @include transition ($transition-property: color);
+
+    & span {
+      color: var(--accent);
+      @include transition ($transition-property: text-decoration);
+
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--accent);
+      }
+
+      &:hover .footer__body-link__icon {
+        color: var(--accent);
+      }
+    }
+
+    &--paddingleft {
+      padding-left: rem(36);
+    }
+
+    &--contacts {
+      display: flex;
+      align-items: center;
+      gap: rem(16);
+      position: relative;
+    }
+
+    &__icon--noflex {
+      position: absolute;
+      width: rem(16);
+      height: rem(16);
+      top: rem(4);
+      left: 0;
+      color: rgba(255, 255, 255, 0.80);
+    }
+
+    &--nohover {
+      @media (any-hover: hover) {
+        &:hover {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    padding: rem(30) 0 rem(50) 0;
+    display: flex;
+    justify-content: space-between;
+    gap: rem(20);
+
+    & p {
+      max-width: rem(820);
+    }
+  }
+
+  &__form-mail {
+    width: rem(325);
+
+  }
+
+  &__form-text {
+    margin-bottom: rem(20);
+  }
+
+  &__form-inner {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(22);
+  }
+
+  &__form-input {
+    border-radius: 3px;
+    border-right: none;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.52);
+    font-size: 16px;
+    padding: rem(15) rem(20);
+    height: rem(50);
+    width: rem(275);
+
+    ::placeholder {}
+  }
+
+  &__form-btn {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent);
+    border-radius: 3px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+
+  }
+
+  & .checkbox__label {
+    color: rgba(255, 255, 255, 0.80);
+    font-size: rem(16);
+    line-height: rem(22);
+  }
+
+}

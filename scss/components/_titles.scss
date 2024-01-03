@@ -41,6 +41,17 @@
   @include adaptivevalue(line-height, 34, 32, 1620, 320, 1);
 }
 
+.title-h5 {
+  display: inline-block;
+  font-size: rem(18);
+  @extend %Montserrat-600;
+  color: var(--white);
+  line-height: calc(22/18);
+  // @include adaptivevalue(line-height, 34, 32, 1620, 320, 1);
+  text-transform: uppercase;
+  margin-bottom: rem(13);
+}
+
 .section-text {
   color: rgba(255, 255, 255, 0.70);
   letter-spacing: 0.54px;
