@@ -506,7 +506,7 @@
       display: flex;
       position: relative;
       color: var(--white);
-      @include adaptivevalue(font-size, 30, 20, 992, 320, 1);
+      // @include adaptivevalue(font-size, 30, 20, 992, 320, 1);
       @include transition ($transition-property: color);
 
       &[data-parent] {
@@ -514,17 +514,19 @@
           @extend %ic;
           @extend ._icon-arrow_bottom;
           display: none;
-          @media screen and (width < 991.98px ) {
+
+          @media screen and (width < 991.98px) {
             transform: rotate(-90deg);
             display: block;
             font-size: calc(10/16)+rem;
           }
         }
-        @media screen and (width < 991.98px ) {
-          display: flex;
+
+        @media screen and (width < 991.98px) {
+          // display: flex;
           width: 100%;
           justify-content: space-between;
-          flex-direction: row-reverse;          
+          flex-direction: row-reverse;
         }
       }
 
@@ -550,17 +552,18 @@
         }
 
       }
-      
+
       @media (any-hover: hover) {
         &:hover {
           color: var(--accent);
         }
       }
-      
+
       &._submenu-active {
         &::after {
           opacity: 1;
           visibility: visible;
+
           @media screen and (width < 991.98px) {
             width: 100%;
             left: 0px;
@@ -662,7 +665,7 @@
         }
 
         &-link {
-          @include adaptivevalue(font-size, 30, 20, 992, 320, 1);
+          // @include adaptivevalue(font-size, 30, 20, 992, 320, 1);
         }
       }
 
@@ -689,7 +692,8 @@
 
       &-footer {
         padding: 30px 15px 30px 0;
-        @media screen and (width < 991.98px ) {
+
+        @media screen and (width < 991.98px) {
           display: none;
         }
       }

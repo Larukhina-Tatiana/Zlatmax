@@ -113,6 +113,10 @@ if ($(window).width() < 991.98) {
   // $(".products-block__link-more").appendTo($(".products-block__item"));
 }
 
+if ($(window).width() < 1150.01) {
+  $(".social").appendTo($(".footer__body-wrapper--social"));
+}
+
 const swiperTvo = new Swiper(".main-block__slider", {
   // loop: true,
   observer: true,
@@ -319,4 +323,10 @@ window.addEventListener("resive", function (event) {
       item.classList.remove("done");
     }
   }
+});
+
+// открытие-закрытие заголовков footer__info-list
+$(".footer__body-title").on("click", function () {
+  $(this).next().slideToggle();
+  $(this).toggleClass("footer__body-title--active");
 });

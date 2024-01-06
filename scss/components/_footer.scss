@@ -1,32 +1,23 @@
 .footer {
-  // background-color: $bg-img;
-  background: linear-gradient(to right,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)),
-    url(../images/footer-bg@1x.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  // height: rem(342);
   color: rgba(255, 255, 255, 0.80);
 
-  @media screen and (min-device-pixel-ratio: 2),
-  screen and (-webkit-min-device-pixel-ratio: 2),
-  screen and (-o-mini-device-pixel-ratio: 2/1),
-  screen and (min-resolution: 228dpi),
-  screen and (min-resolution: 2dppx) {
-    background: linear-gradient(to right,
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.3)),
-      url(../images/footer-bg@1x.jpg);
+  &__header {
+    padding: rem(70) rem(10) rem(60);
+    background-image: url(../images/footer-bg@1x.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-  }
-
-  &__header {
-    padding: rem(70) rem(10) rem(60);
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (-webkit-min-device-pixel-ratio: 2),
+    screen and (-o-mini-device-pixel-ratio: 2/1),
+    screen and (min-resolution: 228dpi),
+    screen and (min-resolution: 2dppx) {
+      background-image: url(../images/footer-bg@2x.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 
   &__title {
@@ -40,18 +31,15 @@
     letter-spacing: 0.54px;
   }
 
-  &__bg {
-    background-color: var(--cod-gray);
-  }
-
-  &__body {
+  &__background {
     padding: rem(68) rem(10) rem(30);
+    background-color: var(--cod-gray);
   }
 
   &__body-wrapper {
     display: flex;
     justify-content: space-between;
-    gap: rem(50);
+    @include adaptivevalue(gap, 50, 20, 1620, 990, 1);
     border-bottom: rem(1) solid rgba(255, 255, 255, 0.50);
     padding-top: rem(35);
     @include adaptivevalue(padding-bottom, 30, 0, 1620, 320, 1);
@@ -97,24 +85,11 @@
       }
     }
 
-    &--paddingleft {
-      padding-left: rem(36);
-    }
 
     &--contacts {
       display: flex;
       align-items: center;
       gap: rem(16);
-      position: relative;
-    }
-
-    &__icon--noflex {
-      position: absolute;
-      width: rem(16);
-      height: rem(16);
-      top: rem(4);
-      left: 0;
-      color: rgba(255, 255, 255, 0.80);
     }
 
     &--nohover {
@@ -126,20 +101,48 @@
     }
   }
 
+  &__body-link--address {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  &__body-title {
+    pointer-events: none;
+    margin-bottom: rem(30);
+  }
+
+  &__link-address {
+    display: flex;
+    align-items: center;
+    gap: rem(18);
+  }
+
+  &__text-address {
+    padding-left: rem(33);
+  }
+
   &__bottom {
     padding: rem(30) 0 rem(50) 0;
     display: flex;
     justify-content: space-between;
     gap: rem(20);
 
-    & p {
+    &-text {
       max-width: rem(820);
+      font-size: rem(14);
     }
   }
 
-  &__form-mail {
-    width: rem(325);
+  &__bottom-link {
+    @include transition ($transition-property: color);
+    font-size: rem(14);
 
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--accent);
+      }
+    }
   }
 
   &__form-text {
@@ -160,25 +163,174 @@
     font-size: 16px;
     padding: rem(15) rem(20);
     height: rem(50);
-    width: rem(275);
-
-    ::placeholder {}
+    width: 100%;
   }
 
   &__form-btn {
+    flex-shrink: 0;
     width: 50px;
     height: 50px;
     background-color: var(--accent);
     border-radius: 3px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
-
   }
 
   & .checkbox__label {
     color: rgba(255, 255, 255, 0.80);
-    font-size: rem(16);
+    @include adaptivevalue(font-size, 16, 14, 1620, 320, 1);
     line-height: rem(22);
   }
 
+
+
+
+
+
+
+
+  @media screen and (width < 1150.01px) {
+    &__body-wrapper {
+      flex-direction: column;
+      text-align: center;
+      gap: rem(60);
+    }
+
+    &__body-wrapper-item {
+      width: 100%;
+    }
+
+    &__body-title {
+      position: relative;
+      pointer-events: none;
+      pointer-events: all;
+
+      &::after {
+        position: absolute;
+        content: url(../images/icons/arrow-footer.svg);
+        width: rem(12);
+        height: rem(24);
+        top: 45%;
+        transform: translateY(-50%);
+        right: rem(-30);
+        @include transition ($transition-property: all);
+      }
+    }
+
+    &__body-title--active::after {
+      transform: rotate(180deg);
+      top: 0;
+    }
+
+    &__body-list {
+      display: none;
+    }
+
+    &__body-title--active .footer__body-list {
+      display: block;
+    }
+
+    &__body-link--contacts {
+      justify-content: center;
+    }
+
+    &__body-link--address {
+      align-items: center;
+    }
+
+    &__form-mail {
+      margin: 0 auto;
+    }
+  }
+
+  &__bottom {
+    flex-direction: column;
+  }
+
+  &__bottom-link {
+    text-align: center;
+    display: inline-flex;
+  }
+
+  .social {
+    margin-bottom: rem(62);
+  }
+
+
+  @media screen and (width < 345.01px) {
+    &__bottom-link {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+
+  &__link {
+    display: inline-block;
+    text-decoration: underline;
+    color: var(--accent);
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: calc(14/12);
+
+    @media screen and (min-width: 1200px) {
+      font-size: 14px;
+      line-height: calc(24/14);
+    }
+  }
+
+  &__castom-icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 15px;
+    border-radius: 2px;
+    border: 1px solid var(--white);
+    margin-right: 7px;
+
+    @include transition ($transition-property: border);
+  }
+
+  &__icon-check {
+    cursor: pointer;
+    opacity: 0;
+    transition-property: opacity;
+    @include transition ($transition-property: opacity);
+  }
+
+  &:checked + &__label &__castom-icon {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  &:checked + &__label &__castom-icon &__icon-check {
+    opacity: 1;
+  }
+
+  &__label {
+    display: inline-flex;
+    @include adaptivevalue(gap, 15, 5, 1620, 320, 1);
+    align-items: baseline;
+    @include transition ($transition-property: background-color);
+    text-align-last: left;
+  }
 }
