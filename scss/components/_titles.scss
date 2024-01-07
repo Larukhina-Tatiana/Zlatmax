@@ -6,6 +6,13 @@
   @include adaptivevalue(letter-spacing, 1.5, 1, 1620, 320, 1);
 }
 
+.title-h1 {
+  color: var(--cod-gray);
+  font-size: rem(24);
+  font-weight: 700;
+  margin: rem(30) 0 rem(25) 0;
+}
+
 .title-h3 {
   display: inline-block;
   color: var(--black);

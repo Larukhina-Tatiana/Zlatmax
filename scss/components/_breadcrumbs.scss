@@ -1,0 +1,41 @@
+.breadcrumbs {
+  white-space: nowrap;
+  overflow: auto;
+  // height: rem(22);
+
+  &__item {
+    display: inline-block;
+    color: rgba(#141414, .5);
+    // color: var(--gray);
+    font-size: rem(16);
+    padding-right: rem(21);
+    margin-right: rem(16);
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      background-image: url(../images/icons/breadcrumbs-arrow.svg);
+      width: rem(7);
+      height: rem(11);
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &__nolink {
+    color: var(--accent);
+  }
+
+  // @media screen and (width < 980.01px) {
+  //   &__inner {
+  //     overflow-x: scroll;
+  //   }
+  // }
+
+}
