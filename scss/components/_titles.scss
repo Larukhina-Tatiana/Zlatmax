@@ -91,5 +91,28 @@
     transform: translateY(-50%);
     right: 0;
   }
+}
 
+.title-form {
+  // padding-right: rem(30);
+  font-size: rem(20);
+  font-weight: 600;
+  position: relative;
+  @include transition ($transition-property: all);
+
+  &::after {
+    position: absolute;
+    content: url(../images/icons/drop-arrow.svg);
+    width: rem(17);
+    height: rem(8);
+    right: rem(30);
+    top: 25%;
+    cursor: pointer;
+  }
+
+
+  &--active::after {
+    top: 65%;
+    transform: rotate(180deg);
+  }
 }

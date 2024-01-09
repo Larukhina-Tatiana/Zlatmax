@@ -11,7 +11,10 @@
 
   <link rel="stylesheet" href="./css/jquery.formstyler.css">
   <link rel="stylesheet" href="./css/jquery.formstyler.theme.css">
+  <link rel="stylesheet" href="./css/ion.rangeSlider.min.css">
 
+
+  <link rel="stylesheet" href="node_modules/nouislider/dist/nouislider.min.css">
   <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="scss/style.css">
 </head>
@@ -440,12 +443,400 @@
         <div class="catalog-page__box">
 
           <div class="catalog-page__aside aside">
+            <div class="aside__btn">Фильтр товаров</div>
+            <form class="aside__form">
+              <ul class="aside__form-list">
+                <li class="aside__form-item-drop aside__form-item-drop--marginbottom">
+                  <p class="aside__form-title aside__form-title--padding title-form">Цена</p>
+                  <div class="range">
+                    <div class="range__values">
+                      <input class="range__values-input" id="min" type="text">
 
+                      <!-- меньшее установленное значение -->
+                      <input class="range__values-input" id="max" type="text" /> <!-- большее установленное значение -->
+                    </div>
+                    <div class="range__slider">
+                      <div id="range"></div> <!-- элемент слайдера диапазона -->
+                    </div>
+                  </div>
+                </li>
+                <li class="aside__form-item-drop">
+                  <p class="aside__form-title title-form aside__btn">Производство</p>
+                  <div class="aside__form-content">
+                    <div class="aside__form-content-box">
+
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        АиР
+                        <span class="aside__form-content-quantity">(250)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        СТИЛЬ-М
+                        <span class="aside__form-content-quantity">(25)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        ЗлатПрофит
+                        <span class="aside__form-content-quantity">(265)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        ЗЗОСС
+                        <span class="aside__form-content-quantity">(18)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        ЗИК
+                        <span>(170)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        ЗИК
+                        <span class="aside__form-content-quantity">(136)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        НБК
+                        <span class="aside__form-content-quantity">(17)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        НИКОН
+                        <span class="aside__form-content-quantity">(125)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Оружейник
+                        <span class="aside__form-content-quantity">(117)</span>
+                      </label>
+                    </div>
+                </li>
+                <li class="aside__form-item-drop">
+                  <p class="aside__form-title title-form aside__btn">Сталь</p>
+                  <div class="aside__form-content">
+                    <div class="aside__form-content-box">
+
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        100Х13М
+                        <span class="aside__form-content-quantity">(250)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        110Х18М-ШД
+                        <span class="aside__form-content-quantity">(25)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        40Х10С2М (ЭИ-107)
+                        <span class="aside__form-content-quantity">(265)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        50Х14МФ
+                        <span class="aside__form-content-quantity">(18)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        95Х18
+                        <span class="aside__form-content-quantity">(170)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        AUS-8
+                        <span class="aside__form-content-quantity">(136)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        ELMAX
+                        <span class="aside__form-content-quantity">(17)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        RWL-34
+                        <span class="aside__form-content-quantity">(125)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Дамаск
+                        <span class="aside__form-content-quantity">(117)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        К340
+                        <span class="aside__form-content-quantity">(117)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Литой булат
+                        <span class="aside__form-content-quantity">(178)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        М390
+                        <span class="aside__form-content-quantity">(101)</span>
+                      </label>
+                    </div>
+                </li>
+                <li class="aside__form-item-drop">
+                  <p class="aside__form-title title-form aside__btn">Рукоять</p>
+                  <div class="aside__form-content">
+                    <div class="aside__form-content-box">
+
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Mercorne
+                        <span class="aside__form-content-quantity">(250)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Березовый кап <span class="aside__form-content-quantity">(25)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Граб
+                        <span class="aside__form-content-quantity">(265)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Дуб
+                        <span class="aside__form-content-quantity">(18)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Кап
+                        <span class="aside__form-content-quantity">(170)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Комбинированная
+                        <span class="aside__form-content-quantity">(136)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Каштан
+                        <span class="aside__form-content-quantity">(17)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Квартопрен
+                        <span class="aside__form-content-quantity">(125)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Кожа-Металл
+                        <span class="aside__form-content-quantity">(117)</span>
+                      </label>
+                    </div>
+                </li>
+                <li class="aside__form-item-drop">
+                  <p class="aside__form-title title-form aside__btn">Гарда и тыльник</p>
+                  <div class="aside__form-content">
+                    <div class="aside__form-content-box">
+
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Алюминий
+                        <span class="aside__form-content-quantity">(250)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Латунь <span class="aside__form-content-quantity">(25)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Литой Барс
+                        <span class="aside__form-content-quantity">(265)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Литой Пума
+                        <span class="aside__form-content-quantity">(18)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Литье
+                        <span class="aside__form-content-quantity">(170)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Металлический
+                        <span class="aside__form-content-quantity">(136)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Нержавеющая сталь
+                        <span class="aside__form-content-quantity">(175)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Текстолит
+                        <span class="aside__form-content-quantity">(125)</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Комбинированная
+                        <span class="aside__form-content-quantity">(117)</span>
+                      </label>
+                    </div>
+                </li>
+                <li class="aside__form-item-drop">
+                  <p class="aside__form-title title-form aside__btn">Золочение</p>
+                  <div class="aside__form-content">
+                    <div class="aside__form-content-box">
+
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Золочение клинка
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+                        <input class="filter-style" type="checkbox">
+                        Золочение рисунка на клинке
+                      </label>
+                    </div>
+                </li>
+                <li class="aside__form-item-drop">
+                  <p class="aside__form-title title-form aside__btn">Рейтинг</p>
+                  <div class="aside__form-content">
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+
+                        <input class="filter-style" type="checkbox">
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-span">5/5</span>
+
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+
+                        <input class="filter-style" type="checkbox">
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-star _icon-star"></span>
+
+                        <span class="aside__content-span">4/5</span>
+
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+
+                        <input class="filter-style" type="checkbox">
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-span">3/5</span>
+
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+
+                        <input class="filter-style" type="checkbox">
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-span">2/5</span>
+                      </label>
+                    </div>
+                    <div class="aside__form-content-box">
+                      <label class="aside__form-content-label">
+
+                        <input class="filter-style" type="checkbox">
+                        <span class="aside__content-star _icon-star"></span>
+                        <span class="aside__content-span">1/5</span>
+                      </label>
+                    </div>
+
+                </li>
+
+
+              </ul>
+            </form>
           </div>
           <div class="catalog-page__content">
             <ul class="catalog-page__list">
               <li class="catalog-page__item">
                 <article class="products-card">
+                  <div class="products-card__sale">-50%</div>
                   <a class="products-card__img-link" href="">
                     <div class="products-card__img-cover">
                       <img class="products-card__img" src="./images/products-card/01.jpg" alt="products images">
@@ -495,6 +886,7 @@
               </li>
               <li class="catalog-page__item">
                 <article class="products-card">
+                  <div class="products-card__sale">-50%</div>
                   <a class="products-card__img-link" href="">
                     <div class="products-card__img-cover">
                       <img class="products-card__img" src="./images/products-card/02.jpg" alt="products images">
@@ -503,8 +895,8 @@
                   <div class="products-card__body">
                     <h4 class="products-card__title title-h4">
                       <a class="products-card__title-link" href=""
-                        title="Нох туристичний в футлярі Moraknive BushCraft Forest">
-                        Нох туристичний в футлярі Moraknive BushCraft Forest
+                        title="Нож туристичний в футлярі Moraknive BushCraft Forest">
+                        Нож туристичний в футлярі Moraknive BushCraft Forest
                       </a>
                     </h4>
                     <div class="products-card__info">
@@ -601,8 +993,8 @@
                   </a>
                   <div class="products-card__body">
                     <h4 class="products-card__title title-h4">
-                      <a class="products-card__title-link" href="" title="Нох Morakniv® Garberg (S)">
-                        Нох Morakniv® Garberg (S)
+                      <a class="products-card__title-link" href="" title="Нож Morakniv® Garberg (S)">
+                        Нож Morakniv® Garberg (S)
                       </a>
                     </h4>
                     <div class="products-card__info">
@@ -642,6 +1034,7 @@
               </li>
               <li class="catalog-page__item">
                 <article class="products-card">
+                  <div class="products-card__sale">-50%</div>
                   <a class="products-card__img-link" href="">
                     <div class="products-card__img-cover">
                       <img class="products-card__img" src="./images/products-card/05.jpg" alt="products images">
@@ -650,8 +1043,8 @@
                   <div class="products-card__body">
                     <h4 class="products-card__title title-h4">
                       <a class="products-card__title-link" href=""
-                        title="Нох туристичний в футлярі Moraknive BushCraft Forest">
-                        Нох туристичний в футлярі Moraknive BushCraft Forest
+                        title="Нож туристичний в футлярі Moraknive BushCraft Forest">
+                        Нож туристичний в футлярі Moraknive BushCraft Forest
                       </a>
                     </h4>
                     <div class="products-card__info">
@@ -747,8 +1140,8 @@
                   </a>
                   <div class="products-card__body">
                     <h4 class="products-card__title title-h4">
-                      <a class="products-card__title-link" href="" title="Нох Morakniv® Garberg (S)">
-                        Нох Morakniv® Garberg (S)
+                      <a class="products-card__title-link" href="" title="Нож Morakniv® Garberg (S)">
+                        Нож Morakniv® Garberg (S)
                       </a>
                     </h4>
                     <div class="products-card__info">
@@ -795,8 +1188,8 @@
                   </a>
                   <div class="products-card__body">
                     <h4 class="products-card__title title-h4">
-                      <a class="products-card__title-link" href="" title="Нох Morakniv® Garberg (S)">
-                        Нох Morakniv® Garberg (S)
+                      <a class="products-card__title-link" href="" title="Нож Morakniv® Garberg (S)">
+                        Нож Morakniv® Garberg (S)
                       </a>
                     </h4>
                     <div class="products-card__info">
@@ -989,8 +1382,8 @@
                   <div class="products-card__body">
                     <h4 class="products-card__title title-h4">
                       <a class="products-card__title-link" href=""
-                        title="Нох туристичний в футлярі Moraknive BushCraft Forest">
-                        Нох туристичний в футлярі Moraknive BushCraft Forest
+                        title="Нож туристичний в футлярі Moraknive BushCraft Forest">
+                        Нож туристичний в футлярі Moraknive BushCraft Forest
                       </a>
                     </h4>
                     <div class="products-card__info">
@@ -1087,8 +1480,8 @@
                   </a>
                   <div class="products-card__body">
                     <h4 class="products-card__title title-h4">
-                      <a class="products-card__title-link" href="" title="Нох Morakniv® Garberg (S)">
-                        Нох Morakniv® Garberg (S)
+                      <a class="products-card__title-link" href="" title="Нож Morakniv® Garberg (S)">
+                        Нож Morakniv® Garberg (S)
                       </a>
                     </h4>
                     <div class="products-card__info">
@@ -1136,8 +1529,8 @@
                   <div class="products-card__body">
                     <h4 class="products-card__title title-h4">
                       <a class="products-card__title-link" href=""
-                        title="Нох туристичний в футлярі Moraknive BushCraft Forest">
-                        Нох туристичний в футлярі Moraknive BushCraft Forest
+                        title="Нож туристичний в футлярі Moraknive BushCraft Forest">
+                        Нож туристичний в футлярі Moraknive BushCraft Forest
                       </a>
                     </h4>
                     <div class="products-card__info">
@@ -1233,8 +1626,8 @@
                   </a>
                   <div class="products-card__body">
                     <h4 class="products-card__title title-h4">
-                      <a class="products-card__title-link" href="" title="Нох Morakniv® Garberg (S)">
-                        Нох Morakniv® Garberg (S)
+                      <a class="products-card__title-link" href="" title="Нож Morakniv® Garberg (S)">
+                        Нож Morakniv® Garberg (S)
                       </a>
                     </h4>
                     <div class="products-card__info">
@@ -1281,8 +1674,8 @@
                   </a>
                   <div class="products-card__body">
                     <h4 class="products-card__title title-h4">
-                      <a class="products-card__title-link" href="" title="Нох Morakniv® Garberg (S)">
-                        Нох Morakniv® Garberg (S)
+                      <a class="products-card__title-link" href="" title="Нож Morakniv® Garberg (S)">
+                        Нож Morakniv® Garberg (S)
                       </a>
                     </h4>
                     <div class="products-card__info">
@@ -1418,7 +1811,7 @@
               </li>
             </ul>
             <div class="catalog-page__footer">
-              <a class="catalog-page__more">Показать больше</a>
+              <a class="catalog-page__more" href="">Показать больше</a>
               <div class="catalog-page__pagging">
                 <button disabled
                   class="catalog-page__pagging-arrow catalog-page__pagging-arrow--prev _icon-arrow_bottom"></button>
@@ -1757,9 +2150,11 @@
   <!--<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
 
 
-  <script src="node_modules/swiper/swiper-bundle.min.js"></script>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/nouislider/dist/nouislider.min.js"></script>
+  <script src="node_modules/swiper/swiper-bundle.min.js"></script>
   <script src="js/jquery.formstyler.min.js"></script>
+  <script src="js/ion.rangeSlider.min.js"></script>
   <script src="js/main.js"></script>
   <!-- <script src="js/modal.js"></script> -->
 </body>

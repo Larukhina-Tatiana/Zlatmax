@@ -1,7 +1,8 @@
 .products-card {
-
+  position: relative;
   display: grid;
-  max-width: 375px;
+  @include adaptivevalue(width, 375, 290, 1620, 320, 1);
+  // max-width: 375px;
   // @include adaptivevalue(height, 600, 537, 1620, 320, 1);
   background-color: var(--white);
   grid-template-rows: auto 1fr;
@@ -9,10 +10,27 @@
   @include transition ($transition-property: transform);
   margin: 0 auto;
 
+
   @media (any-hover: hover) {
     &:hover {
       transform: scale(1.05);
     }
+  }
+
+  &__sale {
+    position: absolute;
+    padding: rem(6) rem(22);
+    top: rem(20);
+    left: 0;
+    width: rem(90);
+    height: rem(35);
+    background-color: var(--accent);
+    color: var(--white);
+    font-weight: 600;
+    border-top-right-radius: rem(3);
+    border-bottom-right-radius: rem(3);
+    z-index: 3;
+    pointer-events: none;
   }
 
   &__img-cover {

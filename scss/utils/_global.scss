@@ -10,6 +10,24 @@ body {
 //     box-sizing: border-box;
 // }
 
+// REM
+@function rem($px) {
+    $result: math.div($px, 16) + rem;
+    @return $result;
+}
+
+// EM
+@function em($px) {
+    $result: math.div($px, 16) + em;
+    @return $result;
+}
+
+// TO %
+@function prc($pxOne, $pxTwo) {
+    $result: math.div($pxOne, $pxTwo) * 100%;
+    @return $result;
+}
+
 
 ul[class] {
     list-style: none;
@@ -60,7 +78,7 @@ body {
     @extend %Montserrat-500;
     font-size: 1.125rem;
     line-height: calc(27/18);
-    color: var(--black);
+    color: var(--cod-gray);
     overflow-x: hidden;
     min-width: 100vw;
 }
@@ -155,6 +173,13 @@ button,
     }
 }
 
+.flex {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    gap: rem(10);
+}
+
 
 .visually-hidden {
     position: absolute;
@@ -167,22 +192,4 @@ button,
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     margin: -1px;
-}
-
-// REM
-@function rem($px) {
-    $result: math.div($px, 16) + rem;
-    @return $result;
-}
-
-// EM
-@function em($px) {
-    $result: math.div($px, 16) + em;
-    @return $result;
-}
-
-// TO %
-@function prc($pxOne, $pxTwo) {
-    $result: math.div($pxOne, $pxTwo) * 100%;
-    @return $result;
 }

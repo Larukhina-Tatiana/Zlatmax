@@ -82,7 +82,7 @@
       overflow: auto;
       background-color: var(--cod-gray);
       padding: 80px 15px 50px 15px;
-      z-index: 5;
+      z-index: 11;
       @include transition ($transition-property: left);
 
       &::before {

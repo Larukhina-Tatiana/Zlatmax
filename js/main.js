@@ -332,3 +332,110 @@ $(".footer__body-title").on("click", function () {
 });
 
 $(".filter-style").styler();
+
+$(".js-range-slider").ionRangeSlider({
+  skin: "round",
+  type: "double",
+  min: 1000,
+  max: 5000,
+});
+
+// const rangeItems = document.querySelectorAll("[data-range]");
+// if (rangeItems.length) {
+//   rangeItems.forEach((rangeItem) => {
+//     const fromValue = rangeItem.querySelector("[data-range-from]");
+//     const toValue = rangeItem.querySelector("[data-range-to]");
+//     const item = rangeItem.querySelector("[data-range-item]");
+//     noUiSlider.create(item, {
+//       start: [Number(fromValue.value), Number(toValue.value)],
+//       connect: true,
+//       range: {
+//         min: [Number(fromValue.dataset.rangeFrom)],
+//         max: [Number(toValue.dataset.rangeTo)],
+//       },
+//     });
+//   });
+// }
+
+// const rangeItems = document.querySelectorAll("[data-range]");
+
+// const fromValue = rangeItem.querySelector("[data-range-from]");
+// const toValue = rangeItem.querySelector("[data-range-to]");
+// const slider = rangeItem.querySelector("[data-range-item]");
+// noUiSlider.create(item1, {
+//   start: [Number(fromValue.value), Number(toValue.value)],
+//   connect: true,
+//   range: {
+//     min: [Number(fromValue.dataset.rangeFrom)],
+//     max: [Number(toValue.dataset.rangeTo)],
+//   },
+// });
+
+// const priceSlider = document.querySelector("#range");
+// if (priceSlider) {
+//   let textFrom = priceSlider.getAttribute('data-from');
+//   let textTo = priceSlider.getAttribute('data-to');
+//   noViSlider.create(priceSlider, {
+//     start: 0,
+//     connect: [true, false],
+//     range: {
+//       'min': [1000],
+//       'max': [5000]
+//     }
+//   });
+
+// }
+
+const rangeSliderInit = () => {
+  // создаем функцию инициализации слайдера
+  const range = document.getElementById("range"); // Ищем слайдер
+  const inputMin = document.getElementById("min"); // Ищем input с меньшим значнием
+  const inputMax = document.getElementById("max"); // Ищем input с большим значнием
+
+  if (!range || !inputMin || !inputMax) return; // если этих элементов нет, прекращаем выполнение функции, чтобы не было ошибок
+
+  const inputs = [inputMin, inputMax]; // создаем массив из меньшего и большего значения
+
+  noUiSlider.create(range, {
+    // инициализируем слайдер
+    start: [2000, 5000], // устанавливаем начальные значения
+    tooltips: [true, true],
+    connect: true, // указываем что нужно показывать выбранный диапазон
+    range: {
+      // устанавливаем минимальное и максимальное значения
+      min: 0,
+      max: 5000,
+    },
+    step: 1, // шаг изменения значений
+  });
+
+  range.noUiSlider.on("update", function (values, handle) {
+    // при изменений положения элементов управления слайдера изменяем соответствующие значения
+    inputs[handle].value = parseInt(values[handle]);
+  });
+
+  inputMin.addEventListener("change", function () {
+    // при изменении меньшего значения в input - меняем положение соответствующего элемента управления
+    range.noUiSlider.set([this.value, null]);
+  });
+
+  inputMax.addEventListener("change", function () {
+    // при изменении большего значения в input - меняем положение соответствующего элемента управления
+    range.noUiSlider.set([null, this.value]);
+  });
+};
+
+const init = () => {
+  rangeSliderInit(); // запускаем функцию инициализации слайдера
+};
+
+window.addEventListener("DOMContentLoaded", init); // запускаем функцию init, когда документ будет загружен и готов к взаимодействию
+
+// Аккардеон заголовки
+$(".title-form, .aside__btn, .aside__form-filter-btn-extra").on(
+  "click",
+  function () {
+    $(this).toggleClass("title-form--active");
+    $(this).next().slideToggle("200");
+  }
+);

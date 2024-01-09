@@ -13,22 +13,16 @@
     display: flex;
   }
 
-  &__aside {
-    min-width: rem(375);
-    margin-right: rem(30);
-    background-color: coral;
-  }
 
   &__list {
     display: flex;
     justify-content: space-around;
-    gap: rem(30);
+    @include adaptivevalue(gap, 30, 10, 1620, 320, 1);
     flex-wrap: wrap;
     margin-bottom: rem(60);
 
     .products-card {
       margin: 0;
-      width: rem(375);
     }
   }
 
@@ -42,9 +36,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: rem(326);
+    @include adaptivevalue(width, 326, 290, 1620, 320, 1);
     height: rem(50);
-    // flex-shrink: 0;
     border-radius: rem(3);
     border: 2px solid var(--accent);
     background-color: rgba(232, 170, 49, 0.00);
@@ -66,7 +59,7 @@
   &__pagging {
     display: flex;
     align-items: center;
-    gap: rem(30);
+    @include adaptivevalue(gap, 30, 15, 1620, 320, 1);
   }
 
   &__pagging-arrow {
@@ -86,30 +79,50 @@
 
     &--next {
       transform: rotate(-90deg);
-      //   transform: rotate(-180deg);
     }
   }
 
   &__pagination {
     display: flex;
     align-items: center;
-    gap: rem(30);
+    @include adaptivevalue(gap, 30, 10, 1620, 320, 1);
   }
 
   &__pagination-item {
     color: var(--black);
     line-height: calc(18/32);
-  }
-
-  &__pagination-item.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    background-color: var(--accent);
     width: rem(34);
     height: rem(34);
+    border-radius: 50%;
+    @include transition ($transition-property: (background-color, color));
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--white);
+        background-color: var(--accent);
+      }
+    }
+  }
+
+  &__pagination-item.active {
     color: var(--white);
+    background-color: var(--accent);
+  }
+
+  @media screen and (width < 1200.01px) {
+    &__footer {
+      flex-direction: column;
+      row-gap: rem(50);
+    }
+  }
+
+  @media screen and (width < 712.01px) {
+    &__box {
+      flex-direction: column;
+    }
   }
 }
 
@@ -172,4 +185,90 @@
 .jq-selectbox__dropdown {
   font-size: rem(14);
   @extend %Montserrat-500;
+}
+
+//  Цена range
+.range {
+
+  &__values {
+    display: flex;
+    width: rem(312);
+    border-radius: rem(2);
+    border: 1px solid #CBCBCB;
+    font-size: rem(16);
+    margin-top: rem(30);
+
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+
+    &-input {
+      padding: rem(12) rem(36);
+      width: 50%;
+      color: var(--cod-gray);
+      text-align: center;
+      line-height: calc(20/16);
+    }
+  }
+
+  &__slider {
+    @include adaptivevalue(width, 312, 234, 1620, 320, 1);
+    // width: rem(312);
+  }
+}
+
+.noUi-target {
+  background: var(--accent);
+  border-radius: rem(2);
+  border: none;
+  box-shadow: none;
+}
+
+.noUi-horizontal {
+  height: rem(2);
+}
+
+.noUi-connect {
+  background-color: var(--black);
+}
+
+
+.noUi-handle::after,
+.noUi-handle::before {
+  display: none;
+}
+
+.noUi-horizontal .noUi-handle {
+  border-radius: 50%;
+  right: rem(-9);
+  top: rem(-9);
+  height: rem(18);
+  width: rem(18);
+}
+
+.noUi-handle {
+  border: 3px solid var(--accent);
+  border-radius: 3px;
+  background: var(--black);
+  cursor: default;
+  box-shadow: none;
+}
+
+.noUi-tooltip {
+  display: block;
+  position: absolute;
+  border: none;
+  border-radius: 3px;
+  background: transparent;
+  color: rgba(20, 20, 20, 0.50);
+  padding: 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.noUi-horizontal .noUi-tooltip {
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  left: 50%;
+  bottom: rem(-52);
 }
