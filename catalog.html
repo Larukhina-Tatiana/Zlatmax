@@ -7,15 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Каталог</title>
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
 
   <link rel="stylesheet" href="./css/jquery.formstyler.css">
   <link rel="stylesheet" href="./css/jquery.formstyler.theme.css">
   <link rel="stylesheet" href="./css/ion.rangeSlider.min.css">
 
 
-  <link rel="stylesheet" href="node_modules/nouislider/dist/nouislider.min.css">
-  <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css">
+  <!-- <link rel="stylesheet" href="node_modules/nouislider/dist/nouislider.min.css">
+  <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css"> -->
   <link rel="stylesheet" href="scss/style.css">
 </head>
 
@@ -411,28 +412,28 @@
       </div>
     </div>
   </header>
-  <div class="container">
-    <h1 class="title-h1">Разделочные ножи</h1>
-    <nav class="breadcrumbs">
-      <div class="breadcrumbs__inner">
-        <ol class="breadcrumbs__list mobile-overflow">
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="index.html">Главная</a>
-          </li>
 
-          <li class="breadcrumbs__item">
-            <span class="breadcrumbs__nolink">Разделочные ножи</span>
-          </li>
-        </ol>
-      </div>
-    </nav>
-  </div>
 
 
 
   <main class="main page page--home">
     <section class="catalog-page">
       <div class="container">
+        <h2 class="title-h1">Разделочные ножи</h2>
+        <nav class="breadcrumbs">
+          <div class="breadcrumbs__inner">
+            <ol class="breadcrumbs__list mobile-overflow">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="index.html">Главная</a>
+              </li>
+
+              <li class="breadcrumbs__item">
+                <span class="breadcrumbs__nolink">Разделочные ножи</span>
+              </li>
+            </ol>
+          </div>
+        </nav>
+
         <div class="catalog-page__control">
           <select class="filter-style select-item">
             <option>По полулярности</option>
@@ -451,9 +452,7 @@
                   <div class="range">
                     <div class="range__values">
                       <input class="range__values-input" id="min" type="text">
-
-                      <!-- меньшее установленное значение -->
-                      <input class="range__values-input" id="max" type="text" /> <!-- большее установленное значение -->
+                      <input class="range__values-input" id="max" type="text">
                     </div>
                     <div class="range__slider">
                       <div id="range"></div> <!-- элемент слайдера диапазона -->
@@ -527,6 +526,7 @@
                         <span class="aside__form-content-quantity">(117)</span>
                       </label>
                     </div>
+                  </div>
                 </li>
                 <li class="aside__form-item-drop">
                   <p class="aside__form-title title-form aside__btn">Сталь</p>
@@ -616,6 +616,7 @@
                         <span class="aside__form-content-quantity">(101)</span>
                       </label>
                     </div>
+                  </div>
                 </li>
                 <li class="aside__form-item-drop">
                   <p class="aside__form-title title-form aside__btn">Рукоять</p>
@@ -683,6 +684,7 @@
                         <span class="aside__form-content-quantity">(117)</span>
                       </label>
                     </div>
+                  </div>
                 </li>
                 <li class="aside__form-item-drop">
                   <p class="aside__form-title title-form aside__btn">Гарда и тыльник</p>
@@ -750,6 +752,7 @@
                         <span class="aside__form-content-quantity">(117)</span>
                       </label>
                     </div>
+                  </div>
                 </li>
                 <li class="aside__form-item-drop">
                   <p class="aside__form-title title-form aside__btn">Золочение</p>
@@ -767,6 +770,7 @@
                         Золочение рисунка на клинке
                       </label>
                     </div>
+                  </div>
                 </li>
                 <li class="aside__form-item-drop">
                   <p class="aside__form-title title-form aside__btn">Рейтинг</p>
@@ -825,10 +829,9 @@
                         <span class="aside__content-span">1/5</span>
                       </label>
                     </div>
+                  </div>
 
                 </li>
-
-
               </ul>
             </form>
           </div>
@@ -2043,7 +2046,7 @@
                   </li>
                   <li class="social__item">
                     <a href="" class="social__link">
-                      <img src="./images/icons/whatsap.svg" alt="icon whatsap">
+                      <img src="./images/icons/whatsap.svg" alt="icon whatsap" width="43" height="43">
                     </a>
                   </li>
                 </ul>
@@ -2085,7 +2088,7 @@
             </h5>
             <ul class="footer__body-list">
               <li class="footer__body-item">
-                <form class="footer__form-mail" action="" name="footer-mail" novalidate>
+                <form class="footer__form-mail" action="#" name="footer-mail" novalidate>
                   <p class="footer__form-text">Подпишитесь прямо сейчас!</p>
                   <div class="footer__form-inner">
                     <label class="footer__form-label" for="user_email"></label>
@@ -2128,10 +2131,10 @@
           </p>
           <a class="footer__bottom-link" href="">
             <p class="footer__bottom-link-text">
-              Златоустовские ножи
+              Златоустовские ножи&nbsp;
             </p>
             <p class="footer__bottom-link-text">
-              www.zlatmax.ua &#169
+              www.zlatmax.ua&#169;
             </p>
           </a>
         </div>
@@ -2145,14 +2148,15 @@
 
 
 
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>   -->
-  <!--<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+  <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
 
 
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/nouislider/dist/nouislider.min.js"></script>
-  <script src="node_modules/swiper/swiper-bundle.min.js"></script>
+  <script src="node_modules/swiper/swiper-bundle.min.js"></script> -->
   <script src="js/jquery.formstyler.min.js"></script>
   <script src="js/ion.rangeSlider.min.js"></script>
   <script src="js/main.js"></script>

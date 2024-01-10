@@ -94,8 +94,7 @@
 }
 
 .title-form {
-  // padding-right: rem(30);
-  font-size: rem(20);
+  @include adaptivevalue(font-size, 20, 18, 1620, 320, 1);
   font-weight: 600;
   position: relative;
   @include transition ($transition-property: all);

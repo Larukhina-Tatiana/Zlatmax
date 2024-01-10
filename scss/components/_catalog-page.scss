@@ -11,6 +11,7 @@
 
   &__box {
     display: flex;
+    gap: rem(30);
   }
 
 
@@ -192,7 +193,8 @@
 
   &__values {
     display: flex;
-    width: rem(312);
+    @include adaptivevalue(width, 312, 290, 1620, 320, 1);
+    // width: rem(312);
     border-radius: rem(2);
     border: 1px solid #CBCBCB;
     font-size: rem(16);
@@ -213,6 +215,7 @@
 
   &__slider {
     @include adaptivevalue(width, 312, 234, 1620, 320, 1);
+    margin: 0 auto;
     // width: rem(312);
   }
 }
