@@ -1,0 +1,9 @@
+.compare-link {
+  font-size: rem(24);
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}

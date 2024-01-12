@@ -131,26 +131,5 @@
     color: var(--cod-gray);
   }
 
-  &__compare-link {
-    font-size: rem(24);
 
-    @media (any-hover: hover) {
-      &:hover {
-        color: var(--accent);
-      }
-    }
-  }
-
-  &__favorite-link {
-    font-size: rem(26);
-    color: var(--accent);
-  }
-
-  &__btn {
-    width: 100%;
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    justify-content: center;
-  }
 }

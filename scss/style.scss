@@ -18,6 +18,9 @@
 @import "./components/_button";
 @import "./components/_titles";
 @import "./components/_catalog";
+@import "./components/compare-link";
+@import "./components/favorite-link";
+
 @import "./components/_products-slider";
 @import "./components/_products-card";
 @import "./components/_rating";
@@ -32,6 +35,12 @@
 @import "./components/_catalog-page";
 @import "./components/_breadcrumbs";
 @import "./components/_aside";
+
+// Карточка товара card-products
+@import "./components/_card";
+@import "./components/optioms-card";
+@import "./components/actions-card";
+@import "./components/counter";
 
 
 

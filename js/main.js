@@ -236,6 +236,33 @@ const swiper1 = new Swiper(".new-products__slider", {
   },
 });
 
+var swiper2 = new Swiper(".mySwiper", {
+  spaceBetween: 16,
+  slidesPerView: 3,
+  freeMode: true,
+  watchSlidesProgress: true,
+  breakpoints: {
+    1330: {
+      slidesPerView: 4,
+      spaceBetween: 16,
+    },
+  },
+});
+var swiper3 = new Swiper(".mySwiper2", {
+  spaceBetween: 16,
+
+  thumbs: {
+    swiper: swiper2,
+  },
+});
+
+// Звёздный рейтинг
+$(".rate-yo").rateYo({
+  ratedFill: "#e8aa31",
+  spacing: "7px",
+  normalFill: "#ABABAB",
+});
+
 // !Рейтинг
 // const ratings = document.querySelectorAll(".rating");
 // if (ratings.length > 0) {
@@ -439,3 +466,23 @@ $(".title-form, .aside__btn, .aside__form-filter-btn-extra").on(
     $(this).next().slideToggle("200");
   }
 );
+
+// ==================================
+// Counter
+// ==================================
+function increaseCount(e, el) {
+  var input = el.previousElementSibling;
+  var value = parseInt(input.value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  input.value = value;
+}
+function decreaseCount(e, el) {
+  var input = el.nextElementSibling;
+  var value = parseInt(input.value, 10);
+  if (value > 1) {
+    value = isNaN(value) ? 0 : value;
+    value--;
+    input.value = value;
+  }
+}

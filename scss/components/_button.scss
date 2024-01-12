@@ -1,4 +1,12 @@
 .button {
+
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: rem(15);
+  justify-content: center;
+
+
   border-radius: 3px;
   background: #E8AA31;
   box-shadow: 0px 4px 20px 0px rgba(232, 170, 49, 0.43);

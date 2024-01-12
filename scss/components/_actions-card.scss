@@ -1,0 +1,43 @@
+.actions-card {
+  padding-top: rem(30);
+
+  &__price {
+    font-size: rem(30);
+    font-weight: 700;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+    align-items: baseline;
+    gap: rem(15);
+  }
+
+  &__row {
+    margin-top: rem(30);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    display: flex;
+    gap: rem(30);
+    align-items: center;
+
+    .button {
+      width: rem(230);
+      height: rem(50);
+    }
+  }
+
+  &__button {
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 0px 4px 20px 0px rgba(41, 40, 38, 0.43);
+    @include transition ($transition-property: box-shadow);
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 0px 4px 45px 0px rgba(41, 40, 38, 0.43);
+      }
+    }
+  }
+}

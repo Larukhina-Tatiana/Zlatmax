@@ -10,7 +10,6 @@
   color: var(--cod-gray);
   font-size: rem(24);
   font-weight: 700;
-  margin: rem(30) 0 rem(25) 0;
 }
 
 .title-h3 {
@@ -28,8 +27,8 @@
   &::after {
     position: absolute;
     content: '';
-    width: 68px;
-    height: 2px;
+    width: rem(68);
+    height: rem(2);
     left: 0;
     // left: calc(50% - 100px);
     bottom: 0;

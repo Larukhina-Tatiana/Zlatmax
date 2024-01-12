@@ -1,0 +1,147 @@
+.card {
+
+  &__box {
+    display: flex;
+    gap: rem(30);
+  }
+
+  &__img {
+    width: 756px;
+  }
+
+
+  &__content {
+    max-width: rem(806);
+    width: 100%;
+    background: var(--background);
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+    padding: rem(30);
+  }
+
+  &__content-top {
+    &:not(:last-child) {
+      padding-bottom: rem(15);
+    }
+
+    border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptivevalue(margin-bottom, 15, 15, 1620, 320, 1);
+    }
+  }
+
+
+  &__content-user-links-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(10);
+  }
+
+  &__content-user-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(30);
+  }
+
+  &__content-аvailability {
+    color: var(--green);
+    font-size: rem(16);
+    margin-top: rem(15);
+  }
+
+  &__content-definitions-list {
+    padding: rem(30) 0;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+  }
+
+  &__content-definitions-item {
+    display: flex;
+    gap: rem(30);
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+
+    dt {
+      max-width: rem(200);
+      width: 100%
+    }
+
+    dd {
+      color: rgba(20, 20, 20, 0.5);
+    }
+  }
+
+  & .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+  }
+
+  & .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  & .swiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.images-product__slider {
+  overflow: hidden;
+}
+
+.thumbs-img {
+  width: 754px;
+  height: 574px;
+}
+
+
+
+
+
+.mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  // opacity: 0.4;
+}
+
+// .mySwiper .swiper-slide-thumb-active {
+//   opacity: 1;
+// }
+
+
+.rate {
+  display: inline-block;
+
+  & svg {
+    width: rem(21);
+    height: rem(21);
+  }
+}

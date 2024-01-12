@@ -1,4 +1,7 @@
 .catalog-page {
+  &__title {
+    margin-top: rem(30);
+  }
 
   &__control {
     display: flex;
