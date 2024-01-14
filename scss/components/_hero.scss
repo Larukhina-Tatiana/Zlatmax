@@ -140,8 +140,8 @@
   }
 
   &__tip {
-    width: calc(20/16)+rem;
-    height: calc(20/16)+rem;
+    width: rem(20);
+    height: rem(20);
     position: absolute;
     cursor: pointer;
     display: flex;

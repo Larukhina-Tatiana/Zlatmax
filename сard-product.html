@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="./css/ion.rangeSlider.min.css">
   <link rel="stylesheet" href="./css/jquery.rateyo.min.css">
 
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+
 
   <link rel="stylesheet" href="node_modules/nouislider/dist/nouislider.min.css">
   <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css">
@@ -518,8 +520,9 @@
                       sizes="(min-width: 1620px) 754px">
                   </picture>
                 </div>
-
               </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
             </div>
 
             <div thumbsSlider="" class="images-product__slider mySwiper">
@@ -528,17 +531,13 @@
                 <div class="thumbs-images__slide-ibg swiper-slide">
                   <picture>
                     <source srcset="
-                                        ./images/card-product/Nozh-Snegir1@1x.webp 177w,
-                                        ./images/card-product/Nozh-Snegir1@2x.webp 354w,
-                                        ./images/card-product/Nozh-Snegir1@3x.webp 531w
+                                        ./images/card-product/Nozh-Snegir1-1@1x.webp 177w
                                       " type="image/webp" media="(min-width: 1620px)"
                       sizes="(min-width: 1620px) 177px">
                     <img srcset="
-                                        ./images/card-product/Nozh-Snegir1@1x.jpg 177w,
-                                        ./images/card-product/Nozh-Snegir1@2x.jpg 354w,
-                                        ./images/card-product/Nozh-Snegir1@3x.jpg 531w
-                                      " src="./images/card-product/Nozh-Snegir1@1x.jpg" alt="imases article1"
-                      sizes="(min-width: 1620px) 177px" height="195">
+                                        ./images/card-product/Nozh-Snegir1-1@1x.jpg 177w
+                                      " src="./images/card-product/Nozh-Snegir1-1@1x.jpg" alt="imases article1"
+                      sizes="(min-width: 1620px) 177px">
                   </picture>
                 </div>
                 <div class="thumbs-images__slide-ibg swiper-slide">
@@ -603,6 +602,7 @@
                   </picture>
                 </div>
               </div>
+
             </div>
           </div>
 
@@ -647,7 +647,7 @@
                   <p class="optioms-card__title">Сталь</p>
                   <div class="optioms-card__value">
                     <select class="filter-style optioms-card__select">
-                      <option>Выбрать сталь</option>
+                      <option selected>Выбрать сталь</option>
                       <option>100Х13М</option>
                       <option>110Х18М-ШД</option>
                       <option>40Х10С2М (ЭИ-107)</option>
@@ -699,7 +699,20 @@
               </ul>
 
               <div class="card__content-actions actions-card">
-                <p class="actions-card__price _icon-hryvnia-icon">3 865</p>
+                <div class="actions-card__price-box">
+                  <p class="actions-card__price _icon-hryvnia-icon">3 865</p>
+                  <div class="actions-card__points">
+                    <p class="actions-card__points-text">
+                      + 449 баллов за покупку
+                    </p>
+                    <button class="actions-card__points-tip">
+                      <span class="actions-card__points-tiptext">Вам будут начислены баллы в размере 5%
+                        от стоимости покупки. Их можно будет использовать
+                        на оплату последующих заказов.</span>
+                    </button>
+
+                  </div>
+                </div>
                 <div class="actions-card__row">
 
                   <div class="counter quantity">
@@ -1043,6 +1056,9 @@
   <script src="js/jquery.formstyler.min.js"></script>
   <script src="js/ion.rangeSlider.min.js"></script>
   <script src="js/jquery.rateyo.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+
   <script src="js/main.js"></script>
   <!-- <script src="js/modal.js"></script> -->
 </body>

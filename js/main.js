@@ -237,10 +237,12 @@ const swiper1 = new Swiper(".new-products__slider", {
 });
 
 var swiper2 = new Swiper(".mySwiper", {
+  loop: true,
   spaceBetween: 16,
-  slidesPerView: 3,
+  slidesPerView: 4,
   freeMode: true,
   watchSlidesProgress: true,
+
   breakpoints: {
     1330: {
       slidesPerView: 4,
@@ -250,6 +252,10 @@ var swiper2 = new Swiper(".mySwiper", {
 });
 var swiper3 = new Swiper(".mySwiper2", {
   spaceBetween: 16,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 
   thumbs: {
     swiper: swiper2,

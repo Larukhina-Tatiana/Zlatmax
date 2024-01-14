@@ -3,19 +3,22 @@
   &__box {
     display: flex;
     gap: rem(30);
+    display: grid;
+    grid-template-columns: 47% 1fr;
   }
 
-  &__img {
-    width: 756px;
-  }
+  // &__img {
+  //   width: 756px;
+  // }
 
 
   &__content {
-    max-width: rem(806);
+    // max-width: rem(806);
     width: 100%;
     background: var(--background);
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
-    padding: rem(30);
+    @include adaptivevalue(padding, 20, 15, 1620, 320, 1);
+    padding: rem(20);
   }
 
   &__content-top {
@@ -29,6 +32,7 @@
   &__title {
     &:not(:last-child) {
       @include adaptivevalue(margin-bottom, 15, 15, 1620, 320, 1);
+      @include adaptivevalue(font-size, 24, 16, 1620, 320, 1);
     }
   }
 
@@ -54,21 +58,24 @@
   }
 
   &__content-definitions-list {
-    padding: rem(30) 0;
+    padding: rem(20) 0;
     border-bottom: 1px solid rgba(20, 20, 20, 0.15);
   }
 
   &__content-definitions-item {
     display: flex;
-    gap: rem(30);
+    // grid-template-columns: rem(200) 1fr;
+    @include adaptivevalue(gap, 20, 5, 1620, 320, 1);
+    @include adaptivevalue(font-size, 18, 14, 1620, 320, 1);
 
     &:not(:last-child) {
-      margin-bottom: rem(20);
+      @include adaptivevalue(margin-bottom, 20, 10, 1620, 320, 1);
     }
 
     dt {
-      max-width: rem(200);
-      width: 100%
+      @include adaptivevalue(max-width, 200, 130, 1620, 320, 1);
+
+      width: 100%;
     }
 
     dd {
@@ -76,13 +83,17 @@
     }
   }
 
+  .images-product__slider1 {
+    @include adaptivevalue(height, 574, 258, 1620, 320, 1);
+    // height: rem(574);
+  }
+
   & .swiper-slide {
     text-align: center;
-    font-size: 18px;
     background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     background-size: cover;
     background-position: center;
   }
@@ -96,52 +107,96 @@
 
   & .swiper {
     width: 100%;
-    height: 300px;
+    // @include adaptivevalue(height, 652, 255, 1620, 320, 1);
+    // height: 652px;
+
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-.images-product__slider {
-  overflow: hidden;
-}
-
-.thumbs-img {
-  width: 754px;
-  height: 574px;
-}
 
 
+  .images-product__slider {
+    overflow: hidden;
+  }
+
+  .thumbs-img {
+    // width: 754px;
+    // height: 574px;
+  }
 
 
+  & .mySwiper2 {
+    // height: 80%;
+    width: 100%;
+  }
 
-.mySwiper2 {
-  height: 80%;
-  width: 100%;
-}
+  & .mySwiper {
+    // @include adaptivevalue(height, 26%, 24%, 1620, 1200, 1);
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
 
-.mySwiper {
-  height: 20%;
-  box-sizing: border-box;
-  padding: 10px 0;
-}
+  & .mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+  }
 
-.mySwiper .swiper-slide {
-  width: 25%;
-  height: 100%;
-  // opacity: 0.4;
-}
+  .mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+  }
 
-// .mySwiper .swiper-slide-thumb-active {
-//   opacity: 1;
-// }
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    top: var(--swiper-navigation-top-offset, 50%);
+    width: calc(var(--swiper-navigation-size)/ 44 * 27);
+    height: var(--swiper-navigation-size);
+    width: rem(35);
+    height: rem(35);
+    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--swiper-navigation-color, var(--white));
+    background-color: rgba(20, 20, 20, 0.5);
+    border-radius: 2px;
+  }
 
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-family: swiper-icons;
+    // font-size: var(--swiper-navigation-size);
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+    font-size: 11px;
+    font-weight: 700;
+  }
 
-.rate {
-  display: inline-block;
+  & .rate {
+    display: inline-block;
 
-  & svg {
-    width: rem(21);
-    height: rem(21);
+    & svg {
+      width: rem(21);
+      height: rem(21);
+    }
+  }
+
+  @media screen and (width < 886.01px) {
+    &__box {
+      display: block;
+    }
+  }
+
+  @media screen and (width < 480.01px) {
+    &__content-user-links-inner {
+      flex-wrap: wrap;
+    }
+
   }
 }
