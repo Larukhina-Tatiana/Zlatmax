@@ -15,8 +15,6 @@
   <link rel="stylesheet" href="./css/ion.rangeSlider.min.css">
   <link rel="stylesheet" href="./css/jquery.rateyo.min.css">
 
-  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
-
 
   <link rel="stylesheet" href="node_modules/nouislider/dist/nouislider.min.css">
   <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css">
@@ -420,7 +418,7 @@
 
 
   <main class="main page page--home">
-    <section class="card">
+    <div class="page-breadcrumbs">
       <div class="container">
         <!-- <h2 class="title-h1">Разделочные ножи</h2> -->
         <nav class="breadcrumbs">
@@ -440,7 +438,11 @@
             </ol>
           </div>
         </nav>
+      </div>
+    </div>
 
+    <section class="card">
+      <div class="container">
         <div class="card__box">
           <div class="card__img">
             <div class="images-product__slider1 swiper mySwiper2">
@@ -722,10 +724,10 @@
                   </div>
 
                   <div class="actions-card__btn">
-                    <button class="button">В корзину
+                    <button class="actions-card__button buttons buttons--accent">В корзину
                       <img src="./images/icons/basket.svg" alt="icons backet">
                     </button>
-                    <button class="actions-card__button button">Купить в 1 клик</button>
+                    <button class="actions-card__button buttons--black buttons">Купить в 1 клик</button>
                   </div>
                 </div>
 
@@ -733,15 +735,308 @@
             </div>
 
           </div>
-
-
-
         </div>
       </div>
+    </section>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="card__description section">
+      <div class="container">
+        <div class="card__description-tabs-inner">
+          <div class="card__description-tabs  tabs-wrapper">
+            <a class="tabs__link card__description-tabs-link" href="#tabs-product-1">
+              Описание
+            </a>
+
+            <a class="tabs__link card__description-tabs-link" href="#tabs-product-2">
+              Характеристики
+            </a>
+
+            <a class="tabs__link card__description-tabs-link tabs__link--active" href="#tabs-product-3">
+              Отзывы
+            </a>
+
+            <a class="tabs__link card__description-tabs-link" href="#tabs-product-4">
+              Доставка
+            </a>
+          </div>
+
+          <ul class="tabs__content">
+            <li class="tabs__content-item card__description-tabs-content" id="tabs-product-1">
+              <p class="card__description-content-text">
+                Легкий удобный
+                <span class="card__description-content-span">нож с клинком</span>, имеющим пологие вогнутые линзовидные
+                спуски
+                <span class="card__description-content-span">на две трети ширины клинка</span> , образующие тонкое,
+                прекрасно режущее лезвие толщиной
+                <span class="card__description-content-span">около 0,6 мм</span> в районе подводов.
+              </p>
+              <p class="card__description-content-text">
+                <span class="card__description-content-span">Обух клинка со спинкой рукояти</span>, имеет одну плавную
+                дугообразную
+                линию. На пяте перед рукоятью есть подпальцевый
+                <span class="card__description-content-span">вырез для точных работ.</span>
+              </p>
+              <p class="card__description-content-text">
+                Необходимо проявлять некоторую осторожность при работе с большими боковыми нагрузками
+                <span class="card__description-content-span">на лезвие ножа</span>, ввиду небольшой толщины клинка
+                в рабочей части.
+              </p>
+              <p class="card__description-content-text">
+                Монтаж рукояти накладной
+                <span class="card__description-content-span">плашечный.</span>На навершии рукояти, функцию которого
+                выполняет
+                выступающий из под плашек хвостовик,
+                имеется
+                <span class="card__description-content-span">отверстие под темляк.</span>
+                Этот нож удобный помощник при работе <span class="card__description-content-span">с продуктами и охоте
+                  на боровую и водоплавающую дичь.</span>
+              </p>
+            </li>
+            <li class="tabs__content-item card__description-tabs-content" id="tabs-product-2">
+              <ul class="card__description-characteristic-list characteristic">
+                <li class="characteristic__item">
+                  <h6 class="characteristic__title title-h6">
+                    Технические характеристики
+                  </h6>
+                  <dl class="characteristic__table">
+                    <div class="characteristic__table-item">
+                      <dt class="characteristic__table-neme">Общая длина, мм:</dt>
+                      <dd class="characteristic__table-meaning">227</dd>
+                    </div>
+                    <div class="characteristic__table-item">
+                      <dt class="characteristic__table-neme">Длина клинка, мм:</dt>
+                      <dd class="characteristic__table-meaning">112</dd>
+                    </div>
+                    <div class="characteristic__table-item">
+                      <dt class="characteristic__table-neme">Ширина клинка, мм:</dt>
+                      <dd class="characteristic__table-meaning">24</dd>
+                    </div>
+                    <div class="characteristic__table-item">
+                      <dt class="characteristic__table-neme">Толщина обуха, мм:</dt>
+                      <dd class="characteristic__table-meaning">2.9</dd>
+                    </div>
+                  </dl>
+                </li>
+
+                <li class="characteristic__item">
+                  <h6 class="characteristic__title title-h6">
+                    Используемые материалы
+                  </h6>
+                  <dl class="characteristic__table">
+                    <div class="characteristic__table-item">
+                      <dt class="characteristic__table-neme characteristic__table-neme--width">Сталь:</dt>
+                      <dd class="characteristic__table-meaning">95Х18</dd>
+                    </div>
+                    <div class="characteristic__table-item">
+                      <dt class="characteristic__table-neme characteristic__table-neme--width">Рукоять:</dt>
+                      <dd class="characteristic__table-meaning">Накладки карельская береза</dd>
+                    </div>
+                  </dl>
+                </li>
+
+                <li class="characteristic__item">
+                  <h6 class="characteristic__title title-h6">
+                    Производство
+                  </h6>
+                  <dl class="characteristic__table">
+                    <div class="characteristic__table-item">
+                      <dt class="characteristic__table-neme">Производство:</dt>
+                      <dd class="characteristic__table-meaning">WUESTHOF (Германия)</dd>
+                    </div>
+                  </dl>
+                </li>
+              </ul>
+            </li>
+            <li
+              class="tabs__content-item card__description-tabs-content card__description-tabs-content--align tabs__content--active"
+              id="tabs-product-3">
+              <ul class="card__description-tabs-comments comments">
+                <li class="comments__item">
+                  <img class="comments__avatar" src="./images/comments/comments1.jpg" alt="images avatar ">
+
+                  <div class="comments__inner">
+
+                    <div class="comments__author-info">
+                      <cite class="comments__author">Никита Панков</cite>
+                      <time class="comments__data" datetime="2023-06-15">15.06.2023</time>
+                    </div>
+
+
+                    <a class="rate" href="">
+                      <div class="rate-yo" data-rateyo-rating="3.6"></div>
+                    </a>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor luctus et consectetur augue.
+                      Dolor egestas nunc pellentesque hac fringilla. Enim hac scelerisque eu tellus feugiat vel.
+                      Ut ac nec eleifend fermentum dictum ullamcorper phasellus at sed.
+                    </p>
+                    <div class="comments__buttons">
+                      <button class="comments__btn">Ответить</button>
+                      <button class="comments__favorite"></button>
+                    </div>
+                  </div>
+                </li>
+                <li class="comments__item">
+                  <img class="comments__avatar" src="./images/comments/comments2.jpg" alt="images avatar ">
+
+                  <div class="comments__inner">
+
+                    <div class="comments__author-info">
+                      <cite class="comments__author">Cаша Осийчук</cite>
+                      <time class="comments__data" datetime="2023-06-21">21.06.2023</time>
+                    </div>
+
+
+                    <a class="rate" href="">
+                      <div class="rate-yo" data-rateyo-rating="4"></div>
+                    </a>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor luctus et consectetur augue.
+                      Dolor egestas nunc pellentesque hac fringilla. Enim hac scelerisque eu tellus feugiat vel.
+                      Ut ac nec eleifend fermentum dictum ullamcorper phasellus at sed.
+                    </p>
+                    <div class="comments__buttons">
+                      <button class="comments__btn">Ответить</button>
+                      <button class="comments__favorite"></button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <button class="comments__btn-link buttons buttons--black">Написать отзыв</button>
+            </li>
+            <li class="tabs__content-item card__description-tabs-content" id="tabs-product-4">Content4</li>
+            <!-- <li class="tabs__content-item card-product__tabs-content" id="tabs-product-4">
+            <form class="card-product__tabs-form">
+              <div class="card-product__form-topline form-topline">
+                <label class="form-topline__label-search">
+                  Магазин
+                  <input class="form-topline__input-search" type="text">
+                </label>
+                <label class="form-topline__label-radio">
+                  <input class="form-topline__input-radio filter-style" type="radio" name="radio">
+                  Забрать сегодня
+                </label>
+                <label class="form-topline__label-radio">
+                  <input class="form-topline__input-radio filter-style" type="radio" name="radio" checked>
+                  Забрать в течение недели
+                </label>
+
+              </div>
+              <ul class="form-topline__list">
+                <li class="form-topline__item form-topline__item--noborder form-topline__item--title">
+                  <div class="form-topline__address">Адрес</div>
+                  <div class="form-topline__workhours">Режим работы</div>
+                  <div class="form-topline__avialable">Доступно</div>
+                  <div class="form-topline__num">Количество</div>
+                  <div class="form-topline__btn"></div>
+                </li>
+                <li class="form-topline__item">
+                  <div class="form-topline__address">Киев, ул. Героев Гражданской войны 25</div>
+                  <div class="form-topline__workhours">
+                    <div class="form-topline__hours">
+                      <span>пн-сб:</span>
+                      <span>08:00-19:00</span>
+                    </div>
+                    <div class="form-topline__hours">
+                      <span>вс:</span>
+                      <span>09:00-17:00</span>
+                    </div>
+                  </div>
+                  <div class="form-topline__avialable">
+                    В наличии
+                  </div>
+                  <div class="form-topline__num">1</div>
+                  <div class="form-topline__btn">
+                    <button class="form-topline__btn-buy btn-buy">Купить</button>
+                  </div>
+                </li>
+                <li class="form-topline__item">
+                  <div class="form-topline__address">Каменец-Подольский, <br> ул. Южная 134</div>
+                  <div class="form-topline__workhours">
+                    <div class="form-topline__hours">
+                      <span>пн-сб:</span>
+                      <span>08:00-19:00</span>
+                    </div>
+                    <div class="form-topline__hours">
+                      <span>вс:</span>
+                      <span>09:00-17:00</span>
+                    </div>
+                  </div>
+                  <div class="form-topline__avialable">
+                    Нет в наличии
+                  </div>
+                  <div class="form-topline__num">0</div>
+                  <div class="form-topline__btn">
+                    <button class="form-topline__btn-buy btn-buy">Купить</button>
+                  </div>
+                </li>
+                <li class="form-topline__item">
+                  <div class="form-topline__address">Днепр, ул. Красная 19</div>
+                  <div class="form-topline__workhours">
+                    <div class="form-topline__hours">
+                      <span>пн-сб:</span>
+                      <span>08:00-19:00</span>
+                    </div>
+                    <div class="form-topline__hours">
+                      <span>вс:</span>
+                      <span>09:00-17:00</span>
+                    </div>
+                  </div>
+                  <div class="form-topline__avialable">
+                    В наличии
+                  </div>
+                  <div class="form-topline__num">6</div>
+                  <div class="form-topline__btn">
+                    <button class="form-topline__btn-buy btn-buy">Купить</button>
+                  </div>
+                </li>
+                <li class="form-topline__item">
+                  <div class="form-topline__address">Киев, ул Шевченко 167</div>
+                  <div class="form-topline__workhours">
+                    <div class="form-topline__hours">
+                      <span>пн-сб:</span>
+                      <span>08:00-19:00</span>
+                    </div>
+                    <div class="form-topline__hours">
+                      <span>вс:</span>
+                      <span>09:00-17:00</span>
+                    </div>
+
+                  </div>
+                  <div class="form-topline__avialable">
+                    Нет в наличии
+                  </div>
+                  <div class="form-topline__num">0</div>
+                  <div class="form-topline__btn">
+                    <button class="form-topline__btn-buy btn-buy">Купить</button>
+                  </div>
+                </li>
+              </ul>
+
+            </form>
+
+          </li> -->
+
+          </ul>
+        </div>
       </div>
     </section>
+
+
+
 
   </main>
 
@@ -1056,8 +1351,7 @@
   <script src="js/jquery.formstyler.min.js"></script>
   <script src="js/ion.rangeSlider.min.js"></script>
   <script src="js/jquery.rateyo.min.js"></script>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
+
 
   <script src="js/main.js"></script>
   <!-- <script src="js/modal.js"></script> -->

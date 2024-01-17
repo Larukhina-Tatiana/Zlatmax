@@ -262,13 +262,6 @@ var swiper3 = new Swiper(".mySwiper2", {
   },
 });
 
-// Звёздный рейтинг
-$(".rate-yo").rateYo({
-  ratedFill: "#e8aa31",
-  spacing: "7px",
-  normalFill: "#ABABAB",
-});
-
 // !Рейтинг
 // const ratings = document.querySelectorAll(".rating");
 // if (ratings.length > 0) {
@@ -492,3 +485,30 @@ function decreaseCount(e, el) {
     input.value = value;
   }
 }
+
+// ! Tabs
+$(".tabs__link").on("click", function (e) {
+  e.preventDefault();
+
+  $($(this).siblings()).removeClass("tabs__link--active");
+
+  $($(this).closest(".tabs-wrapper").siblings().find("li")).removeClass(
+    "tabs__content--active"
+  );
+
+  $(this).addClass("tabs__link--active");
+  $($(this).attr("href")).addClass("tabs__content--active");
+});
+
+// Иконка фаворит становиться залитой
+
+$(".comments__favorite").on("click", function () {
+  $(this).toggleClass("comments__favorite--active");
+});
+
+// Звёздный рейтинг
+$(".rate-yo").rateYo({
+  ratedFill: "#e8aa31",
+  spacing: "7px",
+  normalFill: "#ABABAB",
+});

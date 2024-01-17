@@ -1,0 +1,45 @@
+.characteristic {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: rem(20);
+
+  &__item {
+    max-width: rem(509);
+
+    &:not(:first-child) {
+      border-left: 1px solid var(--gray);
+      padding-left: rem(30);
+    }
+  }
+
+  &__table-item {
+    display: flex;
+    gap: rem(30);
+
+
+    &:not(:last-child) {
+      @include adaptivevalue(margin-bottom, 20, 10, 1620, 320, 1);
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptivevalue(margin-bottom, 30, 20, 1620, 320, 1);
+    }
+  }
+
+
+
+  &__table-neme {
+    width: rem(195);
+
+    &--width {
+      width: rem(90);
+
+    }
+  }
+
+  &__table-meaning {
+    // width: rem(280);
+  }
+}

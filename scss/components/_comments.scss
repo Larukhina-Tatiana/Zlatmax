@@ -1,0 +1,91 @@
+.comments {
+  text-align: start;
+
+  &__item {
+    display: flex;
+    gap: rem(30);
+    padding-bottom: rem(30);
+    border-bottom: 1px solid var(--gray);
+
+    &:not(:first-child) {
+      @include adaptivevalue(padding-top, 30, 20, 1620, 320, 1);
+    }
+  }
+
+  &__avatar {
+    object-fit: cover;
+    width: rem(80);
+    height: rem(80);
+  }
+
+  &__author-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__author {
+    font-weight: 600;
+    line-height: calc(22/18);
+  }
+
+  &__data {
+    color: var(--gray);
+    font-size: rem(14);
+    line-height: 1.2;
+  }
+
+  &__inner p {
+    margin: rem(20) 0;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    color: var(--accent);
+    @extend %Montserrat-500;
+    font-size: rem(18);
+    line-height: inherit;
+    @include transition ($transition-property: text-decoration);
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__favorite {
+    position: relative;
+    width: rem(28);
+    height: rem(25);
+    z-index: 5;
+
+    &::before {
+      position: absolute;
+      content: url(../images/icons/favorite.svg);
+      width: rem(28);
+      height: rem(25);
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__favorite--active::before {
+    content: url(../images/icons/favorite-active.svg);
+  }
+
+  &__btn-link {
+    margin-top: rem(30);
+    margin-left: auto;
+    width: rem(228);
+    height: rem(50);
+  }
+}

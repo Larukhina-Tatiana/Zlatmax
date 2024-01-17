@@ -24,24 +24,15 @@
     @include adaptivevalue(gap, 30, 10, 1620, 320, 1);
     align-items: center;
     flex-wrap: wrap;
-
-    .button {
-      width: rem(230);
-      height: rem(50);
-    }
   }
 
   &__button {
-    background-color: rgba(0, 0, 0, 1);
-    box-shadow: 0px 4px 20px 0px rgba(41, 40, 38, 0.43);
-    @include transition ($transition-property: box-shadow);
-
-    @media (any-hover: hover) {
-      &:hover {
-        box-shadow: 0px 4px 45px 0px rgba(41, 40, 38, 0.43);
-      }
-    }
+    width: rem(228);
+    height: rem(50);
   }
+
+
+
 
   &__price-box {
     display: flex;

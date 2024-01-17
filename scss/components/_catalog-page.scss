@@ -128,6 +128,38 @@
       flex-direction: column;
     }
   }
+
+  //  Цена range
+  .range {
+
+    &__values {
+      display: flex;
+      @include adaptivevalue(width, 312, 290, 1620, 320, 1);
+      // width: rem(312);
+      border-radius: rem(2);
+      border: 1px solid #CBCBCB;
+      font-size: rem(16);
+      margin-top: rem(30);
+
+      &:not(:last-child) {
+        margin-bottom: rem(30);
+      }
+
+      &-input {
+        padding: rem(12) rem(36);
+        width: 50%;
+        color: var(--cod-gray);
+        text-align: center;
+        line-height: calc(20/16);
+      }
+    }
+
+    &__slider {
+      @include adaptivevalue(width, 312, 234, 1620, 320, 1);
+      margin: 0 auto;
+      // width: rem(312);
+    }
+  }
 }
 
 
@@ -191,37 +223,7 @@
   @extend %Montserrat-500;
 }
 
-//  Цена range
-.range {
 
-  &__values {
-    display: flex;
-    @include adaptivevalue(width, 312, 290, 1620, 320, 1);
-    // width: rem(312);
-    border-radius: rem(2);
-    border: 1px solid #CBCBCB;
-    font-size: rem(16);
-    margin-top: rem(30);
-
-    &:not(:last-child) {
-      margin-bottom: rem(30);
-    }
-
-    &-input {
-      padding: rem(12) rem(36);
-      width: 50%;
-      color: var(--cod-gray);
-      text-align: center;
-      line-height: calc(20/16);
-    }
-  }
-
-  &__slider {
-    @include adaptivevalue(width, 312, 234, 1620, 320, 1);
-    margin: 0 auto;
-    // width: rem(312);
-  }
-}
 
 .noUi-target {
   background: var(--accent);

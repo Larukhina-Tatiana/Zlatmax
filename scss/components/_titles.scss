@@ -58,6 +58,14 @@
   margin-bottom: rem(13);
 }
 
+.title-h6 {
+  font-size: rem(18);
+  @extend %Montserrat-700;
+  color: var(--cod-gray);
+  line-height: calc(22/18);
+  // @include adaptivevalue(line-height, 34, 32, 1620, 320, 1);
+}
+
 .section-text {
   color: rgba(255, 255, 255, 0.70);
   letter-spacing: 0.54px;
