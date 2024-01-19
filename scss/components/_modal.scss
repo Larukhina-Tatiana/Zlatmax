@@ -1,45 +1,17 @@
 .backdrop {
     position: fixed;
-    top: 0;
-    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.2);
-    z-index: 5;
-
+    z-index: 13;
     @include transition ((opaciti, visibility));
     backdrop-filter: blur(10px);
 }
-
-.modal {
-    position: absolute;
-    top: 0;
-    left: 0%;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-
-    width: 528px;
-    height: 581px;
-    padding-top: 40px;
-    padding-right: 39px;
-    padding-bottom: 40px;
-    padding-left: 41px;
-
-    background-color: var(--white);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-        0px 1px 1px rgba(0, 0, 0, 0.14),
-        0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-
-    @include transition ($transition-property: scale);
-
-    @media screen and (width < 479.98px) {
-            width: 85%;
-            height: 85%;
-        }
-}
-
 
 .is-hidden {
     visibility: hidden;
@@ -50,154 +22,235 @@
     scale: 0;
 }
 
-/* Выравнивание кнопки относительно мод.окна */
 .close-btn {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     right: 8px;
     top: 8px;
     width: 30px;
     height: 30px;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
 
-    & span {
-        color: #000000;
+    &__icon {
         @include transition ($transition-property: color);
         cursor: pointer;
     }
 
-    &:hover span,
-    &:focus span {
+    &:hover &__icon,
+    &:focus &__icon {
         color: var(--accent);
-        @include transition ($transition-property: color);
-
     }
 }
 
-.form {
-    font-size: calc(12/16)+rem;
-    line-height: calc(14 / 12);
-
-
-    &__title {
-        font-weight: 700;
-        font-size: calc(18/16)+rem;
-        line-height: calc(24 / 16);
-        text-align: center;
-        color: #212121;
-        margin-bottom: 12px;
-    }
-
-    &__label {
-        display: block;
-        margin: 12px auto 4px;
-    }
-
-
-    &__input {
-        border: 1px solid rgba(33, 33, 33, 0.2);
-        border-radius: 4px;
-        outline: transparent;
-
-        @include transition ($transition-property: border);
-
-        padding-left: 42px;
-        height: 40px;
-        width: 100%;
-    }
-
-    &__input:hover,
-    &__input:focus {
-        border: 1px solid var(--accent);
-    }
-
-    &__input:hover + &__icon,
-    &__input:focus + &__icon {
-        fill: var(--accent);
-    }
-
-
-    #comment {
-
-        padding-left: 16px;
-        padding-top: 12px;
-        margin-bottom: 20px;
-        font-size: calc(12/16)+rem;
-        line-height: calc(14/12);
-        letter-spacing: 0.01em;
-        color: rgba(117, 117, 117, 0.5);
-        resize: none;
-        width: 100%;
-        height: 96px;
-    }
-
-    &__icon-wrap {
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
-
-    &__icon {
-        position: absolute;
-        left: 12px;
-        fill: #000000;
-    }
-}
-
-
-.checkbox {
+.modal {
     position: absolute;
-    opacity: 0;
-    z-index: -1;
+    top: rem(-50);
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
 
-    &__link {
-        margin-left: 5px;
-        text-decoration: underline;
-        color: var(--accent);
+    width: rem(850);
+    height: rem(750);
+    padding: rem(40);
 
-    }
+    background-color: var(--background);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
 
-    &__text {
-        display: inline-flex;
-        font-size: calc(8/16)+rem;
-        line-height: calc(10/8);
-    }
+    @include transition ($transition-property: scale);
 
-    &__castom-icon {
+    // @media screen and (max-width: $mobile) {
+    //     width: 100%;
+    // }
+
+    // @media screen and (min-width: 1200px) {
+    //     width: 528px;
+    //     height: 581px;
+    // }
+
+
+
+
+    /* Выравнивание кнопки относительно мод.окна */
+
+
+
+    .form {
         position: relative;
-        justify-content: center;
-        align-items: center;
-        width: 16px;
-        height: 15px;
-        border-radius: 2px;
-        border: 2px solid #212121;
-        margin-right: 7px;
+        font-size: rem(16);
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+        text-align: left;
 
-        @include transition ($transition-property: border);
+        &__title {
+            font-weight: 700;
+            font-size: rem(20);
+            line-height: calc(30 / 20);
+            text-align: center;
+            margin-bottom: rem(12);
+
+            @media screen and (min-width: 1200px) {
+                line-height: calc(23 / 20);
+            }
+        }
+
+        &__label {
+            display: block;
+            margin: 10px auto 4px;
+        }
+
+
+        &__input {
+            border: 1px solid rgba(33, 33, 33, 0.2);
+            border-radius: 4px;
+            outline: transparent;
+
+            @include transition ($transition-property: border);
+
+            padding-left: 42px;
+            height: 40px;
+            width: 100%;
+        }
+
+        &__input:hover,
+        &__input:focus {
+            border: 1px solid var(--accent);
+        }
+
+        &__input:hover + .form__icon,
+        &__input:focus + .form__icon {
+            color: var(--accent);
+        }
+
+
+        #comment {
+            padding-left: 16px;
+            padding-top: 12px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: calc(14/12);
+            letter-spacing: 0.01em;
+            color: var(--cod-gray);
+            // resize: vertical;
+            // width: 100%;
+            // height: 130px;
+            resize: vertical;
+            min-height: 100px;
+            max-height: 200px;
+        }
+
+        &__icon-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        &__icon {
+            position: absolute;
+            left: 12px;
+        }
+
+        &__rate-text {
+            margin-top: rem(10);
+            margin-bottom: rem(20);
+        }
+
+        & .rate {
+            margin-bottom: rem(20);
+        }
+
+        &__rules {
+            margin-top: rem(30);
+
+            // &:not(:last-child) {
+            //     margin-bottom: rem(30);
+            // }
+        }
+
+
+        &__btn {
+            display: block;
+            width: rem(200);
+            height: rem(50);
+            margin: rem(30) auto 0 auto;
+        }
     }
 
-    &__icon-check {
+
+    .checkbox {
+        position: absolute;
         opacity: 0;
-        transition-property: opacity;
-        @include transition ($transition-property: opacity);
-    }
+        z-index: -1;
 
-    &:checked + &__label &__castom-icon {
-        background: var(--accent);
-        border-color: var(--accent);
-    }
+        &__link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            @include transition ($transition-property: text-decoration);
 
-    &:checked + &__label &__castom-icon &__icon-check {
-        opacity: 1;
-    }
+            @media (any-hover: hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
 
-    &__label {
-        display: flex;
-        align-items: center;
-        gap: 7px;
+        &__text {
+            font-size: 12px;
+            line-height: calc(14/12);
 
-        @include transition ($transition-property: background-color);
+            @media screen and (min-width: 1200px) {
+                font-size: 14px;
+                line-height: calc(24/14);
+            }
+
+        }
+
+        &__castom-icon {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 16px;
+            height: 15px;
+            border-radius: 2px;
+            border: 2px solid var(--cod-gray);
+            margin-right: 7px;
+
+            @include transition ($transition-property: border);
+        }
+
+        &__icon-check {
+            cursor: pointer;
+            opacity: 0;
+            transition-property: opacity;
+            @include transition ($transition-property: opacity);
+
+
+        }
+
+        &:checked + &__label &__castom-icon {
+            // background: $accent-color;
+            // border-color: $accent-color;
+        }
+
+        &:checked + &__label &__castom-icon &__icon-check {
+            opacity: 1;
+        }
+
+        .header &__label {
+            display: flex;
+            gap: rem(10);
+            @include transition ($transition-property: background-color);
+        }
+
     }
 
 }

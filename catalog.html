@@ -106,6 +106,71 @@
               </div>
 
               <button class="header-center__phone-callback" data-modal-open>Заказать звонок</button>
+              <div class="backdrop is-hidden" data-modal>
+                <div class="modal">
+                  <button class="close-btn" type="button" data-modal-close>
+                    <svg class="close-btn__icon" aria-label="Иконка закрытия окна" xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.97057 6.55649L14.3345 0.192529L15.7487 1.60674L9.38478 7.9707L15.7487 14.3347L14.3345 15.7489L7.97057 9.38492L1.6066 15.7489L0.192391 14.3347L6.55635 7.9707L0.192391 1.60674L1.6066 0.192529L7.97057 6.55649Z"
+                        fill="currentColor" />
+                    </svg>
+                  </button>
+                  <form class="form">
+                    <p class="form__title">Oставьте Ваши данные и мы перезвоним Вам!</p>
+
+                    <label class="form__label" for="first-name">Ваше имя</label>
+                    <div class="form__icon-wrap">
+                      <input class="form__input" type="text" name="first-name" id="first-name" required>
+                      <svg class="form__icon" aria-label="icon" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_3_6998)">
+                          <path
+                            d="M9 9C10.6575 9 12 7.6575 12 6C12 4.3425 10.6575 3 9 3C7.3425 3 6 4.3425 6 6C6 7.6575 7.3425 9 9 9ZM9 10.5C6.9975 10.5 3 11.505 3 13.5V14.25C3 14.6625 3.3375 15 3.75 15H14.25C14.6625 15 15 14.6625 15 14.25V13.5C15 11.505 11.0025 10.5 9 10.5Z"
+                            fill="currentColor" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_3_6998">
+                            <rect width="18" height="18" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+
+                    <label class="form__label" for="phone">Телефон</label>
+                    <div class="form__icon-wrap">
+                      <input class="form__input" type="tel" name="phone" id="phone" required>
+                      <svg class="form__icon" width="15" height="16" aria-label="icon">
+                        <use href="./images/icons/icons-footer.svg#icon-phone"></use>
+                      </svg>
+                    </div>
+
+                    <label class="form__label" for="comment">Коментарий</label>
+                    <textarea class="form__input" id="comment" placeholder="Введите текст"></textarea>
+
+                    <input class="checkbox" type="checkbox" name="policy" id="policy" checked>
+                    <label class="checkbox__label" for="policy">
+
+                      <span class="checkbox__castom-icon">
+
+                        <svg class="checkbox__icon-check" xmlns="http://www.w3.org/2000/svg" width="13" height="10"
+                          viewBox="0 0 13 10" fill="none">
+                          <path
+                            d="M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z"
+                            fill="white" stroke="white" stroke-width="0.2" />
+                        </svg>
+                      </span>
+                      <span class="checkbox__text">Я согласен с рассылкой и принимаю
+                        <a class="checkbox__link" href="">Условия договора</a>
+                      </span>
+                    </label>
+
+                    <button class="form__btn buttons buttons--accent" type="submit">
+                      Отправить
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
             <a class="header-center__favorite _icon-favorites" href=""></a>
             <a class="header-center__card" href="">
@@ -2104,9 +2169,9 @@
                     </button>
                   </div>
 
-                  <input class="checkbox" type="checkbox" name="policy" id="policy" checked="">
+                  <input class="checkbox" type="checkbox" name="agreement" id="agreement" checked="">
 
-                  <label class="checkbox__label" for="policy">
+                  <label class="checkbox__label" for="agreement">
                     <span class="checkbox__castom-icon">
 
                       <svg class="checkbox__icon-check" xmlns="http://www.w3.org/2000/svg" width="13" height="10"
@@ -2161,7 +2226,7 @@
   <script src="js/jquery.formstyler.min.js"></script>
   <script src="js/ion.rangeSlider.min.js"></script>
   <script src="js/main.js"></script>
-  <!-- <script src="js/modal.js"></script> -->
+  <script src="js/modal.js"></script>
 </body>
 
 </html>

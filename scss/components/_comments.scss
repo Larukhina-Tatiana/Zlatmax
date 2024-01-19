@@ -3,7 +3,7 @@
 
   &__item {
     display: flex;
-    gap: rem(30);
+    @include adaptivevalue(gap, 30, 10, 1620, 320, 1);
     padding-bottom: rem(30);
     border-bottom: 1px solid var(--gray);
 
@@ -14,14 +14,16 @@
 
   &__avatar {
     object-fit: cover;
-    width: rem(80);
-    height: rem(80);
+    @include adaptivevalue(width, 80, 40, 1620, 320, 1);
+    @include adaptivevalue(height, 80, 40, 1620, 320, 1);
+
   }
 
   &__author-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: rem(10);
 
     &:not(:last-child) {
       margin-bottom: rem(10);
@@ -51,8 +53,7 @@
   &__btn {
     color: var(--accent);
     @extend %Montserrat-500;
-    font-size: rem(18);
-    line-height: inherit;
+    @include adaptivevalue(font-size, 18, 16, 1620, 320, 1);
     @include transition ($transition-property: text-decoration);
 
     @media (any-hover: hover) {
@@ -84,7 +85,6 @@
 
   &__btn-link {
     margin-top: rem(30);
-    margin-left: auto;
     width: rem(228);
     height: rem(50);
   }

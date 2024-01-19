@@ -1,14 +1,16 @@
 .characteristic {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: rem(20);
 
   &__item {
     max-width: rem(509);
 
-    &:not(:first-child) {
-      border-left: 1px solid var(--gray);
-      padding-left: rem(30);
+    @media screen and (width > 1082.01px) {
+      &:not(:first-child) {
+        border-left: 1px solid var(--gray);
+        padding-left: rem(30);
+      }
     }
   }
 
@@ -39,7 +41,18 @@
     }
   }
 
-  &__table-meaning {
-    // width: rem(280);
+  @media screen and (width < 1090.01px) {
+    flex-wrap: wrap;
+
+  }
+
+  &__item {
+    margin-bottom: rem(20);
+  }
+
+  @media screen and (width < 480.01px) {
+    &__table-item {
+      display: block;
+    }
   }
 }

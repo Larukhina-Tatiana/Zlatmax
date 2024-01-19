@@ -107,6 +107,71 @@
               </div>
 
               <button class="header-center__phone-callback" data-modal-open>Заказать звонок</button>
+              <div class="backdrop is-hidden" data-modal>
+                <div class="modal">
+                  <button class="close-btn" type="button" data-modal-close>
+                    <svg class="close-btn__icon" aria-label="Иконка закрытия окна" xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.97057 6.55649L14.3345 0.192529L15.7487 1.60674L9.38478 7.9707L15.7487 14.3347L14.3345 15.7489L7.97057 9.38492L1.6066 15.7489L0.192391 14.3347L6.55635 7.9707L0.192391 1.60674L1.6066 0.192529L7.97057 6.55649Z"
+                        fill="currentColor" />
+                    </svg>
+                  </button>
+                  <form class="form">
+                    <p class="form__title">Oставьте Ваши данные и мы перезвоним Вам!</p>
+
+                    <label class="form__label" for="first-name">Ваше имя</label>
+                    <div class="form__icon-wrap">
+                      <input class="form__input" type="text" name="first-name" id="first-name" required>
+                      <svg class="form__icon" aria-label="icon" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_3_6998)">
+                          <path
+                            d="M9 9C10.6575 9 12 7.6575 12 6C12 4.3425 10.6575 3 9 3C7.3425 3 6 4.3425 6 6C6 7.6575 7.3425 9 9 9ZM9 10.5C6.9975 10.5 3 11.505 3 13.5V14.25C3 14.6625 3.3375 15 3.75 15H14.25C14.6625 15 15 14.6625 15 14.25V13.5C15 11.505 11.0025 10.5 9 10.5Z"
+                            fill="currentColor" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_3_6998">
+                            <rect width="18" height="18" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+
+                    <label class="form__label" for="phone">Телефон</label>
+                    <div class="form__icon-wrap">
+                      <input class="form__input" type="tel" name="phone" id="phone" required>
+                      <svg class="form__icon" width="15" height="16" aria-label="icon">
+                        <use href="./images/icons/icons-footer.svg#icon-phone"></use>
+                      </svg>
+                    </div>
+
+                    <label class="form__label" for="comment">Коментарий</label>
+                    <textarea class="form__input" id="comment" placeholder="Введите текст"></textarea>
+
+                    <input class="checkbox" type="checkbox" name="policy" id="policy" checked>
+                    <label class="checkbox__label" for="policy">
+
+                      <span class="checkbox__castom-icon">
+
+                        <svg class="checkbox__icon-check" xmlns="http://www.w3.org/2000/svg" width="13" height="10"
+                          viewBox="0 0 13 10" fill="none">
+                          <path
+                            d="M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z"
+                            fill="white" stroke="white" stroke-width="0.2" />
+                        </svg>
+                      </span>
+                      <span class="checkbox__text">Я согласен с рассылкой и принимаю
+                        <a class="checkbox__link" href="">Условия договора</a>
+                      </span>
+                    </label>
+
+                    <button class="form__btn buttons buttons--accent" type="submit">
+                      Отправить
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
             <a class="header-center__favorite _icon-favorites" href=""></a>
             <a class="header-center__card" href="">
@@ -752,6 +817,8 @@
 
 
 
+
+
     <section class="card__description section">
       <div class="container">
         <div class="card__description-tabs-inner">
@@ -760,11 +827,11 @@
               Описание
             </a>
 
-            <a class="tabs__link card__description-tabs-link" href="#tabs-product-2">
+            <a class="tabs__link card__description-tabs-link tabs__link--active" href="#tabs-product-2">
               Характеристики
             </a>
 
-            <a class="tabs__link card__description-tabs-link tabs__link--active" href="#tabs-product-3">
+            <a class="tabs__link card__description-tabs-link" href="#tabs-product-3">
               Отзывы
             </a>
 
@@ -805,7 +872,7 @@
                   на боровую и водоплавающую дичь.</span>
               </p>
             </li>
-            <li class="tabs__content-item card__description-tabs-content" id="tabs-product-2">
+            <li class="tabs__content-item card__description-tabs-content tabs__content--active" id="tabs-product-2">
               <ul class="card__description-characteristic-list characteristic">
                 <li class="characteristic__item">
                   <h6 class="characteristic__title title-h6">
@@ -860,8 +927,7 @@
                 </li>
               </ul>
             </li>
-            <li
-              class="tabs__content-item card__description-tabs-content card__description-tabs-content--align tabs__content--active"
+            <li class="tabs__content-item card__description-tabs-content card__description-tabs-content--align"
               id="tabs-product-3">
               <ul class="card__description-tabs-comments comments">
                 <li class="comments__item">
@@ -907,6 +973,9 @@
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor luctus et consectetur augue.
                       Dolor egestas nunc pellentesque hac fringilla. Enim hac scelerisque eu tellus feugiat vel.
                       Ut ac nec eleifend fermentum dictum ullamcorper phasellus at sed.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor luctus et consectetur augue.
+                      Dolor egestas nunc pellentesque hac fringilla. Enim hac scelerisque eu tellus feugiat vel.
+                      Ut ac nec eleifend fermentum dictum ullamcorper phasellus at sed.
                     </p>
                     <div class="comments__buttons">
                       <button class="comments__btn">Ответить</button>
@@ -915,9 +984,109 @@
                   </div>
                 </li>
               </ul>
-              <button class="comments__btn-link buttons buttons--black">Написать отзыв</button>
+              <button class="comments__btn-link buttons buttons--black" data-modal-open>Написать отзыв</button>
+              <div class="backdrop is-hidden" data-modal>
+                <div class="modal">
+                  <button class="close-btn" type="button" data-modal-close>
+                    <svg class="close-btn__icon" aria-label="Иконка закрытия окна" xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.97057 6.55649L14.3345 0.192529L15.7487 1.60674L9.38478 7.9707L15.7487 14.3347L14.3345 15.7489L7.97057 9.38492L1.6066 15.7489L0.192391 14.3347L6.55635 7.9707L0.192391 1.60674L1.6066 0.192529L7.97057 6.55649Z"
+                        fill="currentColor" />
+                    </svg>
+                  </button>
+                  <!-- Форма -->
+                  <form class="form">
+                    <p class="form__title">Оставте свой отзыв!</p>
+
+                    <label class="form__label" for="first-name">Ваше имя и фамилия</label>
+                    <div class="form__icon-wrap">
+                      <input class="form__input" type="text" name="first-name" id="first-name" required />
+                      <svg class="form__icon" aria-label="icon" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_3_6998)">
+                          <path
+                            d="M9 9C10.6575 9 12 7.6575 12 6C12 4.3425 10.6575 3 9 3C7.3425 3 6 4.3425 6 6C6 7.6575 7.3425 9 9 9ZM9 10.5C6.9975 10.5 3 11.505 3 13.5V14.25C3 14.6625 3.3375 15 3.75 15H14.25C14.6625 15 15 14.6625 15 14.25V13.5C15 11.505 11.0025 10.5 9 10.5Z"
+                            fill="currentColor" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_3_6998">
+                            <rect width="18" height="18" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+
+                      <!-- <svg class="form__icon" width="18" height="18">
+                        <use href="./images/icons/person-black.svg"></use>
+                      </svg> -->
+                    </div>
+
+
+                    <label class="form__label" for="email">Электронная почта</label>
+                    <div class="form__icon-wrap">
+                      <input class="form__input" type="email" name="email" id="email" required>
+                      <svg class="form__icon" aria-label="Иконка электронной почты" width="18" height="18"
+                        viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_3_7010)">
+                          <path
+                            d="M15 3H3C2.175 3 1.5075 3.675 1.5075 4.5L1.5 13.5C1.5 14.325 2.175 15 3 15H15C15.825 15 16.5 14.325 16.5 13.5V4.5C16.5 3.675 15.825 3 15 3ZM14.7 6.1875L9.3975 9.5025C9.1575 9.6525 8.8425 9.6525 8.6025 9.5025L3.3 6.1875C3.1125 6.0675 3 5.865 3 5.6475C3 5.145 3.5475 4.845 3.975 5.1075L9 8.25L14.025 5.1075C14.4525 4.845 15 5.145 15 5.6475C15 5.865 14.8875 6.0675 14.7 6.1875Z"
+                            fill="currentColor" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_3_7010">
+                            <rect width="18" height="18" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+
+                      <!-- <svg class="form__icon" width="18" height="18">
+                        <use href="./images/icons/icons.svg#icon-email-black-18dp"></use>
+                      </svg> -->
+                    </div>
+
+                    <p class="form__rate-text">Оцените товар</p>
+
+                    <a class="rate" href="">
+                      <div class="rate-yo" data-rateyo-rating=""></div>
+                    </a>
+
+                    <label class="form__label" for="comment">Комментарий</label>
+                    <textarea class="form__input" id="comment" placeholder="Введите текст"></textarea>
+
+                    <input class="checkbox" type="checkbox" name="mail" id="mail" checked>
+                    <label class="checkbox__label" for="mail">
+                      <span class="checkbox__castom-icon">
+
+                        <svg class="checkbox__icon-check" xmlns="http://www.w3.org/2000/svg" width="13" height="10"
+                          viewBox="0 0 13 10" fill="none">
+                          <path
+                            d="M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z"
+                            fill="white" stroke="white" stroke-width="0.2" />
+                        </svg>
+                      </span>
+                      Уведомлять об ответах по электронной почте
+                    </label>
+                    <div class="form__rules">
+                      Чтобы ваш отзыв либо комментарий прошел модерацию и был опубликован, ознакомьтесь, пожалуйста, с
+                      <a class="checkbox__link" href="">нашими правилами</a>
+                    </div>
+
+                    <button class="form__btn buttons buttons--accent" type="submit">
+                      Оставить отзыв
+                    </button>
+                  </form>
+                </div>
+              </div>
             </li>
-            <li class="tabs__content-item card__description-tabs-content" id="tabs-product-4">Content4</li>
+            <li class="tabs__content-item card__description-tabs-content card__description-tabs-content--nocomments"
+              id="tabs-product-3">
+              <p class="card__description-tabs-nocomments">
+                У данного товара нет отзывов. Станьте первым, кто оставил отзыв об этом товаре!
+                <button class="comments__btn-link buttons buttons--black">Написать отзыв</button>
+              </p>
+            </li>
+            <li class="tabs__content-item card__description-tabs-content" id="tabs-product-4">
+              Content4</li>
             <!-- <li class="tabs__content-item card-product__tabs-content" id="tabs-product-4">
             <form class="card-product__tabs-form">
               <div class="card-product__form-topline form-topline">
@@ -1031,6 +1200,609 @@
           </li> -->
 
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-slider section">
+      <div class="container">
+        <div class="products-slider__inner">
+          <div class="products-slider__header">
+            <h2 class="products-slider__title section-title">
+              Похожие товары
+            </h2>
+            <a class="products-slider__link-more" href="">Перейти в каталог</a>
+          </div>
+          <div class="products-slider__slider swiper">
+            <div class="products-slider__swiper swiper-wrapper">
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="/сard-product.html">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/Nozh-Snegir1@1x.jpg"
+                        alt="Nozh-Snegir-95H18-Nakladki-karelskaya-bereza">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href="/card-product.html" title="Нож Снегирь">
+                        Нож Снегирь
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials" title="Карельская берёза, нержавеющая сталь">Карельская
+                        берёза, нержавеющая сталь</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">2 719 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/02.jpg" alt="products images">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href=""
+                        title="Нож туристичний в футлярі Moraknive BushCraft Forest">
+                        Нож туристичний в футлярі Moraknive BushCraft Forest
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials" title="Орех, Алюминий">Орех, Алюминий</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">2 719 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/08.webp" alt="products images">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href=""
+                        title="Нож туристический Morakniv 2000 Outdoor Anniversary Edition">
+                        Нож туристический Morakniv 2000 Outdoor Anniversary Edition
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials" title="Резинопластик, нержавеющая сталь">Резинопластик,
+                        нержавеющая сталь</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">1 380 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/04.jpg" alt="products images">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href="" title="Нож Morakniv® Garberg (S)">
+                        Нож Morakniv® Garberg (S)
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials" title="Орех, Алюминий">Орех, Алюминий</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">2 719 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/05.jpg" alt="products images">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href=""
+                        title="Нож туристичний в футлярі Moraknive BushCraft Forest">
+                        Нож туристичний в футлярі Moraknive BushCraft Forest
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials" title="Орех, Алюминий">Орех, Алюминий</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">2 719 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/08.webp" alt="products images">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href=""
+                        title="Нож туристический Morakniv 2000 Outdoor Anniversary Edition">
+                        Нож туристический Morakniv 2000 Outdoor Anniversary Edition
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials">Резинопластик, сталь</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">1 380 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/01.jpg" alt="products images">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href="" title="Нож Morakniv® Garberg (S)">
+                        Нож Morakniv® Garberg (S)
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials" title="Орех, Алюминий">Орех, Алюминий</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">2 719 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/02.jpg" alt="products images">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href="" title="Нож Morakniv® Garberg (S)">
+                        Нож Morakniv® Garberg (S)
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials" title="Орех, Алюминий">Орех, Алюминий</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">2 719 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/03.jpg" alt="products images">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href=""
+                        title="Нож Лиса Нож Лиса Нож Лиса Нож Лиса Нож Лиса Нож Лиса">
+                        Нож Лиса Нож Лиса Нож Лиса Нож Лиса Нож Лиса Нож Лиса
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials" title="Орех, Алюминий">Орех, Алюминий</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">2 719 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/06.webp" alt="products images">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href="" title="Нож туристический в футляре">
+                        Нож туристический в футляре
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials" title="Орех, Алюминий">Орех, Алюминий</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">2 719 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/07.webp" alt="products images">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href="" title="Нож 2000 Knife Outdoor ORANGE ">
+                        Нож 2000 Knife Outdoor ORANGE
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials">Резинопластик, нержавеющая</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">2 719 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+              <div class="products-slider__slide swiper-slide">
+                <article class="products-card">
+                  <a class="products-card__img-link" href="">
+                    <div class="products-card__img-cover">
+                      <img class="products-card__img" src="./images/products-card/08.webp" alt="products images">
+                    </div>
+                  </a>
+                  <div class="products-card__body">
+                    <h4 class="products-card__title title-h4">
+                      <a class="products-card__title-link" href=""
+                        title="Нож туристический Morakniv 2000 Outdoor Anniversary Edition">
+                        Нож туристический Morakniv 2000 Outdoor Anniversary Edition
+                      </a>
+                    </h4>
+                    <div class="products-card__info">
+                      <span class="products-card__size">95х18</span>
+                      <p class="products-card__materials">Резинопластик, сталь</p>
+                    </div>
+
+                    <fieldset class="rating">
+                      <legend class="rating__star">Рейтинг продукта</legend>
+                      <div class="rating__group">
+                        <input class="rating__input" type="radio" id="radio-5" value="5" name="rating">
+                        <label for="radio-5" class="rating__label _icon-star" aria-label="Отличный"></label>
+                        <input class="rating__input" type="radio" id="radio-4" value="4" name="rating">
+                        <label for="radio-4" class="rating__label _icon-star" aria-label="Хороший"></label>
+                        <input class="rating__input" type="radio" id="radio-3" value="3" name="rating">
+                        <label for="radio-3" class="rating__label _icon-star" aria-label="Средний"></label>
+                        <input class="rating__input" type="radio" id="radio-2" value="2" name="rating">
+                        <label for="radio-2" class="rating__label _icon-star" aria-label="Плохой"></label>
+                        <input class="rating__input" type="radio" id="radio-1" value="1" name="rating">
+                        <label for="radio-1" class="rating__label _icon-star" aria-label="Отвратительный"></label>
+                        <div class="rating__focus"></div>
+                      </div>
+                      <p class="rating__info">12 отзывов</p>
+                    </fieldset>
+
+                    <div class="products-card__footer">
+                      <p class="products-card__price">1 380 грн.</p>
+                      <a class="compare-link _icon-comrape" href=""></a>
+                      <a class="favorite-link _icon-favorites" href=""></a>
+                    </div>
+                    <button class="products-card__btn buttons buttons--accent">В корзину
+                      <img src="./images/icons/basket.svg" alt="icons backet">
+                    </button>
+
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="products-slider__dotts dotts"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -1293,9 +2065,9 @@
                     </button>
                   </div>
 
-                  <input class="checkbox" type="checkbox" name="policy" id="policy" checked="">
+                  <input class="checkbox" type="checkbox" name="agreement" id="agreement" checked="">
 
-                  <label class="checkbox__label" for="policy">
+                  <label class="checkbox__label" for="agreement">
                     <span class="checkbox__castom-icon">
 
                       <svg class="checkbox__icon-check" xmlns="http://www.w3.org/2000/svg" width="13" height="10"
@@ -1353,6 +2125,7 @@
   <script src="js/jquery.rateyo.min.js"></script>
 
 
+  <script src="js/modal-comments.js"></script>
   <script src="js/main.js"></script>
   <!-- <script src="js/modal.js"></script> -->
 </body>

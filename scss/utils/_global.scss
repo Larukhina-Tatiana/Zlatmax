@@ -76,7 +76,7 @@ dd {
 
 body {
     @extend %Montserrat-500;
-    font-size: 1.125rem;
+    @include adaptivevalue(font-size, 18, 16, 1620, 320, 1);
     line-height: calc(27/18);
     color: var(--cod-gray);
     overflow-x: hidden;
