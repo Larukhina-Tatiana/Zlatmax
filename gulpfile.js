@@ -65,7 +65,10 @@ function scripts() {
       "node_modules/swiper/swiper-bundle.js",
       "js/main.js",
       "js/modal.js",
-
+      // "node_modules/swiper/swiper-bundle.min.js",
+      "node_modules/nouislider/dist/nouislider.js",
+      // "js/jquery.formstyler.js",
+      // "js/ion.rangeSlider.min.js",
       // Для подключения многих (всех) файлов js? Обязательно исключать main.min.js
       // 'app/js/*.js',
       // '!app/js/main.min.js'
