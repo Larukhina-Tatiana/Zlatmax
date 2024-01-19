@@ -47,10 +47,10 @@ function fonts() {
 
 function styles() {
   // return src("app/scss/style.scss")
-  return src("app/scss/style.scss")
+  return src("scss/style.scss")
     .pipe(concat("style.min.css"))
     .pipe(scss({ outputStyle: "compressed" }))
-    .pipe(dest("app/css"))
+    .pipe(dest("css"))
     .pipe(
       autoprefixer({
         overrideBrowsersList: ["last 10 version"],
@@ -64,13 +64,15 @@ function scripts() {
     src([
       "node_modules/swiper/swiper-bundle.js",
       "js/main.js",
+      "js/modal.js",
 
       // Для подключения многих (всех) файлов js? Обязательно исключать main.min.js
       // 'app/js/*.js',
       // '!app/js/main.min.js'
+      "!/js/main.min.js",
     ])
-      // .pipe(concat("main.min.js"))
-      .pipe(concat("main.js"))
+      .pipe(concat("main.min.js"))
+      // .pipe(concat("main.js"))
       .pipe(uglify())
       .pipe(dest("js"))
   );
