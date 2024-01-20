@@ -1116,7 +1116,7 @@ button,
 
 .modal {
   position: absolute;
-  top: -3.125rem;
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;

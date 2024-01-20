@@ -50,7 +50,8 @@
 
 .modal {
     position: absolute;
-    top: rem(-50);
+    // top: rem(-50);
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
@@ -68,21 +69,11 @@
 
     @include transition ($transition-property: scale);
 
-    // @media screen and (max-width: $mobile) {
-    //     width: 100%;
-    // }
-
-    // @media screen and (min-width: 1200px) {
-    //     width: 528px;
-    //     height: 581px;
-    // }
 
 
 
 
     /* Выравнивание кнопки относительно мод.окна */
-
-
 
     .form {
         position: relative;
