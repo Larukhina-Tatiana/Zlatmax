@@ -55,7 +55,7 @@ function styles() {
     "css/jquery.formstyler.theme.css",
     "css/jquery.rateyo.css",
     "scss/style.scss",
-    "!/css/style.min.css",
+    // "!/css/style.min.css",
   ])
     .pipe(concat("style.min.css"))
     .pipe(scss({ outputStyle: "compressed" }))

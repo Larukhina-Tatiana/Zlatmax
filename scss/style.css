@@ -1102,11 +1102,13 @@ button,
   background-color: var(--white);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  color: var(--cod-gray);
 }
 .close-btn__icon {
   transition-duration: 450ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  color: inherit;
 }
 .close-btn:hover .close-btn__icon, .close-btn:focus .close-btn__icon {
   color: var(--accent);
@@ -1119,7 +1121,7 @@ button,
   bottom: 0;
   right: 0;
   margin: auto;
-  width: 53.125rem;
+  width: 850px;
   height: 46.875rem;
   padding: 2.5rem;
   background-color: var(--background);
@@ -1129,24 +1131,25 @@ button,
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /* Выравнивание кнопки относительно мод.окна */
 }
+@media screen and (max-width: 960px) {
+  .modal {
+    width: calc(290px + 560 * (100vw - 320px) / 640);
+  }
+}
 .modal .form {
   position: relative;
   font-size: 1rem;
   line-height: 1.2;
   letter-spacing: 0.01em;
   text-align: left;
+  color: var(--cod-gray);
 }
 .modal .form__title {
   font-weight: 700;
   font-size: 1.25rem;
-  line-height: 1.5;
   text-align: center;
   margin-bottom: 0.75rem;
-}
-@media screen and (min-width: 1200px) {
-  .modal .form__title {
-    line-height: 1.15;
-  }
+  white-space: initial;
 }
 .modal .form__label {
   display: block;
@@ -1224,13 +1227,7 @@ button,
 }
 .modal .checkbox__text {
   font-size: 12px;
-  line-height: 1.1666666667;
-}
-@media screen and (min-width: 1200px) {
-  .modal .checkbox__text {
-    font-size: 14px;
-    line-height: 1.7142857143;
-  }
+  white-space: initial;
 }
 .modal .checkbox__castom-icon {
   position: relative;
@@ -2712,12 +2709,6 @@ button,
 .checkbox__text {
   font-size: 12px;
   line-height: 1.1666666667;
-}
-@media screen and (min-width: 1200px) {
-  .checkbox__text {
-    font-size: 14px;
-    line-height: 1.7142857143;
-  }
 }
 .checkbox__castom-icon {
   position: relative;

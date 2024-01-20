@@ -34,10 +34,12 @@
     background-color: var(--white);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+    color: var(--cod-gray);
 
     &__icon {
         @include transition ($transition-property: color);
         cursor: pointer;
+        color: inherit;
     }
 
     &:hover &__icon,
@@ -53,8 +55,8 @@
     bottom: 0;
     right: 0;
     margin: auto;
-
-    width: rem(850);
+    @include adaptivevalue(width, 850, 290, 960, 320, 1);
+    // width: rem(850);
     height: rem(750);
     padding: rem(40);
 
@@ -88,17 +90,15 @@
         line-height: 1.2;
         letter-spacing: 0.01em;
         text-align: left;
+        color: var(--cod-gray);
 
         &__title {
             font-weight: 700;
             font-size: rem(20);
-            line-height: calc(30 / 20);
+            // line-height: calc(30 / 20);
             text-align: center;
             margin-bottom: rem(12);
-
-            @media screen and (min-width: 1200px) {
-                line-height: calc(23 / 20);
-            }
+            white-space: initial;
         }
 
         &__label {
@@ -204,13 +204,7 @@
 
         &__text {
             font-size: 12px;
-            line-height: calc(14/12);
-
-            @media screen and (min-width: 1200px) {
-                font-size: 14px;
-                line-height: calc(24/14);
-            }
-
+            white-space: initial;
         }
 
         &__castom-icon {
