@@ -1,12 +1,12 @@
-@use 'sass:math';
+@import "./utils/_vars";
+@import "./utils/_global";
+// @use 'sass:math';
 
 // $half: math.percentage(1/2);
 
-@import "./utils/modern-normalize.min";
+// @import "./utils/modern-normalize.min";
 @import "./utils/_fonts";
 @import "./utils/_iconfonts";
-@import "./utils/_vars";
-@import "./utils/_global";
 @import "./utils/_container";
 
 @import "./components/_header";
@@ -43,20 +43,6 @@
 @import "./components/counter";
 @import "./components/characteristic";
 @import "./components/comments";
-
-
-
-
-
-// @import "./components/swiper-pagination-bullet";
-// @import "./components/_advantages";
-// @import "./components/howdoes";
-// @import "./components/_video";
-// @import "./components/_footer";
-// @import "./components/_important";
-// @import "./components/_contacts";
-// @import "./components/_blog";
-// @import "./components/_catalog";
 
 
 // .swiper-button-left {

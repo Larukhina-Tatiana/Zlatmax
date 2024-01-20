@@ -47,16 +47,7 @@ function fonts() {
 
 function styles() {
   // return src("app/scss/style.scss")
-  return src([
-    "node_modules/swiper/swiper-bundle.css",
-    "node_modules/nouislider/dist/nouislider.css",
-    "css/ion.rangeSlider.css",
-    "css/jquery.formstyler.css",
-    "css/jquery.formstyler.theme.css",
-    "css/jquery.rateyo.css",
-    "scss/style.scss",
-    "!/css/style.min.css",
-  ])
+  return src("scss/style.scss")
     .pipe(concat("style.min.css"))
     .pipe(scss({ outputStyle: "compressed" }))
     .pipe(dest("css"))
@@ -71,15 +62,13 @@ function styles() {
 function scripts() {
   return (
     src([
-      "node_modules/jquery/dist/jquery.js",
       "node_modules/swiper/swiper-bundle.js",
-      "node_modules/nouislider/dist/nouislider.js",
-      "js/jquery.formstyler.js",
-      "js/ion.rangeSlider.js",
-      "js/jquery.rateyo.js",
-      "js/modal.js",
       "js/main.js",
-
+      "js/modal.js",
+      // "node_modules/swiper/swiper-bundle.min.js",
+      "node_modules/nouislider/dist/nouislider.js",
+      // "js/jquery.formstyler.js",
+      // "js/ion.rangeSlider.min.js",
       // Для подключения многих (всех) файлов js? Обязательно исключать main.min.js
       // 'app/js/*.js',
       // '!app/js/main.min.js'
